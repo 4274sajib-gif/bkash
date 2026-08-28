@@ -1,22 +1,17 @@
-// =================================================
-// APPS SCRIPT BACKEND URL
-// =================================================
+/* ================================================
+   APPS SCRIPT URL
+================================================ */
 
 const API_URL =
   'https://script.google.com/macros/s/AKfycbwjo8vQO3GmnVKTJLJKmoAgHKQequvOtzuO9ySlLSqCAABvGuPvb3X_PeDDMSVu6Fb0Tg/exec';
 
 
-// =================================================
-// GLOBAL
-// =================================================
-
 let currentUser = null;
 
 
-// =================================================
-// API REQUEST
-// JSONP
-// =================================================
+/* ================================================
+   API
+================================================ */
 
 function api(action, params = {}) {
 
@@ -31,26 +26,23 @@ function api(action, params = {}) {
           Math.random() * 100000
         );
 
-
       const script =
-        document.createElement('script');
-
+        document.createElement(
+          'script'
+        );
 
       const query =
         new URLSearchParams();
-
 
       query.set(
         'action',
         action
       );
 
-
       query.set(
         'callback',
         callbackName
       );
-
 
       Object.keys(params).forEach(
         function(key) {
@@ -93,15 +85,20 @@ function api(action, params = {}) {
         clearTimeout(timeout);
 
         if (script.parentNode) {
-          script.parentNode.removeChild(
-            script
-          );
+
+          script.parentNode
+            .removeChild(
+              script
+            );
+
         }
 
         try {
+
           delete window[
             callbackName
           ];
+
         } catch (e) {}
 
       }
@@ -137,19 +134,18 @@ function api(action, params = {}) {
         query.toString();
 
 
-      document
-        .head
-        .appendChild(script);
+      document.head.appendChild(
+        script
+      );
 
     }
   );
-
 }
 
 
-// =================================================
-// PAGE CONTROL
-// =================================================
+/* ================================================
+   PAGE
+================================================ */
 
 function showPage(pageId) {
 
@@ -183,9 +179,9 @@ function showPage(pageId) {
 }
 
 
-// =================================================
-// LOADING
-// =================================================
+/* ================================================
+   LOADING
+================================================ */
 
 function showLoading() {
 
@@ -209,9 +205,9 @@ function hideLoading() {
 }
 
 
-// =================================================
-// PASSWORD
-// =================================================
+/* ================================================
+   PASSWORD
+================================================ */
 
 function togglePassword() {
 
@@ -219,7 +215,6 @@ function togglePassword() {
     document.getElementById(
       'password'
     );
-
 
   input.type =
     input.type === 'password'
@@ -229,9 +224,9 @@ function togglePassword() {
 }
 
 
-// =================================================
-// LOGIN
-// =================================================
+/* ================================================
+   LOGIN
+================================================ */
 
 async function loginUser() {
 
@@ -271,7 +266,6 @@ async function loginUser() {
       'Username and password required.';
 
     return;
-
   }
 
 
@@ -308,7 +302,6 @@ async function loginUser() {
           : 'Login failed.';
 
       return;
-
     }
 
 
@@ -346,9 +339,7 @@ async function loginUser() {
         'adminPage'
       );
 
-
       return;
-
     }
 
 
@@ -379,9 +370,7 @@ async function loginUser() {
 
       loadViewerDetails();
 
-
       return;
-
     }
 
 
@@ -404,9 +393,9 @@ async function loginUser() {
 }
 
 
-// =================================================
-// LOGOUT
-// =================================================
+/* ================================================
+   LOGOUT
+================================================ */
 
 async function logout() {
 
@@ -449,13 +438,6 @@ async function logout() {
     .value = '';
 
 
-  document
-    .getElementById(
-      'loginMessage'
-    )
-    .textContent = '';
-
-
   showPage(
     'loginPage'
   );
@@ -463,11 +445,11 @@ async function logout() {
 }
 
 
-// =================================================
-// ADD TRANSACTION PAGE
-// =================================================
+/* ================================================
+   ADD TRANSACTION
+================================================ */
 
-function openAddTransaction() {
+async function openAddTransaction() {
 
   showPage(
     'addTransactionPage'
@@ -476,16 +458,25 @@ function openAddTransaction() {
 
   setToday();
 
-  loadNames();
+
+  await loadNames();
+
+
+  await loadOptions();
+
+
+  selectType(
+    'বিক্রয়'
+  );
 
 }
 
 
-// =================================================
-// CHECK DETAILS PAGE
-// =================================================
+/* ================================================
+   CHECK DETAILS
+================================================ */
 
-function openCheckDetails() {
+async function openCheckDetails() {
 
   showPage(
     'checkDetailsPage'
@@ -497,14 +488,14 @@ function openCheckDetails() {
   );
 
 
-  loadDetailNames();
+  await loadDetailNames();
 
 }
 
 
-// =================================================
-// TODAY
-// =================================================
+/* ================================================
+   TODAY
+================================================ */
 
 function setToday() {
 
@@ -550,9 +541,9 @@ function setToday() {
 }
 
 
-// =================================================
-// LOAD NAMES
-// =================================================
+/* ================================================
+   LOAD NAMES
+================================================ */
 
 async function loadNames() {
 
@@ -573,7 +564,6 @@ async function loadNames() {
     ) {
 
       return;
-
     }
 
 
@@ -622,9 +612,9 @@ async function loadNames() {
 }
 
 
-// =================================================
-// LOAD DETAIL NAMES
-// =================================================
+/* ================================================
+   LOAD DETAIL NAMES
+================================================ */
 
 async function loadDetailNames() {
 
@@ -645,7 +635,6 @@ async function loadDetailNames() {
     ) {
 
       return;
-
     }
 
 
@@ -694,9 +683,59 @@ async function loadDetailNames() {
 }
 
 
-// =================================================
-// TRANSACTION TYPE
-// =================================================
+/* ================================================
+   LOAD SETTINGS OPTIONS
+================================================ */
+
+let salesOptions = [];
+let paymentOptions = [];
+
+
+async function loadOptions() {
+
+  try {
+
+    const result =
+      await api(
+        'getOptions',
+        {
+          token:
+            currentUser.token
+        }
+      );
+
+
+    if (
+      !result.success
+    ) {
+
+      return;
+    }
+
+
+    salesOptions =
+      result.sales || [];
+
+
+    paymentOptions =
+      result.payments || [];
+
+
+  }
+
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+}
+
+
+/* ================================================
+   TYPE SELECT
+================================================ */
 
 function selectType(type) {
 
@@ -726,6 +765,25 @@ function selectType(type) {
     );
 
 
+  const select =
+    document.getElementById(
+      'transactionMethod'
+    );
+
+
+  const label =
+    document.getElementById(
+      'methodLabel'
+    );
+
+
+  select.innerHTML =
+    '<option value="">Select</option>';
+
+
+  let options = [];
+
+
   if (
     type === 'বিক্রয়'
   ) {
@@ -738,7 +796,16 @@ function selectType(type) {
         'active'
       );
 
+
+    label.textContent =
+      'বিক্রয়ের ধরন';
+
+
+    options =
+      salesOptions;
+
   }
+
 
   else {
 
@@ -750,14 +817,46 @@ function selectType(type) {
         'active'
       );
 
+
+    label.textContent =
+      'পেমেন্টের ধরন';
+
+
+    options =
+      paymentOptions;
+
   }
+
+
+  options.forEach(
+    function(item) {
+
+      const option =
+        document.createElement(
+          'option'
+        );
+
+
+      option.value =
+        item;
+
+      option.textContent =
+        item;
+
+
+      select.appendChild(
+        option
+      );
+
+    }
+  );
 
 }
 
 
-// =================================================
-// SAVE TRANSACTION
-// =================================================
+/* ================================================
+   SAVE
+================================================ */
 
 async function saveTransaction() {
 
@@ -793,6 +892,14 @@ async function saveTransaction() {
       .value;
 
 
+  const method =
+    document
+      .getElementById(
+        'transactionMethod'
+      )
+      .value;
+
+
   const message =
     document.getElementById(
       'transactionMessage'
@@ -808,7 +915,6 @@ async function saveTransaction() {
       'Please select a date.';
 
     return;
-
   }
 
 
@@ -821,7 +927,6 @@ async function saveTransaction() {
       'Please enter a valid amount.';
 
     return;
-
   }
 
 
@@ -831,7 +936,15 @@ async function saveTransaction() {
       'Please select a name.';
 
     return;
+  }
 
+
+  if (!method) {
+
+    message.textContent =
+      'Please select an option.';
+
+    return;
   }
 
 
@@ -858,7 +971,10 @@ async function saveTransaction() {
             name,
 
           type:
-            type
+            type,
+
+          method:
+            method
 
         }
       );
@@ -889,9 +1005,11 @@ async function saveTransaction() {
         .value = '';
 
 
-      selectType(
-        'বিক্রয়'
-      );
+      document
+        .getElementById(
+          'transactionMethod'
+        )
+        .value = '';
 
     }
 
@@ -911,9 +1029,10 @@ async function saveTransaction() {
 }
 
 
-// =================================================
-// MONTH SELECT
-// =================================================
+/* ================================================
+   MONTH SELECT
+   EMPTY = ALL MONTHS
+================================================ */
 
 function setupMonthSelect(
   elementId
@@ -930,7 +1049,8 @@ function setupMonthSelect(
   }
 
 
-  select.innerHTML = '';
+  select.innerHTML =
+    '<option value="">Select Month</option>';
 
 
   const now =
@@ -1004,9 +1124,9 @@ function setupMonthSelect(
 }
 
 
-// =================================================
-// GET MONTH
-// =================================================
+/* ================================================
+   SELECTED MONTH
+================================================ */
 
 function getSelectedMonth(
   elementId
@@ -1020,10 +1140,18 @@ function getSelectedMonth(
       .value;
 
 
+  if (!value) {
+
+    return {
+      year: '',
+      month: ''
+    };
+
+  }
+
+
   const parts =
-    value.split(
-      '-'
-    );
+    value.split('-');
 
 
   return {
@@ -1039,9 +1167,9 @@ function getSelectedMonth(
 }
 
 
-// =================================================
-// CUSTOMER DETAILS
-// =================================================
+/* ================================================
+   CUSTOMER DETAILS
+================================================ */
 
 async function loadCustomerDetails() {
 
@@ -1083,7 +1211,6 @@ async function loadCustomerDetails() {
 
 
     return;
-
   }
 
 
@@ -1134,7 +1261,6 @@ async function loadCustomerDetails() {
         result.message || '';
 
       return;
-
     }
 
 
@@ -1163,7 +1289,7 @@ async function loadCustomerDetails() {
       )
       .textContent =
       formatAmount(
-        result.monthlySales
+        result.totalSales
       );
 
 
@@ -1210,15 +1336,13 @@ async function loadCustomerDetails() {
 }
 
 
-// =================================================
-// VIEWER DETAILS
-// =================================================
+/* ================================================
+   VIEWER DETAILS
+================================================ */
 
 async function loadViewerDetails() {
 
-  if (
-    !currentUser
-  ) {
+  if (!currentUser) {
     return;
   }
 
@@ -1267,7 +1391,6 @@ async function loadViewerDetails() {
         result.message || '';
 
       return;
-
     }
 
 
@@ -1287,7 +1410,7 @@ async function loadViewerDetails() {
       )
       .textContent =
       formatAmount(
-        result.monthlySales
+        result.totalSales
       );
 
 
@@ -1316,9 +1439,9 @@ async function loadViewerDetails() {
 }
 
 
-// =================================================
-// RENDER TRANSACTIONS
-// =================================================
+/* ================================================
+   RENDER TRANSACTIONS
+================================================ */
 
 function renderTransactions(
   transactions,
@@ -1343,7 +1466,6 @@ function renderTransactions(
       '<div class="message">No transactions found.</div>';
 
     return;
-
   }
 
 
@@ -1405,6 +1527,22 @@ function renderTransactions(
           : '💳 পেমেন্ট';
 
 
+      const method =
+        document.createElement(
+          'div'
+        );
+
+
+      method.className =
+        'transaction-method';
+
+
+      method.textContent =
+        item.method
+          ? '• ' + item.method
+          : '';
+
+
       info.appendChild(
         date
       );
@@ -1412,6 +1550,11 @@ function renderTransactions(
 
       info.appendChild(
         type
+      );
+
+
+      info.appendChild(
+        method
       );
 
 
@@ -1451,9 +1594,9 @@ function renderTransactions(
 }
 
 
-// =================================================
-// FORMAT AMOUNT
-// =================================================
+/* ================================================
+   AMOUNT
+================================================ */
 
 function formatAmount(
   amount
@@ -1473,9 +1616,9 @@ function formatAmount(
 }
 
 
-// =================================================
-// RESTORE LOGIN SESSION
-// =================================================
+/* ================================================
+   RESTORE SESSION
+================================================ */
 
 function restoreSession() {
 
@@ -1494,7 +1637,6 @@ function restoreSession() {
       );
 
       return;
-
     }
 
 
@@ -1518,7 +1660,6 @@ function restoreSession() {
       );
 
       return;
-
     }
 
 
@@ -1596,7 +1737,6 @@ function restoreSession() {
       'transactionUser'
     );
 
-
     showPage(
       'loginPage'
     );
@@ -1606,9 +1746,9 @@ function restoreSession() {
 }
 
 
-// =================================================
-// START
-// =================================================
+/* ================================================
+   START
+================================================ */
 
 document.addEventListener(
   'DOMContentLoaded',
@@ -1616,16 +1756,13 @@ document.addEventListener(
 
     setToday();
 
-
     setupMonthSelect(
       'monthSelect'
     );
 
-
     setupMonthSelect(
       'viewerMonth'
     );
-
 
     restoreSession();
 
