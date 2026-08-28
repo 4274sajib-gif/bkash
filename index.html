@@ -2219,10 +2219,17 @@ function renderTransactions(
   const list =
   transactions
     .map((item,index)=>({
+
       item,
-      originalIndex:index
+
+      time:getTransactionTime(
+        item,
+        index,
+        transactions.length
+      )
+
     }))
-    .reverse();
+    .sort((a,b)=>b.time-a.time);
 
   const fragment=
     document.createDocumentFragment();
