@@ -321,6 +321,16 @@ select:focus{
 
 
 /* =====================================================
+   AMOUNT INPUT
+===================================================== */
+
+.amount-input{
+  text-align:left;
+  font-variant-numeric:tabular-nums;
+}
+
+
+/* =====================================================
    PASSWORD
 ===================================================== */
 
@@ -406,6 +416,41 @@ select:focus{
   background:#111;
   border-color:#111;
   color:#fff;
+}
+
+
+/* =====================================================
+   CHECK DETAILS FILTER
+===================================================== */
+
+.details-filter-row{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  width:100%;
+  margin-bottom:12px;
+}
+
+.details-filter-row select{
+  height:34px;
+  padding:0 7px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:700;
+  min-width:0;
+}
+
+.details-filter-row .filter-year{
+  width:27%;
+}
+
+.details-filter-row .filter-month{
+  width:31%;
+}
+
+.details-filter-row .filter-name{
+  flex:1;
+  width:auto;
 }
 
 
@@ -786,6 +831,28 @@ select:focus{
     min-width:88px;
   }
 
+  .details-filter-row{
+    gap:5px;
+  }
+
+  .details-filter-row select{
+    height:32px;
+    font-size:10px;
+    padding:0 6px;
+  }
+
+  .details-filter-row .filter-year{
+    width:25%;
+  }
+
+  .details-filter-row .filter-month{
+    width:30%;
+  }
+
+  .details-filter-row .filter-name{
+    flex:1;
+  }
+
   .transaction-list{
     max-height:calc(100vh - 300px);
   }
@@ -818,6 +885,10 @@ select:focus{
 
   .sales-filter .month-select{
     min-width:80px;
+  }
+
+  .details-filter-row select{
+    font-size:9px;
   }
 
 }
@@ -1018,10 +1089,11 @@ select:focus{
 
             <input
               id="transactionAmount"
-              type="number"
+              class="amount-input"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
               placeholder="1,000"
-              min="0"
-              step="0.01"
             >
 
           </div>
@@ -1125,14 +1197,25 @@ select:focus{
         <main class="details-container">
 
 
-          <div class="input-group">
+          <div class="details-filter-row">
 
-            <label>
-              👤 Name
-            </label>
+            <select
+              id="yearSelect"
+              class="filter-year"
+              onchange="loadCustomerDetails(true)"
+            ></select>
+
+
+            <select
+              id="monthSelect"
+              class="filter-month"
+              onchange="loadCustomerDetails(true)"
+            ></select>
+
 
             <select
               id="detailsName"
+              class="filter-name"
               onchange="loadCustomerDetails()"
             >
 
@@ -1182,28 +1265,6 @@ select:focus{
             id="monthlySection"
             class="hidden"
           >
-
-            <div class="sales-row">
-
-              <div class="sales-filter">
-
-                <select
-                  id="yearSelect"
-                  class="year-select"
-                  onchange="loadCustomerDetails(true)"
-                ></select>
-
-
-                <select
-                  id="monthSelect"
-                  class="month-select"
-                  onchange="loadCustomerDetails(true)"
-                ></select>
-
-              </div>
-
-            </div>
-
           </div>
 
 
@@ -1810,13 +1871,7 @@ async function loginUser(){
 
       setToday();
 
-      /*
-       Login শেষ হওয়ার সাথে সাথেই
-       সব dropdown data একসাথে load হবে।
-      */
-
       preloadAdminData();
-
 
       hideLoading();
 
@@ -1843,10 +1898,6 @@ async function loginUser(){
 
       hideLoading();
 
-
-      /*
-       Viewer-এর data load শুরু।
-      */
 
       loadViewerDetails();
 
@@ -1937,11 +1988,6 @@ async function logout(){
 
 function preloadAdminData(){
 
-  /*
-   Name + Options একই সময়ে request হবে।
-   ফলে একটার জন্য আরেকটা অপেক্ষা করবে না।
-  */
-
   Promise.allSettled([
 
     loadNames(),
@@ -1966,11 +2012,6 @@ function openAddTransaction(){
 
   setToday();
 
-
-  /*
-   Data আগে থেকেই cache থাকলে
-   এখানে কোনো server request হবে না।
-  */
 
   if(!namesCache){
 
@@ -2003,20 +2044,11 @@ function openCheckDetails(){
   showAdminSection('details');
 
 
-  /*
-   Year + Month instant তৈরি হবে।
-  */
-
   setupMonthSelect(
     'monthSelect',
     'yearSelect'
   );
 
-
-  /*
-   Login-এর সময় names preload হয়ে থাকলে
-   সঙ্গে সঙ্গে dropdown-এ দেখাবে।
-  */
 
   if(namesCache){
 
@@ -2083,10 +2115,6 @@ function populateNameSelect(elementId){
   if(!select) return;
 
 
-  /*
-   আগের selected value ধরে রাখা।
-  */
-
   const oldValue =
     select.value;
 
@@ -2131,10 +2159,6 @@ function populateNameSelect(elementId){
 
   select.appendChild(fragment);
 
-
-  /*
-   সম্ভব হলে আগের selection restore।
-  */
 
   if(
     oldValue &&
@@ -2199,11 +2223,6 @@ function loadNames(){
         result.success &&
         Array.isArray(result.names)
       ){
-
-        /*
-         একবার cache হয়ে গেলে
-         পরের বার server call হবে না।
-        */
 
         namesCache =
           result.names;
@@ -2425,6 +2444,130 @@ function selectType(type){
 
 
 /* =====================================================
+   AMOUNT FORMAT
+===================================================== */
+
+function formatInputAmount(value){
+
+  let clean =
+    String(value || '')
+      .replace(/,/g,'')
+      .replace(/[^\d]/g,'');
+
+
+  if(!clean){
+
+    return '';
+
+  }
+
+
+  clean =
+    clean.replace(/^0+(?=\d)/,'');
+
+
+  return Number(clean)
+    .toLocaleString('en-US');
+
+}
+
+
+/* =====================================================
+   AMOUNT INPUT LIVE FORMAT
+===================================================== */
+
+function setupAmountInput(){
+
+  const input =
+    DOM.transactionAmount;
+
+
+  if(!input) return;
+
+
+  input.addEventListener(
+    'input',
+    function(){
+
+      const cursor =
+        input.selectionStart;
+
+
+      const before =
+        input.value.slice(
+          0,
+          cursor
+        );
+
+
+      const digitsBefore =
+        before
+          .replace(/,/g,'')
+          .replace(/[^\d]/g,'')
+          .length;
+
+
+      input.value =
+        formatInputAmount(
+          input.value
+        );
+
+
+      let newCursor = 0;
+
+      let digitCount = 0;
+
+
+      while(
+        newCursor < input.value.length &&
+        digitCount < digitsBefore
+      ){
+
+        if(
+          /\d/.test(
+            input.value[newCursor]
+          )
+        ){
+
+          digitCount++;
+
+        }
+
+
+        newCursor++;
+
+      }
+
+
+      try{
+
+        input.setSelectionRange(
+          newCursor,
+          newCursor
+        );
+
+      }catch(e){}
+
+    }
+  );
+
+
+  input.addEventListener(
+    'blur',
+    function(){
+
+      input.value =
+        formatInputAmount(
+          input.value
+        );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
    SAVE TRANSACTION
 ===================================================== */
 
@@ -2434,7 +2577,8 @@ async function saveTransaction(){
     DOM.transactionDate.value;
 
   const amount =
-    DOM.transactionAmount.value;
+    DOM.transactionAmount.value
+      .replace(/,/g,'');
 
   const name =
     DOM.transactionName.value;
@@ -2603,6 +2747,7 @@ async function saveTransaction(){
 
 /* =====================================================
    YEAR + MONTH SELECT
+   MONTH DEFAULT = ALL MONTHS
 ===================================================== */
 
 function setupMonthSelect(
@@ -2631,21 +2776,6 @@ function setupMonthSelect(
   }
 
 
-  /*
-   যদি already তৈরি থাকে,
-   আবার তৈরি করার দরকার নেই।
-  */
-
-  if(
-    yearSelect.options.length === 5 &&
-    monthSelect.options.length === 12
-  ){
-
-    return;
-
-  }
-
-
   const now =
     new Date();
 
@@ -2654,9 +2784,9 @@ function setupMonthSelect(
     now.getFullYear();
 
 
-  const currentMonth =
-    now.getMonth()+1;
-
+  /* ===================================================
+     YEAR
+  =================================================== */
 
   const yearFragment =
     document.createDocumentFragment();
@@ -2672,12 +2802,16 @@ function setupMonthSelect(
       document.createElement('option');
 
 
-    option.value = year;
+    option.value =
+      year;
 
-    option.textContent = year;
+    option.textContent =
+      year;
 
 
-    yearFragment.appendChild(option);
+    yearFragment.appendChild(
+      option
+    );
 
   }
 
@@ -2688,6 +2822,14 @@ function setupMonthSelect(
     yearFragment
   );
 
+
+  yearSelect.value =
+    currentYear;
+
+
+  /* ===================================================
+     MONTH
+  =================================================== */
 
   const months = [
 
@@ -2710,6 +2852,29 @@ function setupMonthSelect(
   const monthFragment =
     document.createDocumentFragment();
 
+
+  /* ===================================================
+     ALL MONTHS
+  =================================================== */
+
+  const allOption =
+    document.createElement('option');
+
+
+  allOption.value = '';
+
+  allOption.textContent =
+    'All Months';
+
+
+  monthFragment.appendChild(
+    allOption
+  );
+
+
+  /* ===================================================
+     MONTH OPTIONS
+  =================================================== */
 
   for(let i=0;i<12;i++){
 
@@ -2738,11 +2903,11 @@ function setupMonthSelect(
   );
 
 
-  yearSelect.value =
-    currentYear;
+  /* ===================================================
+     DEFAULT = ALL MONTHS
+  =================================================== */
 
-  monthSelect.value =
-    currentMonth;
+  monthSelect.value = '';
 
 }
 
@@ -2774,7 +2939,9 @@ function getSelectedMonth(
       Number(year) || '',
 
     month:
-      Number(month) || ''
+      month === ''
+        ? ''
+        : Number(month)
 
   };
 
@@ -2819,21 +2986,9 @@ async function loadCustomerDetails(
     );
 
 
-  /*
-   প্রতিটি request-এর আলাদা ID।
-   পুরোনো request পরে response দিলে
-   সেটা আর screen overwrite করতে পারবে না।
-  */
-
   const requestId =
     ++detailsRequestId;
 
-
-  /*
-   Month/Year change-এর সময়
-   full-screen loading দেখানো হবে না।
-   এতে UI অনেক দ্রুত মনে হবে।
-  */
 
   if(!quickReload){
 
@@ -2849,7 +3004,7 @@ async function loadCustomerDetails(
         'customerDetails',
         {
           token:currentUser.token,
-          name,
+          name:name,
           year:selected.year,
           month:selected.month
         }
@@ -3092,10 +3247,6 @@ function renderTransactions(
   }
 
 
-  /*
-   Sort করার জন্য ছোট temporary array।
-  */
-
   const list =
     transactions
       .map(function(item,index){
@@ -3318,7 +3469,10 @@ function getTransactionTime(
 function formatAmount(amount){
 
   const number =
-    Number(amount) || 0;
+    Number(
+      String(amount || '')
+        .replace(/,/g,'')
+    ) || 0;
 
 
   return (
@@ -3393,11 +3547,6 @@ function restoreSession(){
 
       setToday();
 
-
-      /*
-       Session restore-এর সাথে সাথেই
-       dropdown preload।
-      */
 
       preloadAdminData();
 
@@ -3477,17 +3626,8 @@ document.addEventListener(
   'DOMContentLoaded',
   function(){
 
-    /*
-     DOM cache প্রথমেই তৈরি।
-    */
-
     cacheDOM();
 
-
-    /*
-     Year + Month dropdown
-     page load-এর আগেই ready।
-    */
 
     setupMonthSelect(
       'monthSelect',
@@ -3501,13 +3641,11 @@ document.addEventListener(
     );
 
 
+    setupAmountInput();
+
+
     setToday();
 
-
-    /*
-     Session থাকলে
-     সঙ্গে সঙ্গে restore + preload।
-    */
 
     restoreSession();
 
@@ -3517,4 +3655,4 @@ document.addEventListener(
 </script>
 
 </body>
-  </html>
+      </html>
