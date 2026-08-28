@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Transaction Software</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+
+<!-- ================================
+     LOGIN
+================================ -->
+
+<section
+  id="loginPage"
+  class="page active"
+>
+
+  <div class="login-card">
+
+    <div class="logo-circle">
+      🔐
+    </div>
+
+    <h1>
+      Welcome Back
+    </h1>
+
+    <p class="subtitle">
+      Login to continue
+    </p>
+
+
+    <div class="input-group">
+
+      <label>
+        Username
+      </label>
+
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter username"
+        autocomplete="username"
+      >
+
+    </div>
+
+
+    <div class="input-group">
+
+      <label>
+        Password
+      </label>
+
+      <div class="password-box">
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+        >
+
+        <button
+          type="button"
+          class="eye-btn"
+          onclick="togglePassword()"
+        >
+          👁️
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="primary-btn"
+      onclick="loginUser()"
+    >
+      LOGIN
+    </button>
+
+
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     ADMIN PANEL
+================================ -->
+
+<section
+  id="adminPage"
+  class="page"
+>
+
+  <div class="app-container">
+
+    <header class="top-header">
+
+      <div>
+
+        <h2>
+          ADMIN PANEL
+        </h2>
+
+        <span id="adminWelcome">
+          Welcome, Admin
+        </span>
+
+      </div>
+
+
+      <button
+        class="logout-btn"
+        onclick="logout()"
+      >
+        🚪
+      </button>
+
+    </header>
+
+
+    <main class="home-content">
+
+
+      <button
+        class="main-action"
+        onclick="openAddTransaction()"
+      >
+
+        <span class="action-icon">
+          ➕
+        </span>
+
+        <div>
+
+          <strong>
+            Add Transaction
+          </strong>
+
+          <small>
+            Add a new transaction
+          </small>
+
+        </div>
+
+        <span class="arrow">
+          ›
+        </span>
+
+      </button>
+
+
+
+      <button
+        class="main-action"
+        onclick="openCheckDetails()"
+      >
+
+        <span class="action-icon">
+          📋
+        </span>
+
+        <div>
+
+          <strong>
+            Check Details
+          </strong>
+
+          <small>
+            View customer details
+          </small>
+
+        </div>
+
+        <span class="arrow">
+          ›
+        </span>
+
+      </button>
+
+
+    </main>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     ADD TRANSACTION
+================================ -->
+
+<section
+  id="addTransactionPage"
+  class="page"
+>
+
+  <div class="app-container">
+
+
+    <header class="inner-header">
+
+      <button
+        class="back-btn"
+        onclick="showPage('adminPage')"
+      >
+        ‹
+      </button>
+
+      <h2>
+        Add Transaction
+      </h2>
+
+    </header>
+
+
+    <main class="form-container">
+
+
+      <div class="input-group">
+
+        <label>
+          📅 Date
+        </label>
+
+        <input
+          id="transactionDate"
+          type="date"
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          💰 Amount
+        </label>
+
+        <input
+          id="transactionAmount"
+          type="number"
+          placeholder="1,000"
+          min="0"
+          step="0.01"
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          👤 Name
+        </label>
+
+        <select
+          id="transactionName"
+        >
+
+          <option value="">
+            Select Name
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="type-row">
+
+        <button
+          id="saleBtn"
+          class="type-btn active"
+          onclick="selectType('বিক্রয়')"
+        >
+          🛒 বিক্রয়
+        </button>
+
+
+        <button
+          id="paymentBtn"
+          class="type-btn"
+          onclick="selectType('পেমেন্ট')"
+        >
+          💳 পেমেন্ট
+        </button>
+
+      </div>
+
+
+      <input
+        id="transactionType"
+        type="hidden"
+        value="বিক্রয়"
+      >
+
+
+      <button
+        class="primary-btn"
+        onclick="saveTransaction()"
+      >
+        💾 SAVE
+      </button>
+
+
+      <div
+        id="transactionMessage"
+        class="message"
+      ></div>
+
+
+    </main>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     CHECK DETAILS
+================================ -->
+
+<section
+  id="checkDetailsPage"
+  class="page"
+>
+
+  <div class="app-container">
+
+
+    <header class="inner-header">
+
+      <button
+        class="back-btn"
+        onclick="showPage('adminPage')"
+      >
+        ‹
+      </button>
+
+      <h2>
+        Check Details
+      </h2>
+
+    </header>
+
+
+    <main class="details-container">
+
+
+      <div class="input-group">
+
+        <label>
+          👤 Name
+        </label>
+
+        <select
+          id="detailsName"
+          onchange="loadCustomerDetails()"
+        >
+
+          <option value="">
+            Select Name
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div
+        id="balanceCard"
+        class="balance-card hidden"
+      >
+
+        <span>
+          CURRENT BALANCE
+        </span>
+
+        <strong id="currentBalance">
+          0 Tk
+        </strong>
+
+      </div>
+
+
+      <div
+        id="monthlySection"
+        class="hidden"
+      >
+
+        <div class="section-title">
+
+          <span>
+            📊 Monthly Sales
+          </span>
+
+          <select
+            id="monthSelect"
+            onchange="loadCustomerDetails()"
+          >
+          </select>
+
+        </div>
+
+
+        <div class="sales-card">
+
+          <span>
+            TOTAL SALES
+          </span>
+
+          <strong id="monthlySales">
+            0 Tk
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="transactionsSection"
+        class="hidden"
+      >
+
+        <h3>
+          TRANSACTIONS
+        </h3>
+
+        <div
+          id="transactionList"
+          class="transaction-list"
+        ></div>
+
+      </div>
+
+
+      <div
+        id="detailsMessage"
+        class="message"
+      ></div>
+
+
+    </main>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     VIEWER PANEL
+================================ -->
+
+<section
+  id="viewerPage"
+  class="page"
+>
+
+  <div class="app-container">
+
+
+    <header class="top-header">
+
+      <div>
+
+        <h2>
+          VIEWER PANEL
+        </h2>
+
+        <span id="viewerWelcome">
+          Welcome
+        </span>
+
+      </div>
+
+
+      <button
+        class="logout-btn"
+        onclick="logout()"
+      >
+        🚪
+      </button>
+
+    </header>
+
+
+    <main class="viewer-container">
+
+
+      <div class="balance-card">
+
+        <span>
+          CURRENT BALANCE
+        </span>
+
+        <strong id="viewerBalance">
+          0 Tk
+        </strong>
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          📊 Monthly Sales
+        </label>
+
+        <select
+          id="viewerMonth"
+          onchange="loadViewerDetails()"
+        >
+        </select>
+
+      </div>
+
+
+      <div class="sales-card">
+
+        <span>
+          TOTAL SALES
+        </span>
+
+        <strong id="viewerMonthlySales">
+          0 Tk
+        </strong>
+
+      </div>
+
+
+      <div class="viewer-history">
+
+        <h3>
+          TRANSACTIONS
+        </h3>
+
+        <div
+          id="viewerTransactionList"
+          class="transaction-list"
+        ></div>
+
+      </div>
+
+
+      <div
+        id="viewerMessage"
+        class="message"
+      ></div>
+
+
+    </main>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     LOADING
+================================ -->
+
+<div
+  id="loading"
+  class="loading hidden"
+>
+
+  <div class="spinner"></div>
+
+  <span>
+    Loading...
+  </span>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
