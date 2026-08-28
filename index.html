@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -14,14 +16,13 @@
     rel="stylesheet"
     href="style.css"
   >
+
 </head>
 
 <body>
 
 
-<!-- ================================
-     LOGIN
-================================ -->
+<!-- LOGIN -->
 
 <section
   id="loginPage"
@@ -34,20 +35,15 @@
       🔐
     </div>
 
-    <h1>
-      Welcome Back
-    </h1>
+    <h1>Welcome Back</h1>
 
     <p class="subtitle">
       Login to continue
     </p>
 
-
     <div class="input-group">
 
-      <label>
-        Username
-      </label>
+      <label>Username</label>
 
       <input
         id="username"
@@ -58,12 +54,9 @@
 
     </div>
 
-
     <div class="input-group">
 
-      <label>
-        Password
-      </label>
+      <label>Password</label>
 
       <div class="password-box">
 
@@ -86,14 +79,12 @@
 
     </div>
 
-
     <button
       class="primary-btn"
       onclick="loginUser()"
     >
       LOGIN
     </button>
-
 
     <div
       id="loginMessage"
@@ -105,10 +96,7 @@
 </section>
 
 
-
-<!-- ================================
-     ADMIN PANEL
-================================ -->
+<!-- ADMIN -->
 
 <section
   id="adminPage"
@@ -121,16 +109,13 @@
 
       <div>
 
-        <h2>
-          ADMIN PANEL
-        </h2>
+        <h2>ADMIN PANEL</h2>
 
         <span id="adminWelcome">
-          Welcome, Admin
+          Welcome
         </span>
 
       </div>
-
 
       <button
         class="logout-btn"
@@ -143,7 +128,6 @@
 
 
     <main class="home-content">
-
 
       <button
         class="main-action"
@@ -173,7 +157,6 @@
       </button>
 
 
-
       <button
         class="main-action"
         onclick="openCheckDetails()"
@@ -201,7 +184,6 @@
 
       </button>
 
-
     </main>
 
   </div>
@@ -209,10 +191,7 @@
 </section>
 
 
-
-<!-- ================================
-     ADD TRANSACTION
-================================ -->
+<!-- ADD TRANSACTION -->
 
 <section
   id="addTransactionPage"
@@ -220,7 +199,6 @@
 >
 
   <div class="app-container">
-
 
     <header class="inner-header">
 
@@ -291,6 +269,8 @@
       </div>
 
 
+      <!-- TYPE -->
+
       <div class="type-row">
 
         <button
@@ -300,7 +280,6 @@
         >
           🛒 বিক্রয়
         </button>
-
 
         <button
           id="paymentBtn"
@@ -320,6 +299,27 @@
       >
 
 
+      <!-- ONE DROPDOWN -->
+
+      <div class="input-group">
+
+        <label id="methodLabel">
+          বিক্রয়ের ধরন
+        </label>
+
+        <select
+          id="transactionMethod"
+        >
+
+          <option value="">
+            Select
+          </option>
+
+        </select>
+
+      </div>
+
+
       <button
         class="primary-btn"
         onclick="saveTransaction()"
@@ -333,7 +333,6 @@
         class="message"
       ></div>
 
-
     </main>
 
   </div>
@@ -341,10 +340,7 @@
 </section>
 
 
-
-<!-- ================================
-     CHECK DETAILS
-================================ -->
+<!-- CHECK DETAILS -->
 
 <section
   id="checkDetailsPage"
@@ -352,7 +348,6 @@
 >
 
   <div class="app-container">
-
 
     <header class="inner-header">
 
@@ -417,13 +412,18 @@
         <div class="section-title">
 
           <span>
-            📊 Monthly Sales
+            📊 Sales
           </span>
 
           <select
             id="monthSelect"
             onchange="loadCustomerDetails()"
           >
+
+            <option value="">
+              Select Month
+            </option>
+
           </select>
 
         </div>
@@ -466,7 +466,6 @@
         class="message"
       ></div>
 
-
     </main>
 
   </div>
@@ -474,10 +473,7 @@
 </section>
 
 
-
-<!-- ================================
-     VIEWER PANEL
-================================ -->
+<!-- VIEWER -->
 
 <section
   id="viewerPage"
@@ -485,7 +481,6 @@
 >
 
   <div class="app-container">
-
 
     <header class="top-header">
 
@@ -500,7 +495,6 @@
         </span>
 
       </div>
-
 
       <button
         class="logout-btn"
@@ -531,13 +525,18 @@
       <div class="input-group">
 
         <label>
-          📊 Monthly Sales
+          📊 Sales
         </label>
 
         <select
           id="viewerMonth"
           onchange="loadViewerDetails()"
         >
+
+          <option value="">
+            Select Month
+          </option>
+
         </select>
 
       </div>
@@ -575,7 +574,6 @@
         class="message"
       ></div>
 
-
     </main>
 
   </div>
@@ -583,10 +581,7 @@
 </section>
 
 
-
-<!-- ================================
-     LOADING
-================================ -->
+<!-- LOADING -->
 
 <div
   id="loading"
