@@ -2,8 +2,12 @@
 <html lang="bn">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0">
+
 <title>Transaction Software</title>
 
 <style>
@@ -13,7 +17,8 @@
   -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+html,
+body{
   margin:0;
   padding:0;
   width:100%;
@@ -23,7 +28,9 @@ html,body{
   color:#202124;
 }
 
-button,input,select{
+button,
+input,
+select{
   font:inherit;
 }
 
@@ -44,7 +51,9 @@ button{
   display:block;
 }
 
-/* LOGIN */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 #loginPage{
   min-height:100vh;
@@ -93,7 +102,9 @@ button{
   font-size:14px;
 }
 
-/* APP */
+/* =====================================================
+   APP
+===================================================== */
 
 .app-container{
   width:100%;
@@ -103,7 +114,9 @@ button{
   background:#f5f7fb;
 }
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .top-header{
   min-height:72px;
@@ -137,7 +150,9 @@ button{
   font-size:19px;
 }
 
-/* ADMIN */
+/* =====================================================
+   ADMIN
+===================================================== */
 
 .admin-content{
   padding:14px;
@@ -203,7 +218,9 @@ button{
   display:block;
 }
 
-/* FORM */
+/* =====================================================
+   FORM
+===================================================== */
 
 .form-container,
 .details-container,
@@ -247,7 +264,9 @@ select:focus{
   font-variant-numeric:tabular-nums;
 }
 
-/* PASSWORD */
+/* =====================================================
+   PASSWORD
+===================================================== */
 
 .password-box{
   position:relative;
@@ -267,7 +286,9 @@ select:focus{
   cursor:pointer;
 }
 
-/* PRIMARY */
+/* =====================================================
+   PRIMARY
+===================================================== */
 
 .primary-btn{
   width:100%;
@@ -284,7 +305,9 @@ select:focus{
   transform:scale(.99);
 }
 
-/* TYPE */
+/* =====================================================
+   TYPE
+===================================================== */
 
 .type-row{
   display:flex;
@@ -309,7 +332,9 @@ select:focus{
   color:#fff;
 }
 
-/* DETAILS FILTER */
+/* =====================================================
+   DETAILS FILTER
+===================================================== */
 
 .details-filter-row{
   display:flex;
@@ -340,7 +365,9 @@ select:focus{
   flex:1;
 }
 
-/* BALANCE */
+/* =====================================================
+   BALANCE
+===================================================== */
 
 .balance-card{
   padding:8px 11px;
@@ -387,7 +414,9 @@ select:focus{
   line-height:1.15;
 }
 
-/* SALES FILTER */
+/* =====================================================
+   SALES FILTER
+===================================================== */
 
 .sales-row{
   display:flex;
@@ -427,7 +456,9 @@ select:focus{
   min-width:95px;
 }
 
-/* TRANSACTIONS */
+/* =====================================================
+   TRANSACTIONS
+===================================================== */
 
 .transactions-header{
   display:flex;
@@ -461,19 +492,17 @@ select:focus{
 }
 
 /* =====================================================
-   NEW COMPACT TRANSACTION CARD
+   TRANSACTION CARD
 ===================================================== */
 
 .transaction-card{
   min-height:58px;
   margin-bottom:6px;
   padding:6px 10px;
-
   background:#fff;
   border:1px solid #e6e9ee;
   border-left:4px solid #aaa;
   border-radius:9px;
-
   display:flex;
   align-items:stretch;
   justify-content:space-between;
@@ -488,12 +517,11 @@ select:focus{
   border-left-color:#34a56f;
 }
 
-/* LEFT SIDE */
+/* LEFT */
 
 .transaction-info{
   min-width:0;
   flex:1;
-
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -520,23 +548,22 @@ select:focus{
   font-weight:400;
 }
 
-/* RIGHT TYPE */
+/* RIGHT */
 
 .transaction-type{
   flex-shrink:0;
-
   display:flex;
   align-items:flex-start;
   justify-content:flex-end;
-
   padding-top:1px;
-
   font-size:11px;
   line-height:1;
   font-weight:800;
 }
 
-/* VIEWER */
+/* =====================================================
+   VIEWER
+===================================================== */
 
 .viewer-history{
   margin-top:12px;
@@ -548,7 +575,9 @@ select:focus{
   font-weight:800;
 }
 
-/* MESSAGE */
+/* =====================================================
+   MESSAGE
+===================================================== */
 
 .message{
   min-height:20px;
@@ -563,7 +592,9 @@ select:focus{
   font-weight:700;
 }
 
-/* LOADING */
+/* =====================================================
+   LOADING
+===================================================== */
 
 .loading{
   position:fixed;
@@ -594,7 +625,9 @@ select:focus{
   }
 }
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:420px){
 
@@ -678,6 +711,7 @@ select:focus{
   .transaction-type{
     font-size:10.5px;
   }
+
 }
 
 @media(max-width:340px){
@@ -718,6 +752,7 @@ select:focus{
   .transaction-amount{
     font-size:14px;
   }
+
 }
 
 </style>
@@ -725,7 +760,9 @@ select:focus{
 
 <body>
 
-<!-- LOGIN -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <section id="loginPage" class="page active">
 
@@ -735,9 +772,12 @@ select:focus{
 
     <h1>Welcome Back</h1>
 
-    <p class="subtitle">Login to continue</p>
+    <p class="subtitle">
+      Login to continue
+    </p>
 
     <div class="input-group">
+
       <label>Username</label>
 
       <input
@@ -746,6 +786,7 @@ select:focus{
         placeholder="Enter username"
         autocomplete="username"
       >
+
     </div>
 
     <div class="input-group">
@@ -778,13 +819,19 @@ select:focus{
       LOGIN
     </button>
 
-    <div id="loginMessage" class="message"></div>
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
 
   </div>
 
 </section>
 
-<!-- ADMIN -->
+
+<!-- =====================================================
+     ADMIN
+===================================================== -->
 
 <section id="adminPage" class="page">
 
@@ -793,8 +840,13 @@ select:focus{
     <header class="top-header">
 
       <div>
+
         <h2>ADMIN PANEL</h2>
-        <span id="adminWelcome">Welcome</span>
+
+        <span id="adminWelcome">
+          Welcome
+        </span>
+
       </div>
 
       <button
@@ -803,6 +855,7 @@ select:focus{
       >🚪</button>
 
     </header>
+
 
     <main class="admin-content">
 
@@ -814,11 +867,16 @@ select:focus{
           onclick="openAddTransaction()"
         >
 
-          <span class="admin-main-icon">✚</span>
+          <span class="admin-main-icon">
+            ✚
+          </span>
 
-          <strong>Add Transaction</strong>
+          <strong>
+            Add Transaction
+          </strong>
 
         </button>
+
 
         <button
           id="checkDetailsBtn"
@@ -826,15 +884,22 @@ select:focus{
           onclick="openCheckDetails()"
         >
 
-          <span class="admin-main-icon">📋</span>
+          <span class="admin-main-icon">
+            📋
+          </span>
 
-          <strong>Check Details</strong>
+          <strong>
+            Check Details
+          </strong>
 
         </button>
 
       </div>
 
-      <!-- ADD TRANSACTION -->
+
+      <!-- =================================================
+           ADD TRANSACTION
+      ================================================= -->
 
       <section
         id="addTransactionSection"
@@ -854,6 +919,7 @@ select:focus{
 
           </div>
 
+
           <div class="input-group">
 
             <label>💰 Amount</label>
@@ -869,6 +935,7 @@ select:focus{
 
           </div>
 
+
           <div class="input-group">
 
             <label>👤 Name</label>
@@ -883,6 +950,7 @@ select:focus{
 
           </div>
 
+
           <div class="type-row">
 
             <button
@@ -890,7 +958,7 @@ select:focus{
               class="type-btn active"
               onclick="selectType('বিক্রয়')"
             >
-             ✚ বিক্রয়
+              ✚ বিক্রয়
             </button>
 
             <button
@@ -898,16 +966,18 @@ select:focus{
               class="type-btn"
               onclick="selectType('পেমেন্ট')"
             >
-             ➖ পেমেন্ট
+              ➖ পেমেন্ট
             </button>
 
           </div>
+
 
           <input
             id="transactionType"
             type="hidden"
             value="বিক্রয়"
           >
+
 
           <div class="input-group">
 
@@ -925,12 +995,14 @@ select:focus{
 
           </div>
 
+
           <button
             class="primary-btn"
             onclick="saveTransaction()"
           >
             💾 SAVE
           </button>
+
 
           <div
             id="transactionMessage"
@@ -941,7 +1013,10 @@ select:focus{
 
       </section>
 
-      <!-- CHECK DETAILS -->
+
+      <!-- =================================================
+           CHECK DETAILS
+      ================================================= -->
 
       <section
         id="checkDetailsSection"
@@ -958,16 +1033,18 @@ select:focus{
               onchange="loadCustomerDetails(true)"
             ></select>
 
+
             <select
               id="monthSelect"
               class="filter-month"
               onchange="loadCustomerDetails(true)"
             ></select>
 
+
             <select
               id="detailsName"
               class="filter-name"
-              onchange="loadCustomerDetails()"
+              onchange="loadCustomerDetails(false)"
             >
 
               <option value="">
@@ -978,6 +1055,7 @@ select:focus{
 
           </div>
 
+
           <div
             id="balanceCard"
             class="balance-card hidden"
@@ -985,7 +1063,9 @@ select:focus{
 
             <div class="balance-left">
 
-              <span>CURRENT BALANCE</span>
+              <span>
+                CURRENT BALANCE
+              </span>
 
               <strong id="currentBalance">
                 0 Tk
@@ -993,9 +1073,12 @@ select:focus{
 
             </div>
 
+
             <div class="balance-sales">
 
-              <span>TOTAL SALES</span>
+              <span>
+                TOTAL SALES
+              </span>
 
               <strong id="monthlySales">
                 0 Tk
@@ -1005,6 +1088,7 @@ select:focus{
 
           </div>
 
+
           <div
             id="transactionsSection"
             class="hidden"
@@ -1012,9 +1096,12 @@ select:focus{
 
             <div class="transactions-header">
 
-              <h3>TRANSACTIONS</h3>
+              <h3>
+                TRANSACTIONS
+              </h3>
 
             </div>
+
 
             <div
               id="transactionList"
@@ -1022,6 +1109,7 @@ select:focus{
             ></div>
 
           </div>
+
 
           <div
             id="detailsMessage"
@@ -1038,7 +1126,10 @@ select:focus{
 
 </section>
 
-<!-- VIEWER -->
+
+<!-- =====================================================
+     VIEWER
+===================================================== -->
 
 <section id="viewerPage" class="page">
 
@@ -1048,7 +1139,9 @@ select:focus{
 
       <div>
 
-        <h2>VIEWER PANEL</h2>
+        <h2>
+          VIEWER PANEL
+        </h2>
 
         <span id="viewerWelcome">
           Welcome
@@ -1063,13 +1156,16 @@ select:focus{
 
     </header>
 
+
     <main class="viewer-container">
 
       <div class="balance-card">
 
         <div class="balance-left">
 
-          <span>CURRENT BALANCE</span>
+          <span>
+            CURRENT BALANCE
+          </span>
 
           <strong id="viewerBalance">
             0 Tk
@@ -1077,9 +1173,12 @@ select:focus{
 
         </div>
 
+
         <div class="balance-sales">
 
-          <span>TOTAL SALES</span>
+          <span>
+            TOTAL SALES
+          </span>
 
           <strong id="viewerMonthlySales">
             0 Tk
@@ -1088,6 +1187,7 @@ select:focus{
         </div>
 
       </div>
+
 
       <div class="sales-row">
 
@@ -1099,6 +1199,7 @@ select:focus{
             onchange="loadViewerDetails(true)"
           ></select>
 
+
           <select
             id="viewerMonth"
             class="month-select"
@@ -1109,9 +1210,12 @@ select:focus{
 
       </div>
 
+
       <div class="viewer-history">
 
-        <h3>TRANSACTIONS</h3>
+        <h3>
+          TRANSACTIONS
+        </h3>
 
         <div
           id="viewerTransactionList"
@@ -1119,6 +1223,7 @@ select:focus{
         ></div>
 
       </div>
+
 
       <div
         id="viewerMessage"
@@ -1131,7 +1236,10 @@ select:focus{
 
 </section>
 
-<!-- LOADING -->
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
 
 <div
   id="loading"
@@ -1140,184 +1248,340 @@ select:focus{
 
   <div class="spinner"></div>
 
-  <span>Loading...</span>
+  <span>
+    Loading...
+  </span>
 
 </div>
 
+
 <script>
+
+/* =====================================================
+   API
+===================================================== */
 
 const API_URL =
 'https://script.google.com/macros/s/AKfycbwjo8vQO3GmnVKTJLJKmoAgHKQequvOtzuO9ySlLSqCAABvGuPvb3X_PeDDMSVu6Fb0Tg/exec';
 
+
+/* =====================================================
+   GLOBAL STATE
+===================================================== */
+
 let currentUser=null;
+
 let salesOptions=[];
 let paymentOptions=[];
+
 let namesCache=null;
 let namesLoading=null;
+
 let optionsLoaded=false;
 let optionsLoading=null;
+
 let detailsRequestId=0;
 let viewerRequestId=0;
 
+let saveRequestRunning=false;
+
+
+/* =====================================================
+   DOM CACHE
+===================================================== */
+
 const DOM={};
+
 
 function cacheDOM(){
 
   const ids=[
-    'loginPage','adminPage','viewerPage',
-    'username','password','loginMessage',
-    'adminWelcome','viewerWelcome',
-    'transactionDate','transactionAmount',
-    'transactionName','transactionType',
-    'transactionMethod','methodLabel',
-    'saleBtn','paymentBtn',
+
+    'loginPage',
+    'adminPage',
+    'viewerPage',
+
+    'username',
+    'password',
+    'loginMessage',
+
+    'adminWelcome',
+    'viewerWelcome',
+
+    'transactionDate',
+    'transactionAmount',
+    'transactionName',
+    'transactionType',
+    'transactionMethod',
+    'methodLabel',
+
+    'saleBtn',
+    'paymentBtn',
+
     'transactionMessage',
-    'detailsName','yearSelect','monthSelect',
-    'balanceCard','transactionsSection',
-    'currentBalance','monthlySales',
-    'transactionList','detailsMessage',
-    'viewerYear','viewerMonth',
-    'viewerBalance','viewerMonthlySales',
-    'viewerTransactionList','viewerMessage',
+
+    'detailsName',
+    'yearSelect',
+    'monthSelect',
+
+    'balanceCard',
+    'transactionsSection',
+
+    'currentBalance',
+    'monthlySales',
+
+    'transactionList',
+    'detailsMessage',
+
+    'viewerYear',
+    'viewerMonth',
+
+    'viewerBalance',
+    'viewerMonthlySales',
+    'viewerTransactionList',
+    'viewerMessage',
+
     'loading'
+
   ];
 
   ids.forEach(id=>{
-    DOM[id]=document.getElementById(id);
+
+    DOM[id]=
+      document.getElementById(id);
+
   });
 
 }
 
-/* API */
+
+/* =====================================================
+   API CALL
+===================================================== */
 
 function api(action,params={}){
 
   return new Promise((resolve,reject)=>{
 
     const callbackName=
-      'cb_'+Date.now()+'_'+
-      Math.random().toString(36).slice(2);
+      'cb_' +
+      Date.now() +
+      '_' +
+      Math.random()
+        .toString(36)
+        .slice(2);
 
-    const script=document.createElement('script');
 
-    const query=new URLSearchParams();
+    const script=
+      document.createElement('script');
 
-    query.set('action',action);
-    query.set('callback',callbackName);
+
+    const query=
+      new URLSearchParams();
+
+
+    query.set(
+      'action',
+      action
+    );
+
+
+    query.set(
+      'callback',
+      callbackName
+    );
+
 
     Object.keys(params).forEach(key=>{
 
-      const value=params[key];
+      const value=
+        params[key];
 
-      if(value!==undefined && value!==null){
-        query.set(key,String(value));
+      if(
+        value!==undefined &&
+        value!==null
+      ){
+
+        query.set(
+          key,
+          String(value)
+        );
+
       }
 
     });
 
+
     let finished=false;
 
-    const timeout=setTimeout(()=>{
 
-      if(finished)return;
+    const timeout=
+      setTimeout(()=>{
 
-      finished=true;
-      cleanup();
+        if(finished)return;
 
-      reject(
-        new Error('Server request timed out.')
-      );
+        finished=true;
 
-    },15000);
+        cleanup();
+
+        reject(
+          new Error(
+            'Server request timed out. Please try again.'
+          )
+        );
+
+      },20000);
+
 
     function cleanup(){
 
       clearTimeout(timeout);
-      script.remove();
+
+      if(script.parentNode){
+
+        script.parentNode
+          .removeChild(script);
+
+      }
 
       try{
+
         delete window[callbackName];
+
       }catch(e){}
 
     }
 
-    window[callbackName]=result=>{
+
+    window[callbackName]=
+      function(result){
+
+        if(finished)return;
+
+        finished=true;
+
+        cleanup();
+
+        resolve(result);
+
+      };
+
+
+    script.onerror=function(){
 
       if(finished)return;
 
       finished=true;
-      cleanup();
 
-      resolve(result);
-
-    };
-
-    script.onerror=()=>{
-
-      if(finished)return;
-
-      finished=true;
       cleanup();
 
       reject(
-        new Error('Unable to connect to server.')
+        new Error(
+          'Unable to connect to server.'
+        )
       );
 
     };
 
-    script.src=
-      API_URL+'?'+query.toString();
 
-    document.head.appendChild(script);
+    script.async=true;
+
+    script.src=
+      API_URL +
+      '?' +
+      query.toString();
+
+
+    document.head.appendChild(
+      script
+    );
 
   });
 
 }
 
-/* PAGE */
+
+/* =====================================================
+   PAGE
+===================================================== */
 
 function showPage(pageId){
 
-  document.querySelectorAll('.page').forEach(page=>{
-    page.classList.remove('active');
-  });
+  document
+    .querySelectorAll('.page')
+    .forEach(page=>{
 
-  const page=document.getElementById(pageId);
+      page.classList.remove(
+        'active'
+      );
 
-  if(page)page.classList.add('active');
+    });
+
+
+  const page=
+    document.getElementById(
+      pageId
+    );
+
+
+  if(page){
+
+    page.classList.add(
+      'active'
+    );
+
+  }
 
 }
 
-/* ADMIN SECTION */
+
+/* =====================================================
+   ADMIN SECTION
+===================================================== */
 
 function showAdminSection(section){
 
   const addSection=
-    document.getElementById('addTransactionSection');
+    document.getElementById(
+      'addTransactionSection'
+    );
+
 
   const detailsSection=
-    document.getElementById('checkDetailsSection');
+    document.getElementById(
+      'checkDetailsSection'
+    );
+
 
   const addBtn=
-    document.getElementById('addTransactionBtn');
+    document.getElementById(
+      'addTransactionBtn'
+    );
+
 
   const detailsBtn=
-    document.getElementById('checkDetailsBtn');
+    document.getElementById(
+      'checkDetailsBtn'
+    );
+
 
   addSection.classList.toggle(
     'active',
     section==='add'
   );
 
+
   detailsSection.classList.toggle(
     'active',
     section==='details'
   );
 
+
   addBtn.classList.toggle(
     'active',
     section==='add'
   );
+
 
   detailsBtn.classList.toggle(
     'active',
@@ -1326,17 +1590,32 @@ function showAdminSection(section){
 
 }
 
-/* LOADING */
+
+/* =====================================================
+   LOADING
+===================================================== */
 
 function showLoading(){
-  DOM.loading.classList.remove('hidden');
+
+  DOM.loading.classList.remove(
+    'hidden'
+  );
+
 }
+
 
 function hideLoading(){
-  DOM.loading.classList.add('hidden');
+
+  DOM.loading.classList.add(
+    'hidden'
+  );
+
 }
 
-/* PASSWORD */
+
+/* =====================================================
+   PASSWORD
+===================================================== */
 
 function togglePassword(){
 
@@ -1347,131 +1626,239 @@ function togglePassword(){
 
 }
 
-/* LOGIN */
+
+/* =====================================================
+   LOGIN
+===================================================== */
 
 async function loginUser(){
 
-  const username=DOM.username.value.trim();
-  const password=DOM.password.value.trim();
+  if(
+    !DOM.username ||
+    !DOM.password
+  ){
+
+    return;
+
+  }
+
+
+  const username=
+    DOM.username.value.trim();
+
+
+  const password=
+    DOM.password.value.trim();
+
 
   DOM.loginMessage.textContent='';
-  DOM.loginMessage.classList.remove('success');
 
-  if(!username || !password){
+
+  DOM.loginMessage.classList.remove(
+    'success'
+  );
+
+
+  if(
+    !username ||
+    !password
+  ){
 
     DOM.loginMessage.textContent=
       'Username and password required.';
 
     return;
+
   }
+
 
   showLoading();
 
+
   try{
 
-    const result=await api(
-      'login',
-      {username,password}
-    );
+    const result=
+      await api(
+        'login',
+        {
+          username:username,
+          password:password
+        }
+      );
 
-    if(!result || !result.success){
+
+    if(
+      !result ||
+      !result.success
+    ){
 
       hideLoading();
 
       DOM.loginMessage.textContent=
-        result?.message || 'Login failed.';
+        result?.message ||
+        'Login failed.';
 
       return;
+
     }
+
 
     currentUser=result;
 
+
     localStorage.setItem(
       'transactionUser',
-      JSON.stringify(currentUser)
+      JSON.stringify(
+        currentUser
+      )
     );
 
-    const role=String(result.role).toLowerCase();
+
+    const role=
+      String(
+        result.role || ''
+      )
+      .trim()
+      .toLowerCase();
+
 
     if(role==='admin'){
 
       DOM.adminWelcome.textContent=
-        'Welcome, '+(result.name||'Admin');
+        'Welcome, ' +
+        (result.name || 'Admin');
 
-      showPage('adminPage');
-      showAdminSection('add');
+
+      showPage(
+        'adminPage'
+      );
+
+
+      showAdminSection(
+        'add'
+      );
+
 
       setToday();
-      preloadAdminData();
+
 
       hideLoading();
+
+
+      /*
+       Background preload.
+       Login complete হওয়ার জন্য
+       এগুলোর response-এর অপেক্ষা করবে না।
+      */
+
+      preloadAdminData();
+
+
       return;
+
     }
+
 
     if(role==='viewer'){
 
       DOM.viewerWelcome.textContent=
-        'Welcome, '+result.name;
+        'Welcome, ' +
+        (result.name || '');
+
 
       setupMonthSelect(
         'viewerMonth',
         'viewerYear'
       );
 
-      showPage('viewerPage');
+
+      showPage(
+        'viewerPage'
+      );
+
 
       hideLoading();
 
+
       loadViewerDetails();
 
+
       return;
+
     }
+
 
     hideLoading();
 
+
     DOM.loginMessage.textContent=
       'Unknown account type.';
+
 
   }catch(error){
 
     hideLoading();
 
     DOM.loginMessage.textContent=
-      error.message ||
+      error?.message ||
       'Something went wrong.';
 
   }
 
 }
 
-/* LOGOUT */
+
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 async function logout(){
 
-  const user=currentUser;
+  const user=
+    currentUser;
+
 
   currentUser=null;
+
+
   namesCache=null;
   namesLoading=null;
+
   salesOptions=[];
   paymentOptions=[];
+
   optionsLoaded=false;
   optionsLoading=null;
 
-  localStorage.removeItem('transactionUser');
+  detailsRequestId++;
+  viewerRequestId++;
+
+  saveRequestRunning=false;
+
+
+  localStorage.removeItem(
+    'transactionUser'
+  );
+
 
   DOM.username.value='';
   DOM.password.value='';
 
-  showPage('loginPage');
 
-  if(user){
+  showPage(
+    'loginPage'
+  );
+
+
+  if(user?.token){
 
     try{
 
       await api(
         'logout',
-        {token:user.token}
+        {
+          token:user.token
+        }
       );
 
     }catch(e){}
@@ -1480,373 +1867,791 @@ async function logout(){
 
 }
 
-/* PRELOAD */
+
+/* =====================================================
+   PRELOAD ADMIN DATA
+===================================================== */
 
 function preloadAdminData(){
 
-  loadNames();
-  loadOptions();
-
   setToday();
+
+  /*
+   দুইটি request parallel-এ যাবে।
+   একটার জন্য আরেকটা অপেক্ষা করবে না।
+  */
+
+  loadNames();
+
+  loadOptions();
 
 }
 
-/* ADD */
+
+/* =====================================================
+   ADD TRANSACTION
+===================================================== */
 
 function openAddTransaction(){
 
-  showAdminSection('add');
+  showAdminSection(
+    'add'
+  );
+
+
   setToday();
 
-  if(!namesCache)loadNames();
 
-  if(!optionsLoaded)loadOptions();
+  /*
+   Cache থাকলে dropdown instant।
+   না থাকলে background request।
+  */
 
-  selectType(
-    DOM.transactionType.value||'বিক্রয়'
-  );
+  if(!namesCache){
+
+    loadNames();
+
+  }else{
+
+    populateNameSelect(
+      'transactionName'
+    );
+
+  }
+
+
+  if(!optionsLoaded){
+
+    loadOptions();
+
+  }else{
+
+    selectType(
+      DOM.transactionType.value ||
+      'বিক্রয়'
+    );
+
+  }
 
 }
 
-/* CHECK */
+
+/* =====================================================
+   CHECK DETAILS
+===================================================== */
 
 function openCheckDetails(){
 
-  showAdminSection('details');
+  /*
+   প্রথমে UI instantly change হবে।
+  */
+
+  showAdminSection(
+    'details'
+  );
+
 
   setupMonthSelect(
     'monthSelect',
     'yearSelect'
   );
 
-  if(namesCache){
 
-    populateNameSelect('detailsName');
+  /*
+   =====================================================
+   IMPORTANT
+   =====================================================
 
-  }else{
+   Check Details ক্লিক করলেই
+   background refresh শুরু হবে।
 
-    loadNames();
+   কোনো Loading overlay দেখাবে না।
+   */
+
+
+  /*
+   Names:
+
+   Cache থাকলে dropdown সঙ্গে সঙ্গে থাকবে।
+   একই সাথে server থেকে fresh names আসবে।
+  */
+
+  loadNames(true);
+
+
+  /*
+   যদি customer আগে থেকেই selected থাকে,
+   তাহলে তার transaction-ও সঙ্গে সঙ্গে
+   background-এ fresh load হবে।
+  */
+
+  if(
+    DOM.detailsName &&
+    DOM.detailsName.value
+  ){
+
+    loadCustomerDetails(
+      true
+    );
 
   }
 
 }
 
-/* TODAY */
+
+/* =====================================================
+   TODAY
+===================================================== */
 
 function setToday(){
 
-  const input=DOM.transactionDate;
+  const input=
+    DOM.transactionDate;
+
 
   if(!input)return;
 
-  const now=new Date();
+
+  const now=
+    new Date();
+
 
   const today=
-    now.getFullYear()+'-'+
-    String(now.getMonth()+1).padStart(2,'0')+'-'+
-    String(now.getDate()).padStart(2,'0');
+    now.getFullYear() +
+    '-' +
+    String(
+      now.getMonth()+1
+    ).padStart(2,'0') +
+    '-' +
+    String(
+      now.getDate()
+    ).padStart(2,'0');
 
-  input.value=today;
-  input.max=today;
+
+  input.value=
+    today;
+
+
+  input.max=
+    today;
 
 }
 
-/* NAMES */
 
-function populateNameSelect(elementId){
+/* =====================================================
+   NAME DROPDOWN
+===================================================== */
 
-  const select=document.getElementById(elementId);
+function populateNameSelect(
+  elementId
+){
+
+  const select=
+    document.getElementById(
+      elementId
+    );
+
 
   if(!select)return;
 
-  const oldValue=select.value;
+
+  /*
+   Existing selection save করছি।
+   Background refresh-এর সময় customer
+   selected থাকলে সেটা হারাবে না।
+  */
+
+  const oldValue=
+    select.value;
+
 
   select.innerHTML=
     '<option value="">Select Name</option>';
 
-  if(!namesCache?.length)return;
 
-  const fragment=document.createDocumentFragment();
+  if(
+    !Array.isArray(namesCache) ||
+    !namesCache.length
+  ){
+
+    return;
+
+  }
+
+
+  const fragment=
+    document.createDocumentFragment();
+
 
   namesCache.forEach(name=>{
 
-    const option=document.createElement('option');
+    const option=
+      document.createElement(
+        'option'
+      );
 
-    option.value=name;
-    option.textContent=name;
 
-    fragment.appendChild(option);
+    option.value=
+      name;
+
+
+    option.textContent=
+      name;
+
+
+    fragment.appendChild(
+      option
+    );
 
   });
 
-  select.appendChild(fragment);
 
-  if(oldValue && namesCache.includes(oldValue)){
-    select.value=oldValue;
+  select.appendChild(
+    fragment
+  );
+
+
+  /*
+   Old selected customer থাকলে
+   refresh-এর পরেও selected থাকবে।
+  */
+
+  if(
+    oldValue &&
+    namesCache.includes(
+      oldValue
+    )
+  ){
+
+    select.value=
+      oldValue;
+
   }
 
 }
 
-function loadNames(){
 
-  if(namesCache){
+/* =====================================================
+   LOAD NAMES
+===================================================== */
 
-    populateNameSelect('transactionName');
-    populateNameSelect('detailsName');
+function loadNames(
+  forceRefresh=false
+){
 
-    return Promise.resolve(namesCache);
+  /*
+   Cache থাকলে প্রথমে সঙ্গে সঙ্গে
+   dropdown render হবে।
+  */
+
+  if(
+    Array.isArray(namesCache)
+  ){
+
+    populateNameSelect(
+      'transactionName'
+    );
+
+
+    populateNameSelect(
+      'detailsName'
+    );
+
+
+    /*
+     Force refresh না হলে
+     cached result-ই যথেষ্ট।
+    */
+
+    if(!forceRefresh){
+
+      return Promise.resolve(
+        namesCache
+      );
+
+    }
+
   }
 
-  if(namesLoading)return namesLoading;
 
-  if(!currentUser)return Promise.resolve([]);
+  /*
+   একই সময়ে request already চলছে।
+   Duplicate request বন্ধ।
+  */
+
+  if(namesLoading){
+
+    return namesLoading;
+
+  }
+
+
+  if(!currentUser){
+
+    return Promise.resolve(
+      namesCache || []
+    );
+
+  }
+
 
   namesLoading=
     api(
       'getNames',
-      {token:currentUser.token}
+      {
+        token:currentUser.token
+      }
     )
     .then(result=>{
 
       if(
         result?.success &&
-        Array.isArray(result.names)
+        Array.isArray(
+          result.names
+        )
       ){
 
-        namesCache=result.names;
+        /*
+         Duplicate names remove।
+        */
 
-        populateNameSelect('transactionName');
-        populateNameSelect('detailsName');
+        namesCache=
+          [...new Set(
+            result.names
+              .map(name=>
+                String(name).trim()
+              )
+              .filter(Boolean)
+          )];
+
+
+        populateNameSelect(
+          'transactionName'
+        );
+
+
+        populateNameSelect(
+          'detailsName'
+        );
 
       }
 
-      return namesCache||[];
+
+      return namesCache || [];
 
     })
     .catch(error=>{
 
-      console.error('Names:',error);
-      return [];
+      console.error(
+        'Names refresh:',
+        error
+      );
+
+
+      /*
+       Server fail করলেও existing
+       cache থাকলে সেটা থাকবে।
+      */
+
+      return namesCache || [];
 
     })
     .finally(()=>{
+
       namesLoading=null;
+
     });
+
 
   return namesLoading;
 
 }
 
-/* OPTIONS */
+
+/* =====================================================
+   OPTIONS
+===================================================== */
 
 function loadOptions(){
 
   if(optionsLoaded){
 
     selectType(
-      DOM.transactionType.value||'বিক্রয়'
+      DOM.transactionType.value ||
+      'বিক্রয়'
     );
 
+
     return Promise.resolve();
+
   }
 
-  if(optionsLoading)return optionsLoading;
 
-  if(!currentUser)return Promise.resolve();
+  if(optionsLoading){
+
+    return optionsLoading;
+
+  }
+
+
+  if(!currentUser){
+
+    return Promise.resolve();
+
+  }
+
 
   optionsLoading=
     api(
       'getOptions',
-      {token:currentUser.token}
+      {
+        token:currentUser.token
+      }
     )
     .then(result=>{
 
       if(result?.success){
 
         salesOptions=
-          Array.isArray(result.sales)
+          Array.isArray(
+            result.sales
+          )
             ? result.sales
             : [];
 
+
         paymentOptions=
-          Array.isArray(result.payments)
+          Array.isArray(
+            result.payments
+          )
             ? result.payments
             : [];
 
+
         optionsLoaded=true;
 
+
         selectType(
-          DOM.transactionType.value||'বিক্রয়'
+          DOM.transactionType.value ||
+          'বিক্রয়'
         );
 
       }
+
 
       return result;
 
     })
     .catch(error=>{
 
-      console.error('Options:',error);
+      console.error(
+        'Options:',
+        error
+      );
+
+
       return null;
 
     })
     .finally(()=>{
+
       optionsLoading=null;
+
     });
+
 
   return optionsLoading;
 
 }
 
-/* TYPE */
+
+/* =====================================================
+   TYPE
+===================================================== */
 
 function selectType(type){
 
-  DOM.transactionType.value=type;
+  DOM.transactionType.value=
+    type;
 
-  const isSale=type==='বিক্রয়';
+
+  const isSale=
+    type==='বিক্রয়';
+
 
   DOM.saleBtn.classList.toggle(
     'active',
     isSale
   );
 
+
   DOM.paymentBtn.classList.toggle(
     'active',
     !isSale
   );
+
 
   DOM.methodLabel.textContent=
     isSale
       ? 'বিক্রয়ের ধরন'
       : 'পেমেন্টের ধরন';
 
+
   const options=
     isSale
       ? salesOptions
       : paymentOptions;
 
-  const select=DOM.transactionMethod;
+
+  const select=
+    DOM.transactionMethod;
+
+
+  const oldValue=
+    select.value;
+
 
   select.innerHTML=
     '<option value="">Select</option>';
 
+
   if(!options.length){
 
-    if(!optionsLoaded)loadOptions();
+    if(!optionsLoaded){
 
-    return;
-  }
-
-  const fragment=document.createDocumentFragment();
-
-  options.forEach(item=>{
-
-    const option=document.createElement('option');
-
-    option.value=item;
-    option.textContent=item;
-
-    fragment.appendChild(option);
-
-  });
-
-  select.appendChild(fragment);
-
-}
-
-/* AMOUNT FORMAT */
-
-function formatInputAmount(value){
-
-  let clean=String(value||'')
-    .replace(/,/g,'')
-    .replace(/[^\d]/g,'');
-
-  if(!clean)return '';
-
-  clean=clean.replace(/^0+(?=\d)/,'');
-
-  return Number(clean).toLocaleString('en-US');
-
-}
-
-/* AMOUNT LIVE */
-
-function setupAmountInput(){
-
-  const input=DOM.transactionAmount;
-
-  if(!input)return;
-
-  input.addEventListener('input',()=>{
-
-    const cursor=input.selectionStart;
-
-    const before=input.value.slice(0,cursor);
-
-    const digitsBefore=
-      before
-        .replace(/,/g,'')
-        .replace(/[^\d]/g,'')
-        .length;
-
-    input.value=formatInputAmount(input.value);
-
-    let newCursor=0;
-    let digitCount=0;
-
-    while(
-      newCursor<input.value.length &&
-      digitCount<digitsBefore
-    ){
-
-      if(/\d/.test(input.value[newCursor])){
-        digitCount++;
-      }
-
-      newCursor++;
+      loadOptions();
 
     }
 
-    try{
+    return;
 
-      input.setSelectionRange(
-        newCursor,
-        newCursor
+  }
+
+
+  const fragment=
+    document.createDocumentFragment();
+
+
+  options.forEach(item=>{
+
+    const option=
+      document.createElement(
+        'option'
       );
 
-    }catch(e){}
+
+    option.value=
+      item;
+
+
+    option.textContent=
+      item;
+
+
+    fragment.appendChild(
+      option
+    );
 
   });
 
-  input.addEventListener('blur',()=>{
 
-    input.value=
-      formatInputAmount(input.value);
+  select.appendChild(
+    fragment
+  );
 
-  });
+
+  /*
+   Type change না হলে previous option
+   possible হলে preserve করবে।
+  */
+
+  if(
+    oldValue &&
+    options.includes(oldValue)
+  ){
+
+    select.value=
+      oldValue;
+
+  }
 
 }
 
-/* SAVE */
+
+/* =====================================================
+   AMOUNT FORMAT
+===================================================== */
+
+function formatInputAmount(value){
+
+  let clean=
+    String(value || '')
+      .replace(/,/g,'')
+      .replace(/[^\d]/g,'');
+
+
+  if(!clean){
+
+    return '';
+
+  }
+
+
+  clean=
+    clean.replace(
+      /^0+(?=\d)/,
+      ''
+    );
+
+
+  return Number(clean)
+    .toLocaleString('en-IN');
+
+}
+
+
+/* =====================================================
+   AMOUNT INPUT
+===================================================== */
+
+function setupAmountInput(){
+
+  const input=
+    DOM.transactionAmount;
+
+
+  if(!input)return;
+
+
+  input.addEventListener(
+    'input',
+    ()=>{
+
+      const cursor=
+        input.selectionStart;
+
+
+      const before=
+        input.value.slice(
+          0,
+          cursor
+        );
+
+
+      const digitsBefore=
+        before
+          .replace(/,/g,'')
+          .replace(/[^\d]/g,'')
+          .length;
+
+
+      input.value=
+        formatInputAmount(
+          input.value
+        );
+
+
+      let newCursor=0;
+
+      let digitCount=0;
+
+
+      while(
+        newCursor<
+          input.value.length &&
+        digitCount<
+          digitsBefore
+      ){
+
+        if(
+          /\d/.test(
+            input.value[newCursor]
+          )
+        ){
+
+          digitCount++;
+
+        }
+
+
+        newCursor++;
+
+      }
+
+
+      try{
+
+        input.setSelectionRange(
+          newCursor,
+          newCursor
+        );
+
+      }catch(e){}
+
+    }
+  );
+
+
+  input.addEventListener(
+    'blur',
+    ()=>{
+
+      input.value=
+        formatInputAmount(
+          input.value
+        );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   SAVE TRANSACTION
+===================================================== */
 
 async function saveTransaction(){
 
-  const date=DOM.transactionDate.value;
+  if(saveRequestRunning){
+
+    return;
+
+  }
+
+
+  const date=
+    DOM.transactionDate.value;
+
 
   const amount=
     DOM.transactionAmount.value
       .replace(/,/g,'');
 
-  const name=DOM.transactionName.value;
-  const type=DOM.transactionType.value;
-  const method=DOM.transactionMethod.value;
 
-  const message=DOM.transactionMessage;
+  const name=
+    DOM.transactionName.value;
+
+
+  const type=
+    DOM.transactionType.value;
+
+
+  const method=
+    DOM.transactionMethod.value;
+
+
+  const message=
+    DOM.transactionMessage;
+
 
   message.textContent='';
-  message.classList.remove('success');
+
+
+  message.classList.remove(
+    'success'
+  );
+
 
   if(!date){
 
@@ -1854,14 +2659,25 @@ async function saveTransaction(){
       'Please select a date.';
 
     return;
+
   }
 
-  const now=new Date();
+
+  const now=
+    new Date();
+
 
   const todayString=
-    now.getFullYear()+'-'+
-    String(now.getMonth()+1).padStart(2,'0')+'-'+
-    String(now.getDate()).padStart(2,'0');
+    now.getFullYear() +
+    '-' +
+    String(
+      now.getMonth()+1
+    ).padStart(2,'0') +
+    '-' +
+    String(
+      now.getDate()
+    ).padStart(2,'0');
+
 
   if(date>todayString){
 
@@ -1871,15 +2687,22 @@ async function saveTransaction(){
     setToday();
 
     return;
+
   }
 
-  if(!amount || Number(amount)<=0){
+
+  if(
+    !amount ||
+    Number(amount)<=0
+  ){
 
     message.textContent=
       'Please enter a valid amount.';
 
     return;
+
   }
+
 
   if(!name){
 
@@ -1887,7 +2710,9 @@ async function saveTransaction(){
       'Please select a name.';
 
     return;
+
   }
+
 
   if(!method){
 
@@ -1895,25 +2720,44 @@ async function saveTransaction(){
       'Please select an option.';
 
     return;
+
   }
+
+
+  if(!currentUser?.token){
+
+    message.textContent=
+      'Session expired. Please login again.';
+
+    return;
+
+  }
+
+
+  saveRequestRunning=true;
+
 
   showLoading();
 
+
   try{
 
-    const result=await api(
-      'addTransaction',
-      {
-        token:currentUser.token,
-        date,
-        amount,
-        name,
-        type,
-        method
-      }
-    );
+    const result=
+      await api(
+        'addTransaction',
+        {
+          token:currentUser.token,
+          date:date,
+          amount:amount,
+          name:name,
+          type:type,
+          method:method
+        }
+      );
+
 
     hideLoading();
+
 
     if(result?.success){
 
@@ -1921,13 +2765,47 @@ async function saveTransaction(){
         result.message ||
         'Transaction added successfully.';
 
-      message.classList.add('success');
+
+      message.classList.add(
+        'success'
+      );
+
+
+      /*
+       Form clear
+      */
 
       DOM.transactionAmount.value='';
+
       DOM.transactionName.value='';
+
       DOM.transactionMethod.value='';
 
+
       setToday();
+
+
+      /*
+       Previous details request invalid.
+      */
+
+      detailsRequestId++;
+
+
+      /*
+       IMPORTANT:
+
+       নতুন transaction save হওয়ার পরে
+       names-এর cache রেখে background refresh।
+      */
+
+      loadNames(true);
+
+
+      /*
+       যদি Check Details-এর customer selected থাকে,
+       পরেরবার Check Details খুললেই fresh data আসবে।
+      */
 
     }else{
 
@@ -1941,15 +2819,23 @@ async function saveTransaction(){
 
     hideLoading();
 
+
     message.textContent=
-      error.message ||
+      error?.message ||
       'Failed to save transaction.';
+
+  }finally{
+
+    saveRequestRunning=false;
 
   }
 
 }
 
-/* YEAR MONTH */
+
+/* =====================================================
+   YEAR MONTH
+===================================================== */
 
 function setupMonthSelect(
   monthElementId,
@@ -1957,73 +2843,163 @@ function setupMonthSelect(
 ){
 
   const monthSelect=
-    document.getElementById(monthElementId);
+    document.getElementById(
+      monthElementId
+    );
+
 
   const yearSelect=
-    document.getElementById(yearElementId);
+    document.getElementById(
+      yearElementId
+    );
 
-  if(!monthSelect || !yearSelect)return;
+
+  if(
+    !monthSelect ||
+    !yearSelect
+  ){
+
+    return;
+
+  }
+
+
+  /*
+   Already initialized হলে আবার
+   DOM rebuild করবে না।
+  */
 
   if(
     yearSelect.options.length===5 &&
     monthSelect.options.length===12
   ){
+
     return;
+
   }
 
-  const now=new Date();
 
-  const currentYear=now.getFullYear();
-  const currentMonth=now.getMonth()+1;
+  const now=
+    new Date();
+
+
+  const currentYear=
+    now.getFullYear();
+
+
+  const currentMonth=
+    now.getMonth()+1;
+
 
   const yearFragment=
     document.createDocumentFragment();
 
-  for(let i=0;i<5;i++){
 
-    const year=currentYear-i;
+  for(
+    let i=0;
+    i<5;
+    i++
+  ){
+
+    const year=
+      currentYear-i;
+
 
     const option=
-      document.createElement('option');
+      document.createElement(
+        'option'
+      );
 
-    option.value=year;
-    option.textContent=year;
 
-    yearFragment.appendChild(option);
+    option.value=
+      year;
+
+
+    option.textContent=
+      year;
+
+
+    yearFragment.appendChild(
+      option
+    );
 
   }
 
+
   yearSelect.innerHTML='';
-  yearSelect.appendChild(yearFragment);
+
+  yearSelect.appendChild(
+    yearFragment
+  );
+
 
   const months=[
-    'January','February','March','April',
-    'May','June','July','August',
-    'September','October','November','December'
+
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+
   ];
+
 
   const monthFragment=
     document.createDocumentFragment();
 
-  months.forEach((month,index)=>{
 
-    const option=
-      document.createElement('option');
+  months.forEach(
+    (month,index)=>{
 
-    option.value=index+1;
-    option.textContent=month;
+      const option=
+        document.createElement(
+          'option'
+        );
 
-    monthFragment.appendChild(option);
 
-  });
+      option.value=
+        index+1;
+
+
+      option.textContent=
+        month;
+
+
+      monthFragment.appendChild(
+        option
+      );
+
+    }
+  );
+
 
   monthSelect.innerHTML='';
-  monthSelect.appendChild(monthFragment);
 
-  yearSelect.value=currentYear;
-  monthSelect.value=currentMonth;
+  monthSelect.appendChild(
+    monthFragment
+  );
+
+
+  yearSelect.value=
+    currentYear;
+
+
+  monthSelect.value=
+    currentMonth;
 
 }
+
+
+/* =====================================================
+   SELECTED MONTH
+===================================================== */
 
 function getSelectedMonth(
   monthElementId,
@@ -2031,33 +3007,69 @@ function getSelectedMonth(
 ){
 
   const month=
-    document.getElementById(monthElementId).value;
+    document.getElementById(
+      monthElementId
+    ).value;
+
 
   const year=
-    document.getElementById(yearElementId).value;
+    document.getElementById(
+      yearElementId
+    ).value;
+
 
   return{
-    year:Number(year)||'',
-    month:Number(month)||''
+
+    year:
+      Number(year) || '',
+
+    month:
+      Number(month) || ''
+
   };
 
 }
 
-/* CUSTOMER DETAILS */
+
+/* =====================================================
+   CUSTOMER DETAILS
+===================================================== */
 
 async function loadCustomerDetails(
   quickReload=false
 ){
 
-  const name=DOM.detailsName.value;
+  const name=
+    DOM.detailsName.value;
+
+
+  /*
+   Name select না করা থাকলে
+   list clear করার দরকার নেই যদি background
+   refresh থেকে আসে।
+
+   তবে normal selection change হলে clear।
+  */
 
   if(!name){
 
-    DOM.balanceCard.classList.add('hidden');
-    DOM.transactionsSection.classList.add('hidden');
+    DOM.balanceCard.classList.add(
+      'hidden'
+    );
+
+
+    DOM.transactionsSection.classList.add(
+      'hidden'
+    );
+
+
+    DOM.transactionList.innerHTML='';
+
 
     return;
+
   }
+
 
   const selected=
     getSelectedMonth(
@@ -2065,74 +3077,140 @@ async function loadCustomerDetails(
       'yearSelect'
     );
 
-  const requestId=++detailsRequestId;
 
-  if(!quickReload)showLoading();
+  const requestId=
+    ++detailsRequestId;
+
+
+  /*
+   Quick reload হলে কোনো overlay নেই।
+   Normal name selection হলে loading থাকবে।
+  */
+
+  if(!quickReload){
+
+    showLoading();
+
+  }
+
 
   try{
 
-    const result=await api(
-      'customerDetails',
-      {
-        token:currentUser.token,
-        name,
-        year:selected.year,
-        month:selected.month
-      }
-    );
+    const result=
+      await api(
+        'customerDetails',
+        {
+          token:currentUser.token,
+          name:name,
+          year:selected.year,
+          month:selected.month
+        }
+      );
 
-    if(requestId!==detailsRequestId)return;
 
-    if(!quickReload)hideLoading();
+    /*
+     পুরোনো request হলে result ignore।
+    */
+
+    if(
+      requestId!==detailsRequestId
+    ){
+
+      return;
+
+    }
+
+
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
 
     if(!result?.success){
 
       DOM.detailsMessage.textContent=
-        result?.message||'';
+        result?.message || '';
+
 
       return;
+
     }
+
 
     DOM.detailsMessage.textContent='';
 
+
     DOM.currentBalance.textContent=
-      formatAmount(result.currentBalance);
+      formatAmount(
+        result.currentBalance
+      );
+
 
     DOM.monthlySales.textContent=
-      formatAmount(result.totalSales);
+      formatAmount(
+        result.totalSales
+      );
 
-    DOM.balanceCard.classList.remove('hidden');
+
+    DOM.balanceCard.classList.remove(
+      'hidden'
+    );
+
 
     renderTransactions(
       result.transactions,
       'transactionList'
     );
 
+
     DOM.transactionsSection.classList.remove(
       'hidden'
     );
 
+
   }catch(error){
 
-    if(requestId!==detailsRequestId)return;
+    if(
+      requestId!==detailsRequestId
+    ){
 
-    if(!quickReload)hideLoading();
+      return;
+
+    }
+
+
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
 
     DOM.detailsMessage.textContent=
-      error.message ||
+      error?.message ||
       'Failed to load details.';
 
   }
 
 }
 
-/* VIEWER */
+
+/* =====================================================
+   VIEWER
+===================================================== */
 
 async function loadViewerDetails(
   quickReload=false
 ){
 
-  if(!currentUser)return;
+  if(!currentUser){
+
+    return;
+
+  }
+
 
   const selected=
     getSelectedMonth(
@@ -2140,59 +3218,105 @@ async function loadViewerDetails(
       'viewerYear'
     );
 
-  const requestId=++viewerRequestId;
 
-  if(!quickReload)showLoading();
+  const requestId=
+    ++viewerRequestId;
+
+
+  if(!quickReload){
+
+    showLoading();
+
+  }
+
 
   try{
 
-    const result=await api(
-      'viewerDetails',
-      {
-        token:currentUser.token,
-        year:selected.year,
-        month:selected.month
-      }
-    );
+    const result=
+      await api(
+        'viewerDetails',
+        {
+          token:currentUser.token,
+          year:selected.year,
+          month:selected.month
+        }
+      );
 
-    if(requestId!==viewerRequestId)return;
 
-    if(!quickReload)hideLoading();
+    if(
+      requestId!==viewerRequestId
+    ){
+
+      return;
+
+    }
+
+
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
 
     if(!result?.success){
 
       DOM.viewerMessage.textContent=
-        result?.message||'';
+        result?.message || '';
+
 
       return;
+
     }
+
 
     DOM.viewerMessage.textContent='';
 
+
     DOM.viewerBalance.textContent=
-      formatAmount(result.currentBalance);
+      formatAmount(
+        result.currentBalance
+      );
+
 
     DOM.viewerMonthlySales.textContent=
-      formatAmount(result.totalSales);
+      formatAmount(
+        result.totalSales
+      );
+
 
     renderTransactions(
       result.transactions,
       'viewerTransactionList'
     );
 
+
   }catch(error){
 
-    if(requestId!==viewerRequestId)return;
+    if(
+      requestId!==viewerRequestId
+    ){
 
-    if(!quickReload)hideLoading();
+      return;
+
+    }
+
+
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
 
     DOM.viewerMessage.textContent=
-      error.message ||
+      error?.message ||
       'Failed to load details.';
 
   }
 
 }
+
 
 /* =====================================================
    TRANSACTION RENDER
@@ -2204,120 +3328,220 @@ function renderTransactions(
 ){
 
   const container=
-    document.getElementById(elementId);
+    document.getElementById(
+      elementId
+    );
+
 
   if(!container)return;
 
-  if(!transactions?.length){
+
+  container.innerHTML='';
+
+
+  if(
+    !Array.isArray(transactions) ||
+    !transactions.length
+  ){
 
     container.innerHTML=
       '<div class="message">No transactions found.</div>';
 
+
     return;
+
   }
 
-  const list =
-  transactions
-    .map((item,index)=>({
 
-      item,
+  /*
+   Newest transaction first।
 
-      time:getTransactionTime(
-        item,
-        index,
-        transactions.length
+   Timestamp থাকলে timestamp।
+   transactionId / id / rowNumber থাকলে সেটা।
+   কিছু না থাকলে backend response order।
+  */
+
+  const list=
+    transactions
+      .map(
+        (item,index)=>({
+
+          item:item,
+
+          time:getTransactionTime(
+            item,
+            index,
+            transactions.length
+          )
+
+        })
       )
+      .sort(
+        (a,b)=>
+          b.time-a.time
+      );
 
-    }))
-    .sort((a,b)=>b.time-a.time);
 
   const fragment=
     document.createDocumentFragment();
 
-  list.forEach(({item})=>{
 
-    const card=
-      document.createElement('div');
+  list.forEach(
+    ({item})=>{
 
-    const isSale=
-      item.type==='বিক্রয়';
+      const card=
+        document.createElement(
+          'div'
+        );
 
-    card.className=
-      'transaction-card '+
-      (isSale?'sale':'payment');
 
-    /* LEFT */
+      const isSale=
+        String(
+          item.type || ''
+        ).trim()==='বিক্রয়';
 
-    const info=
-      document.createElement('div');
 
-    info.className=
-      'transaction-info';
+      card.className=
+        'transaction-card ' +
+        (
+          isSale
+            ? 'sale'
+            : 'payment'
+        );
 
-    const date=
-      document.createElement('div');
 
-    date.className=
-      'transaction-date';
+      /* LEFT */
 
-    date.textContent=
-      item.date||'';
+      const info=
+        document.createElement(
+          'div'
+        );
 
-    const amount=
-      document.createElement('div');
 
-    amount.className=
-      'transaction-amount';
+      info.className=
+        'transaction-info';
 
-    const numericAmount=
-      Number(
-        String(item.amount||'')
+
+      const date=
+        document.createElement(
+          'div'
+        );
+
+
+      date.className=
+        'transaction-date';
+
+
+      date.textContent=
+        item.date || '';
+
+
+      const amount=
+        document.createElement(
+          'div'
+        );
+
+
+      amount.className=
+        'transaction-amount';
+
+
+      const numericAmount=
+        Number(
+          String(
+            item.amount || ''
+          )
           .replace(/,/g,'')
-      )||0;
+        ) || 0;
 
-    amount.textContent=
-      (isSale?'+':'−')+
-      formatNumber(numericAmount)+
-      ' TK';
 
-    const method=
-      document.createElement('div');
+      amount.textContent=
+        (
+          isSale
+            ? '+'
+            : '−'
+        ) +
+        formatNumber(
+          numericAmount
+        ) +
+        ' TK';
 
-    method.className=
-      'transaction-method';
 
-    method.textContent=
-      item.method||'';
+      const method=
+        document.createElement(
+          'div'
+        );
 
-    info.appendChild(date);
-    info.appendChild(amount);
-    info.appendChild(method);
 
-    /* RIGHT */
+      method.className=
+        'transaction-method';
 
-    const type=
-      document.createElement('div');
 
-    type.className=
-      'transaction-type';
+      method.textContent=
+        item.method || '';
 
-    type.textContent=
-      isSale
-        ? 'বিক্রয়'
-        : 'পেমেন্ট';
 
-    card.appendChild(info);
-    card.appendChild(type);
+      info.appendChild(
+        date
+      );
 
-    fragment.appendChild(card);
 
-  });
+      info.appendChild(
+        amount
+      );
 
-  container.replaceChildren(fragment);
+
+      info.appendChild(
+        method
+      );
+
+
+      /* RIGHT */
+
+      const type=
+        document.createElement(
+          'div'
+        );
+
+
+      type.className=
+        'transaction-type';
+
+
+      type.textContent=
+        isSale
+          ? 'বিক্রয়'
+          : 'পেমেন্ট';
+
+
+      card.appendChild(
+        info
+      );
+
+
+      card.appendChild(
+        type
+      );
+
+
+      fragment.appendChild(
+        card
+      );
+
+    }
+  );
+
+
+  container.replaceChildren(
+    fragment
+  );
 
 }
 
-/* TRANSACTION TIME */
+
+/* =====================================================
+   TRANSACTION TIME
+===================================================== */
 
 function getTransactionTime(
   item,
@@ -2325,26 +3549,46 @@ function getTransactionTime(
   total
 ){
 
+  /*
+   Backend timestamp থাকলে সেটাই priority।
+  */
+
   const timestamp=
-    item.timestamp||
-    item.createdAt||
-    item.time||
+    item.timestamp ||
+    item.createdAt ||
+    item.time ||
     item.datetime;
+
 
   if(timestamp){
 
     const parsed=
-      new Date(timestamp).getTime();
+      new Date(
+        timestamp
+      ).getTime();
 
-    if(!Number.isNaN(parsed)){
+
+    if(
+      !Number.isNaN(parsed)
+    ){
+
       return parsed;
+
     }
+
   }
 
+
+  /*
+   transaction ID / row number থাকলে
+   insertion order হিসেবে ব্যবহার।
+  */
+
   const id=
-    item.transactionId||
-    item.id||
+    item.transactionId ||
+    item.id ||
     item.rowNumber;
+
 
   if(
     id!==undefined &&
@@ -2352,134 +3596,229 @@ function getTransactionTime(
     id!==''
   ){
 
-    const numericId=Number(id);
+    const numericId=
+      Number(id);
+
 
     if(
-      Number.isFinite(numericId) &&
+      Number.isFinite(
+        numericId
+      ) &&
       numericId>0
     ){
 
-      return 1000000000000+numericId;
+      return (
+        1000000000000 +
+        numericId
+      );
 
     }
 
   }
 
-  if(item.date){
 
-    const parsedDate=
-      new Date(item.date).getTime();
+  /*
+   Backend timestamp না দিলে
+   response order ধরে newest first।
+  */
 
-    if(!Number.isNaN(parsedDate)){
-
-      return parsedDate+
-        index/Math.max(total,1);
-
-    }
-
-  }
-
-  return index;
+  return (
+    1000000000000 +
+    (
+      total-index
+    )
+  );
 
 }
 
-/* NUMBER */
+
+/* =====================================================
+   NUMBER
+===================================================== */
 
 function formatNumber(number){
 
-  return Number(number||0)
-    .toLocaleString('en-IN');
+  return Number(
+    number || 0
+  )
+  .toLocaleString(
+    'en-IN'
+  );
 
 }
 
-/* AMOUNT */
+
+/* =====================================================
+   AMOUNT
+===================================================== */
 
 function formatAmount(amount){
 
   const number=
     Number(
-      String(amount||'')
-        .replace(/,/g,'')
-    )||0;
+      String(
+        amount || ''
+      )
+      .replace(/,/g,'')
+    ) || 0;
 
-  return formatNumber(number)+' Tk';
+
+  return (
+    formatNumber(number) +
+    ' Tk'
+  );
 
 }
 
-/* RESTORE */
+
+/* =====================================================
+   RESTORE SESSION
+===================================================== */
 
 function restoreSession(){
 
   try{
 
     const saved=
-      localStorage.getItem('transactionUser');
+      localStorage.getItem(
+        'transactionUser'
+      );
+
 
     if(!saved){
 
-      showPage('loginPage');
+      showPage(
+        'loginPage'
+      );
+
       return;
 
     }
 
-    const user=JSON.parse(saved);
+
+    const user=
+      JSON.parse(
+        saved
+      );
+
 
     if(!user?.token){
 
-      localStorage.removeItem('transactionUser');
-      showPage('loginPage');
+      localStorage.removeItem(
+        'transactionUser'
+      );
+
+
+      showPage(
+        'loginPage'
+      );
+
+
       return;
 
     }
 
-    currentUser=user;
+
+    currentUser=
+      user;
+
 
     const role=
-      String(user.role).toLowerCase();
+      String(
+        user.role || ''
+      )
+      .trim()
+      .toLowerCase();
+
 
     if(role==='admin'){
 
       DOM.adminWelcome.textContent=
-        'Welcome, '+(user.name||'Admin');
+        'Welcome, ' +
+        (user.name || 'Admin');
 
-      showPage('adminPage');
-      showAdminSection('add');
+
+      showPage(
+        'adminPage'
+      );
+
+
+      showAdminSection(
+        'add'
+      );
+
 
       setToday();
+
+
+      /*
+       Session restore-এর সময়ও
+       data background-এ preload হবে।
+      */
+
       preloadAdminData();
 
+
       return;
+
     }
+
 
     if(role==='viewer'){
 
       DOM.viewerWelcome.textContent=
-        'Welcome, '+user.name;
+        'Welcome, ' +
+        (user.name || '');
+
 
       setupMonthSelect(
         'viewerMonth',
         'viewerYear'
       );
 
-      showPage('viewerPage');
+
+      showPage(
+        'viewerPage'
+      );
+
 
       loadViewerDetails();
 
+
       return;
+
     }
 
-    logout();
+
+    localStorage.removeItem(
+      'transactionUser'
+    );
+
+
+    showPage(
+      'loginPage'
+    );
+
 
   }catch(error){
 
-    localStorage.removeItem('transactionUser');
-    showPage('loginPage');
+    localStorage.removeItem(
+      'transactionUser'
+    );
+
+
+    showPage(
+      'loginPage'
+    );
 
   }
 
 }
 
-/* ENTER */
+
+/* =====================================================
+   ENTER LOGIN
+===================================================== */
 
 document.addEventListener(
   'keydown',
@@ -2487,7 +3826,9 @@ document.addEventListener(
 
     if(
       event.key==='Enter' &&
-      DOM.loginPage?.classList.contains('active')
+      DOM.loginPage?.classList.contains(
+        'active'
+      )
     ){
 
       loginUser();
@@ -2497,7 +3838,10 @@ document.addEventListener(
   }
 );
 
-/* START */
+
+/* =====================================================
+   START
+===================================================== */
 
 document.addEventListener(
   'DOMContentLoaded',
@@ -2505,19 +3849,28 @@ document.addEventListener(
 
     cacheDOM();
 
+
+    /*
+     Month/year dropdown আগে তৈরি।
+    */
+
     setupMonthSelect(
       'monthSelect',
       'yearSelect'
     );
+
 
     setupMonthSelect(
       'viewerMonth',
       'viewerYear'
     );
 
+
     setupAmountInput();
 
+
     setToday();
+
 
     restoreSession();
 
@@ -2527,4 +3880,4 @@ document.addEventListener(
 </script>
 
 </body>
-</html>
+        </html>
