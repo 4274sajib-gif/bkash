@@ -1,219 +1,745 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<head>
+<title>Transaction Software</title><style>
 
-  <meta charset="UTF-8">
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:#f5f7fb;
+  color:#202124;
+}
+
+button,input,select{
+  font:inherit;
+}
+
+button{
+  border:0;
+}
+
+.hidden{
+  display:none!important;
+}
+
+
+/* ================= PAGE ================= */
+
+.page{
+  display:none;
+  min-height:100vh;
+}
+
+.page.active{
+  display:block;
+}
+
+
+/* ================= LOGIN ================= */
+
+#loginPage{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:#f5f7fb;
+}
+
+#loginPage.active{
+  display:flex;
+}
+
+.login-card{
+  width:100%;
+  max-width:390px;
+  background:#fff;
+  border-radius:20px;
+  padding:30px 24px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.logo-circle{
+  width:62px;
+  height:62px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef3ff;
+  font-size:28px;
+}
+
+.login-card h1{
+  margin:0;
+  text-align:center;
+  font-size:25px;
+}
+
+.subtitle{
+  margin:7px 0 25px;
+  text-align:center;
+  color:#777;
+  font-size:14px;
+}
+
+
+/* ================= APP ================= */
+
+.app-container{
+  width:100%;
+  max-width:650px;
+  min-height:100vh;
+  margin:auto;
+  background:#f5f7fb;
+}
+
+
+/* ================= HEADER ================= */
+
+.top-header{
+  min-height:72px;
+  padding:15px 18px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #e9edf3;
+}
+
+.top-header h2{
+  margin:0;
+  font-size:18px;
+  font-weight:800;
+}
+
+.top-header span{
+  display:block;
+  margin-top:4px;
+  font-size:12px;
+  color:#777;
+}
+
+.logout-btn{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#f2f4f7;
+  cursor:pointer;
+  font-size:19px;
+}
+
+
+/* ================= ADMIN HOME ================= */
+
+.admin-content{
+  padding:14px;
+}
+
+
+/* ================= TWO MAIN BUTTONS ================= */
+
+.admin-buttons{
+  display:flex;
+  gap:10px;
+  width:100%;
+  margin-bottom:14px;
+}
+
+.admin-main-btn{
+  flex:1;
+  min-width:0;
+  height:52px;
+  padding:8px 10px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #e5e9ef;
+  box-shadow:0 3px 12px rgba(0,0,0,.04);
+  cursor:pointer;
+
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+
+  text-align:center;
+  transition:.12s;
+}
+
+.admin-main-btn:active{
+  transform:scale(.97);
+  background:#f8f9fb;
+}
+
+.admin-main-icon{
+  width:auto;
+  height:auto;
+  border-radius:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  font-size:17px;
+  margin:0;
+  flex-shrink:0;
+}
+
+.admin-main-btn strong{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+}
+
+.admin-main-btn small{
+  display:none;
+}
+
+
+/* ================= ADMIN CONTENT ================= */
+
+.admin-panel-section{
+  display:none;
+  background:#fff;
+  border:1px solid #e6e9ee;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.admin-panel-section.active{
+  display:block;
+}
+
+.panel-title{
+  min-height:52px;
+  padding:0 15px;
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid #e9edf3;
+  background:#fff;
+}
+
+.panel-title h3{
+  margin:0;
+  font-size:16px;
+}
+
+
+/* ================= FORMS ================= */
+
+.form-container,
+.details-container,
+.viewer-container{
+  padding:16px;
+}
+
+.input-group{
+  margin-bottom:14px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:7px;
+  font-size:13px;
+  font-weight:700;
+  color:#444;
+}
+
+input,
+select{
+  width:100%;
+  height:45px;
+  padding:0 12px;
+  border:1px solid #dfe3e8;
+  border-radius:11px;
+  outline:none;
+  background:#fff;
+  color:#222;
+  font-size:14px;
+}
+
+input:focus,
+select:focus{
+  border-color:#7185ff;
+  box-shadow:0 0 0 3px rgba(113,133,255,.10);
+}
+
+
+/* ================= PASSWORD ================= */
+
+.password-box{
+  position:relative;
+}
+
+.password-box input{
+  padding-right:50px;
+}
+
+.eye-btn{
+  position:absolute;
+  right:5px;
+  top:4px;
+  width:36px;
+  height:36px;
+  background:transparent;
+  cursor:pointer;
+}
+
+
+/* ================= PRIMARY ================= */
+
+.primary-btn{
+  width:100%;
+  height:46px;
+  border-radius:11px;
+  background:#5267e8;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  margin-top:4px;
+}
+
+.primary-btn:active{
+  transform:scale(.99);
+}
+
+
+/* ================= TYPE ================= */
+
+.type-row{
+  display:flex;
+  gap:10px;
+  margin:3px 0 14px;
+}
+
+.type-btn{
+  flex:1;
+  height:44px;
+  border-radius:11px;
+  background:#fff;
+  border:1px solid #dfe3e8;
+  color:#555;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.type-btn.active{
+  background:#5267e8;
+  border-color:#5267e8;
+  color:#fff;
+}
+
+
+/* ================= BALANCE ================= */
+
+.balance-card{
+  padding:17px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #e7eaf0;
+  box-shadow:0 3px 12px rgba(0,0,0,.04);
+  margin-bottom:14px;
+}
+
+.balance-card span,
+.sales-card span{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  color:#777;
+  letter-spacing:.4px;
+}
+
+.balance-card strong{
+  display:block;
+  margin-top:6px;
+  font-size:24px;
+}
+
+
+/* ================= SALES ================= */
+
+#monthlySection{
+  margin-bottom:14px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:9px;
+}
+
+.section-title span{
+  flex:1;
+  font-size:14px;
+  font-weight:800;
+}
+
+.section-title select{
+  width:auto;
+  min-width:140px;
+  height:39px;
+}
+
+.sales-card{
+  padding:15px 17px;
+  background:#fff;
+  border:1px solid #e7eaf0;
+  border-radius:13px;
+  margin-bottom:14px;
+}
+
+.sales-card strong{
+  display:block;
+  margin-top:5px;
+  font-size:21px;
+}
+
+
+/* ================= TRANSACTIONS ================= */
+
+#transactionsSection h3,
+.viewer-history h3{
+  margin:5px 0 9px;
+  font-size:14px;
+}
+
+.transaction-list{
+  max-height:calc(100vh - 350px);
+  min-height:150px;
+  overflow-y:auto;
+  padding-right:2px;
+  -webkit-overflow-scrolling:touch;
+}
+
+.transaction-list::-webkit-scrollbar{
+  width:4px;
+}
+
+.transaction-list::-webkit-scrollbar-thumb{
+  background:#cbd0d8;
+  border-radius:10px;
+}
+
+.transaction-card{
+  min-height:57px;
+  margin-bottom:7px;
+  padding:8px 10px;
+  background:#fff;
+  border:1px solid #e6e9ee;
+  border-left:4px solid #aaa;
+  border-radius:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.transaction-card.sale{
+  border-left-color:#4f7cff;
+}
+
+.transaction-card.payment{
+  border-left-color:#34a56f;
+}
+
+.transaction-info{
+  min-width:0;
+}
+
+.transaction-date{
+  font-size:10px;
+  color:#888;
+  margin-bottom:3px;
+}
+
+.transaction-type{
+  font-size:12px;
+  font-weight:800;
+}
+
+.transaction-method{
+  display:inline-block;
+  margin-top:2px;
+  font-size:10px;
+  color:#777;
+}
+
+.transaction-amount{
+  flex-shrink:0;
+  font-size:13px;
+  font-weight:800;
+}
+
+
+/* ================= VIEWER ================= */
+
+.viewer-history{
+  margin-top:14px;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message{
+  min-height:20px;
+  margin-top:9px;
+  text-align:center;
+  font-size:13px;
+  color:#d34c4c;
+}
+
+
+/* ================= LOADING ================= */
+
+.loading{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(255,255,255,.72);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+  font-size:13px;
+  color:#555;
+}
+
+.spinner{
+  width:30px;
+  height:30px;
+  border:3px solid #ddd;
+  border-top-color:#5267e8;
+  border-radius:50%;
+  animation:spin .7s linear infinite;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:420px){
+
+  .admin-content{
+    padding:11px;
+  }
+
+  .admin-buttons{
+    gap:8px;
+  }
+
+  .admin-main-btn{
+    height:48px;
+    padding:7px 8px;
+    gap:5px;
+  }
+
+  .admin-main-icon{
+    font-size:16px;
+  }
+
+  .admin-main-btn strong{
+    font-size:11px;
+  }
+
+  .form-container,
+  .details-container,
+  .viewer-container{
+    padding:13px;
+  }
+
+  .section-title select{
+    min-width:120px;
+  }
+
+}
+
+@media(max-width:340px){
+
+  .admin-buttons{
+    gap:6px;
+  }
+
+  .admin-main-btn{
+    height:46px;
+    padding:6px;
+  }
+
+  .admin-main-icon{
+    font-size:15px;
+  }
+
+  .admin-main-btn strong{
+    font-size:10px;
+  }
+
+}
+
+</style></head><body><!-- =================================================
+     LOGIN
+================================================= --><section id="loginPage" class="page active">  <div class="login-card"><div class="logo-circle">🔐</div>
+
+<h1>Welcome Back</h1>
+
+<p class="subtitle">
+  Login to continue
+</p>
+
+<div class="input-group">
+
+  <label>Username</label>
+
+  <input
+    id="username"
+    type="text"
+    placeholder="Enter username"
+    autocomplete="username"
   >
 
-  <title>Transaction Software</title>
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
-</head>
-
-<body>
+</div>
 
 
-<!-- LOGIN -->
+<div class="input-group">
 
-<section
-  id="loginPage"
-  class="page active"
->
+  <label>Password</label>
 
-  <div class="login-card">
+  <div class="password-box">
 
-    <div class="logo-circle">
-      🔐
-    </div>
-
-    <h1>Welcome Back</h1>
-
-    <p class="subtitle">
-      Login to continue
-    </p>
-
-    <div class="input-group">
-
-      <label>Username</label>
-
-      <input
-        id="username"
-        type="text"
-        placeholder="Enter username"
-        autocomplete="username"
-      >
-
-    </div>
-
-    <div class="input-group">
-
-      <label>Password</label>
-
-      <div class="password-box">
-
-        <input
-          id="password"
-          type="password"
-          placeholder="Enter password"
-          autocomplete="current-password"
-        >
-
-        <button
-          type="button"
-          class="eye-btn"
-          onclick="togglePassword()"
-        >
-          👁️
-        </button>
-
-      </div>
-
-    </div>
+    <input
+      id="password"
+      type="password"
+      placeholder="Enter password"
+      autocomplete="current-password"
+    >
 
     <button
-      class="primary-btn"
-      onclick="loginUser()"
+      type="button"
+      class="eye-btn"
+      onclick="togglePassword()"
     >
-      LOGIN
+      👁️
     </button>
 
-    <div
-      id="loginMessage"
-      class="message"
-    ></div>
+  </div>
+
+</div>
+
+
+<button
+  class="primary-btn"
+  onclick="loginUser()"
+>
+  LOGIN
+</button>
+
+
+<div
+  id="loginMessage"
+  class="message"
+></div>
+
+  </div></section><!-- =================================================
+     ADMIN
+================================================= --><section id="adminPage" class="page">  <div class="app-container"><header class="top-header">
+
+  <div>
+
+    <h2>ADMIN PANEL</h2>
+
+    <span id="adminWelcome">
+      Welcome
+    </span>
 
   </div>
 
-</section>
+  <button
+    class="logout-btn"
+    onclick="logout()"
+  >
+    🚪
+  </button>
+
+</header>
 
 
-<!-- ADMIN -->
-
-<section
-  id="adminPage"
-  class="page"
->
-
-  <div class="app-container">
-
-    <header class="top-header">
-
-      <div>
-
-        <h2>ADMIN PANEL</h2>
-
-        <span id="adminWelcome">
-          Welcome
-        </span>
-
-      </div>
-
-      <button
-        class="logout-btn"
-        onclick="logout()"
-      >
-        🚪
-      </button>
-
-    </header>
+<main class="admin-content">
 
 
-    <main class="home-content">
+  <!-- TWO MAIN BUTTONS -->
 
-      <button
-        class="main-action"
-        onclick="openAddTransaction()"
-      >
+  <div class="admin-buttons">
 
-        <span class="action-icon">
-          ➕
-        </span>
+    <button
+      id="addTransactionBtn"
+      class="admin-main-btn"
+      onclick="openAddTransaction()"
+    >
 
-        <div>
+      <span class="admin-main-icon">
+        ➕
+      </span>
 
-          <strong>
-            Add Transaction
-          </strong>
-
-          <small>
-            Add a new transaction
-          </small>
-
-        </div>
-
-        <span class="arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button
-        class="main-action"
-        onclick="openCheckDetails()"
-      >
-
-        <span class="action-icon">
-          📋
-        </span>
-
-        <div>
-
-          <strong>
-            Check Details
-          </strong>
-
-          <small>
-            View customer details
-          </small>
-
-        </div>
-
-        <span class="arrow">
-          ›
-        </span>
-
-      </button>
-
-    </main>
-
-  </div>
-
-</section>
-
-
-<!-- ADD TRANSACTION -->
-
-<section
-  id="addTransactionPage"
-  class="page"
->
-
-  <div class="app-container">
-
-    <header class="inner-header">
-
-      <button
-        class="back-btn"
-        onclick="showPage('adminPage')"
-      >
-        ‹
-      </button>
-
-      <h2>
+      <strong>
         Add Transaction
-      </h2>
+      </strong>
 
-    </header>
+    </button>
+
+
+    <button
+      id="checkDetailsBtn"
+      class="admin-main-btn"
+      onclick="openCheckDetails()"
+    >
+
+      <span class="admin-main-icon">
+        📋
+      </span>
+
+      <strong>
+        Check Details
+      </strong>
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================================
+       ADD TRANSACTION
+  ========================================== -->
+
+  <section
+    id="addTransactionSection"
+    class="admin-panel-section"
+  >
+
+    <div class="panel-title">
+
+      <h3>
+        Add Transaction
+      </h3>
+
+    </div>
 
 
     <main class="form-container">
@@ -256,9 +782,7 @@
           👤 Name
         </label>
 
-        <select
-          id="transactionName"
-        >
+        <select id="transactionName">
 
           <option value="">
             Select Name
@@ -268,8 +792,6 @@
 
       </div>
 
-
-      <!-- TYPE -->
 
       <div class="type-row">
 
@@ -299,17 +821,13 @@
       >
 
 
-      <!-- ONE DROPDOWN -->
-
       <div class="input-group">
 
         <label id="methodLabel">
           বিক্রয়ের ধরন
         </label>
 
-        <select
-          id="transactionMethod"
-        >
+        <select id="transactionMethod">
 
           <option value="">
             Select
@@ -335,34 +853,25 @@
 
     </main>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- CHECK DETAILS -->
+  <!-- =========================================
+       CHECK DETAILS
+  ========================================== -->
 
-<section
-  id="checkDetailsPage"
-  class="page"
->
+  <section
+    id="checkDetailsSection"
+    class="admin-panel-section"
+  >
 
-  <div class="app-container">
+    <div class="panel-title">
 
-    <header class="inner-header">
-
-      <button
-        class="back-btn"
-        onclick="showPage('adminPage')"
-      >
-        ‹
-      </button>
-
-      <h2>
+      <h3>
         Check Details
-      </h2>
+      </h3>
 
-    </header>
+    </div>
 
 
     <main class="details-container">
@@ -421,7 +930,7 @@
           >
 
             <option value="">
-              Select Month
+              All Months
             </option>
 
           </select>
@@ -468,136 +977,1618 @@
 
     </main>
 
-  </div>
+  </section>
 
-</section>
+</main>
 
+  </div></section><!-- =================================================
+     VIEWER
+================================================= --><section id="viewerPage" class="page">  <div class="app-container"><header class="top-header">
 
-<!-- VIEWER -->
+  <div>
 
-<section
-  id="viewerPage"
-  class="page"
->
+    <h2>
+      VIEWER PANEL
+    </h2>
 
-  <div class="app-container">
-
-    <header class="top-header">
-
-      <div>
-
-        <h2>
-          VIEWER PANEL
-        </h2>
-
-        <span id="viewerWelcome">
-          Welcome
-        </span>
-
-      </div>
-
-      <button
-        class="logout-btn"
-        onclick="logout()"
-      >
-        🚪
-      </button>
-
-    </header>
-
-
-    <main class="viewer-container">
-
-
-      <div class="balance-card">
-
-        <span>
-          CURRENT BALANCE
-        </span>
-
-        <strong id="viewerBalance">
-          0 Tk
-        </strong>
-
-      </div>
-
-
-      <div class="input-group">
-
-        <label>
-          📊 Sales
-        </label>
-
-        <select
-          id="viewerMonth"
-          onchange="loadViewerDetails()"
-        >
-
-          <option value="">
-            Select Month
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div class="sales-card">
-
-        <span>
-          TOTAL SALES
-        </span>
-
-        <strong id="viewerMonthlySales">
-          0 Tk
-        </strong>
-
-      </div>
-
-
-      <div class="viewer-history">
-
-        <h3>
-          TRANSACTIONS
-        </h3>
-
-        <div
-          id="viewerTransactionList"
-          class="transaction-list"
-        ></div>
-
-      </div>
-
-
-      <div
-        id="viewerMessage"
-        class="message"
-      ></div>
-
-    </main>
+    <span id="viewerWelcome">
+      Welcome
+    </span>
 
   </div>
 
-</section>
+  <button
+    class="logout-btn"
+    onclick="logout()"
+  >
+    🚪
+  </button>
+
+</header>
 
 
-<!-- LOADING -->
+<main class="viewer-container">
 
-<div
+
+  <div class="balance-card">
+
+    <span>
+      CURRENT BALANCE
+    </span>
+
+    <strong id="viewerBalance">
+      0 Tk
+    </strong>
+
+  </div>
+
+
+  <div class="input-group">
+
+    <label>
+      📊 Sales
+    </label>
+
+    <select
+      id="viewerMonth"
+      onchange="loadViewerDetails()"
+    >
+
+      <option value="">
+        All Months
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div class="sales-card">
+
+    <span>
+      TOTAL SALES
+    </span>
+
+    <strong id="viewerMonthlySales">
+      0 Tk
+    </strong>
+
+  </div>
+
+
+  <div class="viewer-history">
+
+    <h3>
+      TRANSACTIONS
+    </h3>
+
+    <div
+      id="viewerTransactionList"
+      class="transaction-list"
+    ></div>
+
+  </div>
+
+
+  <div
+    id="viewerMessage"
+    class="message"
+  ></div>
+
+</main>
+
+  </div></section><!-- =================================================
+     LOADING
+================================================= --><div
   id="loading"
   class="loading hidden"
->
-
-  <div class="spinner"></div>
-
-  <span>
+>  <div class="spinner"></div>  <span>
     Loading...
-  </span>
+  </span></div><script>
 
-</div>
+/* =====================================================
+   APPS SCRIPT URL
+===================================================== */
+
+const API_URL =
+  'https://script.google.com/macros/s/AKfycbwjo8vQO3GmnVKTJLJKmoAgHKQequvOtzuO9ySlLSqCAABvGuPvb3X_PeDDMSVu6Fb0Tg/exec';
 
 
-<script src="app.js"></script>
+let currentUser = null;
 
-</body>
-</html>
+let salesOptions = [];
+
+let paymentOptions = [];
+
+
+/* =====================================================
+   API
+===================================================== */
+
+function api(action, params = {}) {
+
+  return new Promise(function(resolve, reject) {
+
+    const callbackName =
+      'apiCallback_' +
+      Date.now() +
+      '_' +
+      Math.floor(Math.random() * 100000);
+
+    const script =
+      document.createElement('script');
+
+    const query =
+      new URLSearchParams();
+
+    query.set('action', action);
+
+    query.set('callback', callbackName);
+
+
+    Object.keys(params).forEach(function(key) {
+
+      if (
+        params[key] !== undefined &&
+        params[key] !== null
+      ) {
+
+        query.set(
+          key,
+          params[key]
+        );
+
+      }
+
+    });
+
+
+    let finished = false;
+
+
+    const timeout =
+      setTimeout(function() {
+
+        if (finished) return;
+
+        finished = true;
+
+        cleanup();
+
+        reject(
+          new Error(
+            'Server request timed out.'
+          )
+        );
+
+      }, 15000);
+
+
+    function cleanup() {
+
+      clearTimeout(timeout);
+
+      if (script.parentNode) {
+
+        script.parentNode.removeChild(script);
+
+      }
+
+      try {
+
+        delete window[callbackName];
+
+      } catch (e) {}
+
+    }
+
+
+    window[callbackName] =
+      function(result) {
+
+        if (finished) return;
+
+        finished = true;
+
+        cleanup();
+
+        resolve(result);
+
+      };
+
+
+    script.onerror =
+      function() {
+
+        if (finished) return;
+
+        finished = true;
+
+        cleanup();
+
+        reject(
+          new Error(
+            'Unable to connect to server.'
+          )
+        );
+
+      };
+
+
+    script.src =
+      API_URL +
+      '?' +
+      query.toString();
+
+
+    document.head.appendChild(script);
+
+  });
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+function showPage(pageId) {
+
+  document
+    .querySelectorAll('.page')
+    .forEach(function(page) {
+
+      page.classList.remove('active');
+
+    });
+
+
+  const page =
+    document.getElementById(pageId);
+
+
+  if (page) {
+
+    page.classList.add('active');
+
+  }
+
+}
+
+
+/* =====================================================
+   ADMIN SECTION
+===================================================== */
+
+function showAdminSection(section) {
+
+  const addSection =
+    document.getElementById(
+      'addTransactionSection'
+    );
+
+  const detailsSection =
+    document.getElementById(
+      'checkDetailsSection'
+    );
+
+
+  addSection.classList.remove('active');
+
+  detailsSection.classList.remove('active');
+
+
+  if (section === 'add') {
+
+    addSection.classList.add('active');
+
+  }
+
+
+  if (section === 'details') {
+
+    detailsSection.classList.add('active');
+
+  }
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+function showLoading() {
+
+  document
+    .getElementById('loading')
+    .classList.remove('hidden');
+
+}
+
+
+function hideLoading() {
+
+  document
+    .getElementById('loading')
+    .classList.add('hidden');
+
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+function togglePassword() {
+
+  const input =
+    document.getElementById('password');
+
+
+  input.type =
+    input.type === 'password'
+      ? 'text'
+      : 'password';
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+async function loginUser() {
+
+  const username =
+    document
+      .getElementById('username')
+      .value
+      .trim();
+
+
+  const password =
+    document
+      .getElementById('password')
+      .value
+      .trim();
+
+
+  const message =
+    document.getElementById('loginMessage');
+
+
+  message.textContent = '';
+
+
+  if (!username || !password) {
+
+    message.textContent =
+      'Username and password required.';
+
+    return;
+
+  }
+
+
+  showLoading();
+
+
+  try {
+
+    const result =
+      await api('login', {
+        username: username,
+        password: password
+      });
+
+
+    hideLoading();
+
+
+    if (!result || !result.success) {
+
+      message.textContent =
+        result && result.message
+          ? result.message
+          : 'Login failed.';
+
+      return;
+
+    }
+
+
+    currentUser = result;
+
+
+    localStorage.setItem(
+      'transactionUser',
+      JSON.stringify(currentUser)
+    );
+
+
+    if (
+      String(result.role)
+        .toLowerCase() === 'admin'
+    ) {
+
+      document
+        .getElementById('adminWelcome')
+        .textContent =
+        'Welcome, ' +
+        (result.name || 'Admin');
+
+
+      showPage('adminPage');
+
+      showAdminSection('add');
+
+      return;
+
+    }
+
+
+    if (
+      String(result.role)
+        .toLowerCase() === 'viewer'
+    ) {
+
+      document
+        .getElementById('viewerWelcome')
+        .textContent =
+        'Welcome, ' +
+        result.name;
+
+
+      setupMonthSelect('viewerMonth');
+
+      showPage('viewerPage');
+
+      loadViewerDetails();
+
+      return;
+
+    }
+
+
+    message.textContent =
+      'Unknown account type.';
+
+  }
+
+  catch (error) {
+
+    hideLoading();
+
+    message.textContent =
+      error.message ||
+      'Something went wrong.';
+
+  }
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function logout() {
+
+  if (currentUser) {
+
+    try {
+
+      await api('logout', {
+        token: currentUser.token
+      });
+
+    } catch (e) {}
+
+  }
+
+
+  currentUser = null;
+
+
+  localStorage.removeItem(
+    'transactionUser'
+  );
+
+
+  document.getElementById('username').value = '';
+
+  document.getElementById('password').value = '';
+
+
+  showPage('loginPage');
+
+}
+
+
+/* =====================================================
+   ADD TRANSACTION
+===================================================== */
+
+async function openAddTransaction() {
+
+  showAdminSection('add');
+
+  setToday();
+
+
+  const nameSelect =
+    document.getElementById(
+      'transactionName'
+    );
+
+
+  if (
+    nameSelect.options.length <= 1
+  ) {
+
+    await loadNames();
+
+  }
+
+
+  if (
+    salesOptions.length === 0 &&
+    paymentOptions.length === 0
+  ) {
+
+    await loadOptions();
+
+  }
+
+
+  selectType('বিক্রয়');
+
+}
+
+
+/* =====================================================
+   CHECK DETAILS
+===================================================== */
+
+async function openCheckDetails() {
+
+  showAdminSection('details');
+
+
+  const select =
+    document.getElementById(
+      'detailsName'
+    );
+
+
+  if (
+    select.options.length <= 1
+  ) {
+
+    await loadDetailNames();
+
+  }
+
+
+  setupMonthSelect('monthSelect');
+
+}
+
+
+/* =====================================================
+   TODAY
+===================================================== */
+
+function setToday() {
+
+  const input =
+    document.getElementById(
+      'transactionDate'
+    );
+
+
+  const now =
+    new Date();
+
+
+  const year =
+    now.getFullYear();
+
+
+  const month =
+    String(
+      now.getMonth() + 1
+    ).padStart(2, '0');
+
+
+  const day =
+    String(
+      now.getDate()
+    ).padStart(2, '0');
+
+
+  input.value =
+    year +
+    '-' +
+    month +
+    '-' +
+    day;
+
+}
+
+
+/* =====================================================
+   LOAD NAMES
+===================================================== */
+
+async function loadNames() {
+
+  try {
+
+    const result =
+      await api('getNames', {
+        token: currentUser.token
+      });
+
+
+    if (!result.success) return;
+
+
+    const select =
+      document.getElementById(
+        'transactionName'
+      );
+
+
+    select.innerHTML =
+      '<option value="">Select Name</option>';
+
+
+    result.names.forEach(function(name) {
+
+      const option =
+        document.createElement('option');
+
+
+      option.value = name;
+
+      option.textContent = name;
+
+
+      select.appendChild(option);
+
+    });
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+}
+
+
+/* =====================================================
+   LOAD DETAIL NAMES
+===================================================== */
+
+async function loadDetailNames() {
+
+  try {
+
+    const result =
+      await api('getNames', {
+        token: currentUser.token
+      });
+
+
+    if (!result.success) return;
+
+
+    const select =
+      document.getElementById(
+        'detailsName'
+      );
+
+
+    select.innerHTML =
+      '<option value="">Select Name</option>';
+
+
+    result.names.forEach(function(name) {
+
+      const option =
+        document.createElement('option');
+
+
+      option.value = name;
+
+      option.textContent = name;
+
+
+      select.appendChild(option);
+
+    });
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+}
+
+
+/* =====================================================
+   LOAD OPTIONS
+===================================================== */
+
+async function loadOptions() {
+
+  try {
+
+    const result =
+      await api('getOptions', {
+        token: currentUser.token
+      });
+
+
+    if (!result.success) return;
+
+
+    salesOptions =
+      result.sales || [];
+
+
+    paymentOptions =
+      result.payments || [];
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+}
+
+
+/* =====================================================
+   TYPE SELECT
+===================================================== */
+
+function selectType(type) {
+
+  document
+    .getElementById('transactionType')
+    .value = type;
+
+
+  document
+    .getElementById('saleBtn')
+    .classList.remove('active');
+
+
+  document
+    .getElementById('paymentBtn')
+    .classList.remove('active');
+
+
+  const select =
+    document.getElementById(
+      'transactionMethod'
+    );
+
+
+  const label =
+    document.getElementById(
+      'methodLabel'
+    );
+
+
+  select.innerHTML =
+    '<option value="">Select</option>';
+
+
+  let options = [];
+
+
+  if (type === 'বিক্রয়') {
+
+    document
+      .getElementById('saleBtn')
+      .classList.add('active');
+
+
+    label.textContent =
+      'বিক্রয়ের ধরন';
+
+
+    options =
+      salesOptions;
+
+  }
+
+  else {
+
+    document
+      .getElementById('paymentBtn')
+      .classList.add('active');
+
+
+    label.textContent =
+      'পেমেন্টের ধরন';
+
+
+    options =
+      paymentOptions;
+
+  }
+
+
+  options.forEach(function(item) {
+
+    const option =
+      document.createElement('option');
+
+
+    option.value = item;
+
+    option.textContent = item;
+
+
+    select.appendChild(option);
+
+  });
+
+}
+
+
+/* =====================================================
+   SAVE TRANSACTION
+===================================================== */
+
+async function saveTransaction() {
+
+  const date =
+    document
+      .getElementById('transactionDate')
+      .value;
+
+
+  const amount =
+    document
+      .getElementById('transactionAmount')
+      .value;
+
+
+  const name =
+    document
+      .getElementById('transactionName')
+      .value;
+
+
+  const type =
+    document
+      .getElementById('transactionType')
+      .value;
+
+
+  const method =
+    document
+      .getElementById('transactionMethod')
+      .value;
+
+
+  const message =
+    document.getElementById(
+      'transactionMessage'
+    );
+
+
+  message.textContent = '';
+
+
+  if (!date) {
+
+    message.textContent =
+      'Please select a date.';
+
+    return;
+
+  }
+
+
+  if (!amount || Number(amount) <= 0) {
+
+    message.textContent =
+      'Please enter a valid amount.';
+
+    return;
+
+  }
+
+
+  if (!name) {
+
+    message.textContent =
+      'Please select a name.';
+
+    return;
+
+  }
+
+
+  if (!method) {
+
+    message.textContent =
+      'Please select an option.';
+
+    return;
+
+  }
+
+
+  showLoading();
+
+
+  try {
+
+    const result =
+      await api(
+        'addTransaction',
+        {
+          token: currentUser.token,
+          date: date,
+          amount: amount,
+          name: name,
+          type: type,
+          method: method
+        }
+      );
+
+
+    hideLoading();
+
+
+    message.textContent =
+      result.message || '';
+
+
+    if (result.success) {
+
+      document
+        .getElementById(
+          'transactionAmount'
+        )
+        .value = '';
+
+
+      document
+        .getElementById(
+          'transactionName'
+        )
+        .value = '';
+
+
+      document
+        .getElementById(
+          'transactionMethod'
+        )
+        .value = '';
+
+    }
+
+  }
+
+  catch (error) {
+
+    hideLoading();
+
+    message.textContent =
+      error.message ||
+      'Failed to save transaction.';
+
+  }
+
+}
+
+
+/* =====================================================
+   MONTH SELECT
+===================================================== */
+
+function setupMonthSelect(elementId) {
+
+  const select =
+    document.getElementById(elementId);
+
+
+  if (!select) return;
+
+
+  select.innerHTML =
+    '<option value="">All Months</option>';
+
+
+  const now =
+    new Date();
+
+
+  const currentYear =
+    now.getFullYear();
+
+
+  const currentMonth =
+    now.getMonth();
+
+
+  for (let i = 0; i < 24; i++) {
+
+    const date =
+      new Date(
+        currentYear,
+        currentMonth - i,
+        1
+      );
+
+
+    const year =
+      date.getFullYear();
+
+
+    const month =
+      date.getMonth() + 1;
+
+
+    const monthName =
+      date.toLocaleString(
+        'en-US',
+        {
+          month:'long'
+        }
+      );
+
+
+    const option =
+      document.createElement('option');
+
+
+    option.value =
+      year + '-' + month;
+
+
+    option.textContent =
+      monthName + ' ' + year;
+
+
+    select.appendChild(option);
+
+  }
+
+}
+
+
+/* =====================================================
+   SELECTED MONTH
+===================================================== */
+
+function getSelectedMonth(elementId) {
+
+  const value =
+    document
+      .getElementById(elementId)
+      .value;
+
+
+  if (!value) {
+
+    return {
+      year:'',
+      month:''
+    };
+
+  }
+
+
+  const parts =
+    value.split('-');
+
+
+  return {
+    year:Number(parts[0]),
+    month:Number(parts[1])
+  };
+
+}
+
+
+/* =====================================================
+   CUSTOMER DETAILS
+===================================================== */
+
+async function loadCustomerDetails() {
+
+  const name =
+    document
+      .getElementById('detailsName')
+      .value;
+
+
+  if (!name) {
+
+    document
+      .getElementById('balanceCard')
+      .classList.add('hidden');
+
+
+    document
+      .getElementById('monthlySection')
+      .classList.add('hidden');
+
+
+    document
+      .getElementById('transactionsSection')
+      .classList.add('hidden');
+
+
+    return;
+
+  }
+
+
+  const selected =
+    getSelectedMonth('monthSelect');
+
+
+  showLoading();
+
+
+  try {
+
+    const result =
+      await api(
+        'customerDetails',
+        {
+          token:currentUser.token,
+          name:name,
+          year:selected.year,
+          month:selected.month
+        }
+      );
+
+
+    hideLoading();
+
+
+    if (!result.success) {
+
+      document
+        .getElementById('detailsMessage')
+        .textContent =
+        result.message || '';
+
+      return;
+
+    }
+
+
+    document
+      .getElementById('currentBalance')
+      .textContent =
+      formatAmount(
+        result.currentBalance
+      );
+
+
+    document
+      .getElementById('balanceCard')
+      .classList.remove('hidden');
+
+
+    document
+      .getElementById('monthlySales')
+      .textContent =
+      formatAmount(
+        result.totalSales
+      );
+
+
+    document
+      .getElementById('monthlySection')
+      .classList.remove('hidden');
+
+
+    renderTransactions(
+      result.transactions,
+      'transactionList'
+    );
+
+
+    document
+      .getElementById('transactionsSection')
+      .classList.remove('hidden');
+
+  }
+
+  catch (error) {
+
+    hideLoading();
+
+    document
+      .getElementById('detailsMessage')
+      .textContent =
+      error.message ||
+      'Failed to load details.';
+
+  }
+
+}
+
+
+/* =====================================================
+   VIEWER DETAILS
+===================================================== */
+
+async function loadViewerDetails() {
+
+  if (!currentUser) return;
+
+
+  const selected =
+    getSelectedMonth('viewerMonth');
+
+
+  showLoading();
+
+
+  try {
+
+    const result =
+      await api(
+        'viewerDetails',
+        {
+          token:currentUser.token,
+          year:selected.year,
+          month:selected.month
+        }
+      );
+
+
+    hideLoading();
+
+
+    if (!result.success) {
+
+      document
+        .getElementById('viewerMessage')
+        .textContent =
+        result.message || '';
+
+      return;
+
+    }
+
+
+    document
+      .getElementById('viewerBalance')
+      .textContent =
+      formatAmount(
+        result.currentBalance
+      );
+
+
+    document
+      .getElementById('viewerMonthlySales')
+      .textContent =
+      formatAmount(
+        result.totalSales
+      );
+
+
+    renderTransactions(
+      result.transactions,
+      'viewerTransactionList'
+    );
+
+  }
+
+  catch (error) {
+
+    hideLoading();
+
+    document
+      .getElementById('viewerMessage')
+      .textContent =
+      error.message ||
+      'Failed to load details.';
+
+  }
+
+}
+
+
+/* =====================================================
+   RENDER TRANSACTIONS
+===================================================== */
+
+function renderTransactions(
+  transactions,
+  elementId
+) {
+
+  const container =
+    document.getElementById(elementId);
+
+
+  container.innerHTML = '';
+
+
+  if (
+    !transactions ||
+    transactions.length === 0
+  ) {
+
+    container.innerHTML =
+      '<div class="message">No transactions found.</div>';
+
+    return;
+
+  }
+
+
+  const fragment =
+    document.createDocumentFragment();
+
+
+  transactions.forEach(function(item) {
+
+    const card =
+      document.createElement('div');
+
+
+    card.className =
+      'transaction-card ' +
+      (
+        item.type === 'বিক্রয়'
+          ? 'sale'
+          : 'payment'
+      );
+
+
+    const info =
+      document.createElement('div');
+
+
+    info.className =
+      'transaction-info';
+
+
+    const date =
+      document.createElement('div');
+
+
+    date.className =
+      'transaction-date';
+
+
+    date.textContent =
+      item.date || '';
+
+
+    const type =
+      document.createElement('div');
+
+
+    type.className =
+      'transaction-type';
+
+
+    type.textContent =
+      item.type === 'বিক্রয়'
+        ? '🛒 বিক্রয়'
+        : '💳 পেমেন্ট';
+
+
+    const method =
+      document.createElement('div');
+
+
+    method.className =
+      'transaction-method';
+
+
+    method.textContent =
+      item.method
+        ? '• ' + item.method
+        : '';
+
+
+    info.appendChild(date);
+
+    info.appendChild(type);
+
+
+    if (item.method) {
+
+      info.appendChild(method);
+
+    }
+
+
+    const amount =
+      document.createElement('div');
+
+
+    amount.className =
+      'transaction-amount';
+
+
+    amount.textContent =
+      formatAmount(item.amount);
+
+
+    card.appendChild(info);
+
+    card.appendChild(amount);
+
+
+    fragment.appendChild(card);
+
+  });
+
+
+  container.appendChild(fragment);
+
+}
+
+
+/* =====================================================
+   AMOUNT
+===================================================== */
+
+function formatAmount(amount) {
+
+  const number =
+    Number(amount) || 0;
+
+
+  return (
+    number.toLocaleString('en-US') +
+    ' Tk'
+  );
+
+}
+
+
+/* =====================================================
+   RESTORE SESSION
+===================================================== */
+
+function restoreSession() {
+
+  try {
+
+    const saved =
+      localStorage.getItem(
+        'transactionUser'
+      );
+
+
+    if (!saved) {
+
+      showPage('loginPage');
+
+      return;
+
+    }
+
+
+    const user =
+      JSON.parse(saved);
+
+
+    if (!user || !user.token) {
+
+      localStorage.removeItem(
+        'transactionUser'
+      );
+
+      showPage('loginPage');
+
+      return;
+
+    }
+
+
+    currentUser = user;
+
+
+    if (
+      String(user.role)
+        .toLowerCase() === 'admin'
+    ) {
+
+      document
+        .getElementById('adminWelcome')
+        .textContent =
+        'Welcome, ' +
+        (user.name || 'Admin');
+
+
+      showPage('adminPage');
+
+      showAdminSection('add');
+
+      return;
+
+    }
+
+
+    if (
+      String(user.role)
+        .toLowerCase() === 'viewer'
+    ) {
+
+      document
+        .getElementById('viewerWelcome')
+        .textContent =
+        'Welcome, ' +
+        user.name;
+
+
+      setupMonthSelect('viewerMonth');
+
+      showPage('viewerPage');
+
+      loadViewerDetails();
+
+      return;
+
+    }
+
+
+    logout();
+
+  }
+
+  catch (error) {
+
+    localStorage.removeItem(
+      'transactionUser'
+    );
+
+    showPage('loginPage');
+
+  }
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function() {
+
+    setToday();
+
+    setupMonthSelect('monthSelect');
+
+    setupMonthSelect('viewerMonth');
+
+    restoreSession();
+
+  }
+);
+
+</script></body>
+  </html>
