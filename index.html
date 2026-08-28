@@ -1,14 +1,28 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="bn">
 
-<title>Transaction Software</title><style>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Transaction Software</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 *{
   box-sizing:border-box;
   -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+html,
+body{
   margin:0;
   padding:0;
   width:100%;
@@ -18,7 +32,9 @@ html,body{
   color:#202124;
 }
 
-button,input,select{
+button,
+input,
+select{
   font:inherit;
 }
 
@@ -31,7 +47,9 @@ button{
 }
 
 
-/* ================= PAGE ================= */
+/* =====================================================
+   PAGE
+===================================================== */
 
 .page{
   display:none;
@@ -43,7 +61,9 @@ button{
 }
 
 
-/* ================= LOGIN ================= */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 #loginPage{
   min-height:100vh;
@@ -93,7 +113,9 @@ button{
 }
 
 
-/* ================= APP ================= */
+/* =====================================================
+   APP
+===================================================== */
 
 .app-container{
   width:100%;
@@ -104,15 +126,19 @@ button{
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .top-header{
   min-height:72px;
   padding:15px 18px;
   background:#fff;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   border-bottom:1px solid #e9edf3;
 }
 
@@ -139,14 +165,18 @@ button{
 }
 
 
-/* ================= ADMIN HOME ================= */
+/* =====================================================
+   ADMIN
+===================================================== */
 
 .admin-content{
   padding:14px;
 }
 
 
-/* ================= TWO MAIN BUTTONS ================= */
+/* =====================================================
+   MAIN BUTTONS
+===================================================== */
 
 .admin-buttons{
   display:flex;
@@ -159,38 +189,49 @@ button{
   flex:1;
   min-width:0;
   height:52px;
+
   padding:8px 10px;
+
   border-radius:12px;
+
   background:#fff;
   border:1px solid #e5e9ef;
+
   box-shadow:0 3px 12px rgba(0,0,0,.04);
+
   cursor:pointer;
 
   display:flex;
-  flex-direction:row;
   align-items:center;
   justify-content:center;
+
   gap:6px;
 
   text-align:center;
-  transition:.12s;
+
+  transition:
+    background .12s,
+    color .12s,
+    transform .12s;
 }
 
 .admin-main-btn:active{
   transform:scale(.97);
-  background:#f8f9fb;
+}
+
+.admin-main-btn.active{
+  background:#111;
+  border-color:#111;
+  color:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
 }
 
 .admin-main-icon{
-  width:auto;
-  height:auto;
-  border-radius:0;
   display:flex;
   align-items:center;
   justify-content:center;
   background:transparent;
   font-size:17px;
-  margin:0;
   flex-shrink:0;
 }
 
@@ -205,13 +246,18 @@ button{
 }
 
 
-/* ================= ADMIN CONTENT ================= */
+/* =====================================================
+   ADMIN SECTIONS
+===================================================== */
 
 .admin-panel-section{
   display:none;
+
   background:#fff;
+
   border:1px solid #e6e9ee;
   border-radius:15px;
+
   overflow:hidden;
 }
 
@@ -220,21 +266,13 @@ button{
 }
 
 .panel-title{
-  min-height:52px;
-  padding:0 15px;
-  display:flex;
-  align-items:center;
-  border-bottom:1px solid #e9edf3;
-  background:#fff;
-}
-
-.panel-title h3{
-  margin:0;
-  font-size:16px;
+  display:none;
 }
 
 
-/* ================= FORMS ================= */
+/* =====================================================
+   FORMS
+===================================================== */
 
 .form-container,
 .details-container,
@@ -258,23 +296,33 @@ input,
 select{
   width:100%;
   height:45px;
+
   padding:0 12px;
+
   border:1px solid #dfe3e8;
   border-radius:11px;
+
   outline:none;
+
   background:#fff;
   color:#222;
+
   font-size:14px;
 }
 
 input:focus,
 select:focus{
   border-color:#7185ff;
-  box-shadow:0 0 0 3px rgba(113,133,255,.10);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(113,133,255,.10);
 }
 
 
-/* ================= PASSWORD ================= */
+/* =====================================================
+   PASSWORD
+===================================================== */
 
 .password-box{
   position:relative;
@@ -288,23 +336,32 @@ select:focus{
   position:absolute;
   right:5px;
   top:4px;
+
   width:36px;
   height:36px;
+
   background:transparent;
   cursor:pointer;
 }
 
 
-/* ================= PRIMARY ================= */
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
 
 .primary-btn{
   width:100%;
   height:46px;
+
   border-radius:11px;
+
   background:#5267e8;
   color:#fff;
+
   font-weight:800;
+
   cursor:pointer;
+
   margin-top:4px;
 }
 
@@ -313,7 +370,9 @@ select:focus{
 }
 
 
-/* ================= TYPE ================= */
+/* =====================================================
+   TYPE BUTTONS
+===================================================== */
 
 .type-row{
   display:flex;
@@ -324,102 +383,194 @@ select:focus{
 .type-btn{
   flex:1;
   height:44px;
+
   border-radius:11px;
+
   background:#fff;
+
   border:1px solid #dfe3e8;
+
   color:#555;
+
   font-weight:700;
+
   cursor:pointer;
+
+  transition:
+    background .12s,
+    color .12s,
+    border-color .12s;
 }
 
 .type-btn.active{
-  background:#5267e8;
-  border-color:#5267e8;
+  background:#111;
+  border-color:#111;
   color:#fff;
 }
 
 
-/* ================= BALANCE ================= */
+/* =====================================================
+   BALANCE + TOTAL SALES
+===================================================== */
 
 .balance-card{
-  padding:17px;
-  border-radius:14px;
+  padding:8px 11px;
+
+  border-radius:9px;
+
   background:#fff;
+
   border:1px solid #e7eaf0;
-  box-shadow:0 3px 12px rgba(0,0,0,.04);
-  margin-bottom:14px;
-}
 
-.balance-card span,
-.sales-card span{
-  display:block;
-  font-size:11px;
-  font-weight:700;
-  color:#777;
-  letter-spacing:.4px;
-}
+  box-shadow:0 2px 7px rgba(0,0,0,.035);
 
-.balance-card strong{
-  display:block;
-  margin-top:6px;
-  font-size:24px;
-}
+  margin-bottom:9px;
 
-
-/* ================= SALES ================= */
-
-#monthlySection{
-  margin-bottom:14px;
-}
-
-.section-title{
   display:flex;
   align-items:center;
+  justify-content:space-between;
+
   gap:10px;
+}
+
+.balance-left{
+  min-width:0;
+}
+
+.balance-left span,
+.balance-sales span{
+  display:block;
+
+  font-size:9px;
+
+  font-weight:700;
+
+  color:#777;
+
+  letter-spacing:.2px;
+}
+
+.balance-left strong{
+  display:block;
+
+  margin-top:1px;
+
+  font-size:17px;
+
+  line-height:1.15;
+}
+
+.balance-sales{
+  text-align:right;
+  flex-shrink:0;
+}
+
+.balance-sales strong{
+  display:block;
+
+  margin-top:1px;
+
+  font-size:16px;
+
+  line-height:1.15;
+}
+
+
+/* =====================================================
+   YEAR + MONTH FILTER
+===================================================== */
+
+.sales-row{
+  display:flex;
+
+  align-items:center;
+  justify-content:flex-end;
+
+  gap:8px;
+
+  padding:7px 9px;
+
+  background:#fff;
+
+  border:1px solid #e7eaf0;
+
+  border-radius:9px;
+
   margin-bottom:9px;
 }
 
-.section-title span{
-  flex:1;
-  font-size:14px;
+.sales-filter{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:5px;
+
+  width:100%;
+}
+
+.sales-filter select{
+  width:auto;
+
+  height:30px;
+
+  min-width:75px;
+
+  padding:0 7px;
+
+  border-radius:7px;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  border:1px solid #dfe3e8;
+
+  background:#fff;
+}
+
+.sales-filter .year-select{
+  min-width:68px;
+}
+
+.sales-filter .month-select{
+  min-width:95px;
+}
+
+
+/* =====================================================
+   TRANSACTIONS
+===================================================== */
+
+.transactions-header{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  margin:9px 0 8px;
+}
+
+.transactions-header h3{
+  margin:0;
+
+  font-size:13px;
   font-weight:800;
 }
 
-.section-title select{
-  width:auto;
-  min-width:140px;
-  height:39px;
-}
-
-.sales-card{
-  padding:15px 17px;
-  background:#fff;
-  border:1px solid #e7eaf0;
-  border-radius:13px;
-  margin-bottom:14px;
-}
-
-.sales-card strong{
-  display:block;
-  margin-top:5px;
-  font-size:21px;
-}
-
-
-/* ================= TRANSACTIONS ================= */
-
-#transactionsSection h3,
-.viewer-history h3{
-  margin:5px 0 9px;
-  font-size:14px;
-}
-
 .transaction-list{
-  max-height:calc(100vh - 350px);
-  min-height:150px;
+  max-height:calc(100vh - 330px);
+
+  min-height:120px;
+
   overflow-y:auto;
+
   padding-right:2px;
+
   -webkit-overflow-scrolling:touch;
+
+  overscroll-behavior:contain;
 }
 
 .transaction-list::-webkit-scrollbar{
@@ -431,18 +582,32 @@ select:focus{
   border-radius:10px;
 }
 
+
+/* =====================================================
+   TRANSACTION CARD
+===================================================== */
+
 .transaction-card{
   min-height:57px;
+
   margin-bottom:7px;
+
   padding:8px 10px;
+
   background:#fff;
+
   border:1px solid #e6e9ee;
+
   border-left:4px solid #aaa;
+
   border-radius:10px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:10px;
 }
 
@@ -471,60 +636,99 @@ select:focus{
 
 .transaction-method{
   display:inline-block;
+
   margin-top:2px;
+
   font-size:10px;
+
   color:#777;
 }
 
 .transaction-amount{
   flex-shrink:0;
+
+  font-size:13px;
+
+  font-weight:800;
+}
+
+
+/* =====================================================
+   VIEWER
+===================================================== */
+
+.viewer-history{
+  margin-top:12px;
+}
+
+.viewer-history h3{
+  margin:0 0 8px;
+
   font-size:13px;
   font-weight:800;
 }
 
 
-/* ================= VIEWER ================= */
-
-.viewer-history{
-  margin-top:14px;
-}
-
-
-/* ================= MESSAGE ================= */
+/* =====================================================
+   MESSAGE
+===================================================== */
 
 .message{
   min-height:20px;
+
   margin-top:9px;
+
   text-align:center;
+
   font-size:13px;
+
   color:#d34c4c;
 }
 
+.message.success{
+  color:#159447;
+  font-weight:700;
+}
 
-/* ================= LOADING ================= */
+
+/* =====================================================
+   LOADING
+===================================================== */
 
 .loading{
   position:fixed;
+
   inset:0;
+
   z-index:9999;
+
   background:rgba(255,255,255,.72);
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   gap:10px;
+
   font-size:13px;
+
   color:#555;
 }
 
 .spinner{
   width:30px;
   height:30px;
+
   border:3px solid #ddd;
+
   border-top-color:#5267e8;
+
   border-radius:50%;
+
   animation:spin .7s linear infinite;
 }
 
@@ -535,7 +739,9 @@ select:focus{
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:420px){
 
@@ -567,11 +773,25 @@ select:focus{
     padding:13px;
   }
 
-  .section-title select{
-    min-width:120px;
+  .sales-filter select{
+    height:29px;
+    font-size:10px;
+  }
+
+  .sales-filter .year-select{
+    min-width:64px;
+  }
+
+  .sales-filter .month-select{
+    min-width:88px;
+  }
+
+  .transaction-list{
+    max-height:calc(100vh - 300px);
   }
 
 }
+
 
 @media(max-width:340px){
 
@@ -592,359 +812,499 @@ select:focus{
     font-size:10px;
   }
 
+  .sales-filter .year-select{
+    min-width:60px;
+  }
+
+  .sales-filter .month-select{
+    min-width:80px;
+  }
+
 }
 
-</style></head><body><!-- =================================================
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
      LOGIN
-================================================= --><section id="loginPage" class="page active">  <div class="login-card"><div class="logo-circle">🔐</div>
+===================================================== -->
 
-<h1>Welcome Back</h1>
+<section id="loginPage" class="page active">
 
-<p class="subtitle">
-  Login to continue
-</p>
+  <div class="login-card">
 
-<div class="input-group">
+    <div class="logo-circle">
+      🔐
+    </div>
 
-  <label>Username</label>
+    <h1>
+      Welcome Back
+    </h1>
 
-  <input
-    id="username"
-    type="text"
-    placeholder="Enter username"
-    autocomplete="username"
-  >
+    <p class="subtitle">
+      Login to continue
+    </p>
 
-</div>
+    <div class="input-group">
 
+      <label>
+        Username
+      </label>
 
-<div class="input-group">
-
-  <label>Password</label>
-
-  <div class="password-box">
-
-    <input
-      id="password"
-      type="password"
-      placeholder="Enter password"
-      autocomplete="current-password"
-    >
-
-    <button
-      type="button"
-      class="eye-btn"
-      onclick="togglePassword()"
-    >
-      👁️
-    </button>
-
-  </div>
-
-</div>
-
-
-<button
-  class="primary-btn"
-  onclick="loginUser()"
->
-  LOGIN
-</button>
-
-
-<div
-  id="loginMessage"
-  class="message"
-></div>
-
-  </div></section><!-- =================================================
-     ADMIN
-================================================= --><section id="adminPage" class="page">  <div class="app-container"><header class="top-header">
-
-  <div>
-
-    <h2>ADMIN PANEL</h2>
-
-    <span id="adminWelcome">
-      Welcome
-    </span>
-
-  </div>
-
-  <button
-    class="logout-btn"
-    onclick="logout()"
-  >
-    🚪
-  </button>
-
-</header>
-
-
-<main class="admin-content">
-
-
-  <!-- TWO MAIN BUTTONS -->
-
-  <div class="admin-buttons">
-
-    <button
-      id="addTransactionBtn"
-      class="admin-main-btn"
-      onclick="openAddTransaction()"
-    >
-
-      <span class="admin-main-icon">
-        ➕
-      </span>
-
-      <strong>
-        Add Transaction
-      </strong>
-
-    </button>
-
-
-    <button
-      id="checkDetailsBtn"
-      class="admin-main-btn"
-      onclick="openCheckDetails()"
-    >
-
-      <span class="admin-main-icon">
-        📋
-      </span>
-
-      <strong>
-        Check Details
-      </strong>
-
-    </button>
-
-  </div>
-
-
-  <!-- =========================================
-       ADD TRANSACTION
-  ========================================== -->
-
-  <section
-    id="addTransactionSection"
-    class="admin-panel-section"
-  >
-
-    <div class="panel-title">
-
-      <h3>
-        Add Transaction
-      </h3>
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter username"
+        autocomplete="username"
+      >
 
     </div>
 
 
-    <main class="form-container">
+    <div class="input-group">
 
+      <label>
+        Password
+      </label>
 
-      <div class="input-group">
-
-        <label>
-          📅 Date
-        </label>
-
-        <input
-          id="transactionDate"
-          type="date"
-        >
-
-      </div>
-
-
-      <div class="input-group">
-
-        <label>
-          💰 Amount
-        </label>
+      <div class="password-box">
 
         <input
-          id="transactionAmount"
-          type="number"
-          placeholder="1,000"
-          min="0"
-          step="0.01"
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
         >
-
-      </div>
-
-
-      <div class="input-group">
-
-        <label>
-          👤 Name
-        </label>
-
-        <select id="transactionName">
-
-          <option value="">
-            Select Name
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div class="type-row">
 
         <button
-          id="saleBtn"
-          class="type-btn active"
-          onclick="selectType('বিক্রয়')"
+          type="button"
+          class="eye-btn"
+          onclick="togglePassword()"
         >
-          🛒 বিক্রয়
-        </button>
-
-        <button
-          id="paymentBtn"
-          class="type-btn"
-          onclick="selectType('পেমেন্ট')"
-        >
-          💳 পেমেন্ট
+          👁️
         </button>
 
       </div>
 
+    </div>
 
-      <input
-        id="transactionType"
-        type="hidden"
-        value="বিক্রয়"
+
+    <button
+      class="primary-btn"
+      onclick="loginUser()"
+    >
+      LOGIN
+    </button>
+
+
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMIN
+===================================================== -->
+
+<section id="adminPage" class="page">
+
+  <div class="app-container">
+
+    <header class="top-header">
+
+      <div>
+
+        <h2>
+          ADMIN PANEL
+        </h2>
+
+        <span id="adminWelcome">
+          Welcome
+        </span>
+
+      </div>
+
+      <button
+        class="logout-btn"
+        onclick="logout()"
+      >
+        🚪
+      </button>
+
+    </header>
+
+
+    <main class="admin-content">
+
+
+      <div class="admin-buttons">
+
+        <button
+          id="addTransactionBtn"
+          class="admin-main-btn active"
+          onclick="openAddTransaction()"
+        >
+
+          <span class="admin-main-icon">
+            ➕
+          </span>
+
+          <strong>
+            Add Transaction
+          </strong>
+
+        </button>
+
+
+        <button
+          id="checkDetailsBtn"
+          class="admin-main-btn"
+          onclick="openCheckDetails()"
+        >
+
+          <span class="admin-main-icon">
+            📋
+          </span>
+
+          <strong>
+            Check Details
+          </strong>
+
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           ADD TRANSACTION
+      ================================================== -->
+
+      <section
+        id="addTransactionSection"
+        class="admin-panel-section active"
       >
 
+        <main class="form-container">
 
-      <div class="input-group">
 
-        <label id="methodLabel">
-          বিক্রয়ের ধরন
-        </label>
+          <div class="input-group">
 
-        <select id="transactionMethod">
+            <label>
+              📅 Date
+            </label>
 
-          <option value="">
-            Select
-          </option>
+            <input
+              id="transactionDate"
+              type="date"
+            >
 
-        </select>
+          </div>
+
+
+          <div class="input-group">
+
+            <label>
+              💰 Amount
+            </label>
+
+            <input
+              id="transactionAmount"
+              type="number"
+              placeholder="1,000"
+              min="0"
+              step="0.01"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label>
+              👤 Name
+            </label>
+
+            <select
+              id="transactionName"
+            >
+
+              <option value="">
+                Select Name
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="type-row">
+
+            <button
+              id="saleBtn"
+              class="type-btn active"
+              onclick="selectType('বিক্রয়')"
+            >
+              🛒 বিক্রয়
+            </button>
+
+
+            <button
+              id="paymentBtn"
+              class="type-btn"
+              onclick="selectType('পেমেন্ট')"
+            >
+              💳 পেমেন্ট
+            </button>
+
+          </div>
+
+
+          <input
+            id="transactionType"
+            type="hidden"
+            value="বিক্রয়"
+          >
+
+
+          <div class="input-group">
+
+            <label id="methodLabel">
+              বিক্রয়ের ধরন
+            </label>
+
+            <select
+              id="transactionMethod"
+            >
+
+              <option value="">
+                Select
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <button
+            class="primary-btn"
+            onclick="saveTransaction()"
+          >
+            💾 SAVE
+          </button>
+
+
+          <div
+            id="transactionMessage"
+            class="message"
+          ></div>
+
+
+        </main>
+
+      </section>
+
+
+      <!-- =================================================
+           CHECK DETAILS
+      ================================================== -->
+
+      <section
+        id="checkDetailsSection"
+        class="admin-panel-section"
+      >
+
+        <main class="details-container">
+
+
+          <div class="input-group">
+
+            <label>
+              👤 Name
+            </label>
+
+            <select
+              id="detailsName"
+              onchange="loadCustomerDetails()"
+            >
+
+              <option value="">
+                Select Name
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div
+            id="balanceCard"
+            class="balance-card hidden"
+          >
+
+            <div class="balance-left">
+
+              <span>
+                CURRENT BALANCE
+              </span>
+
+              <strong id="currentBalance">
+                0 Tk
+              </strong>
+
+            </div>
+
+
+            <div class="balance-sales">
+
+              <span>
+                TOTAL SALES
+              </span>
+
+              <strong id="monthlySales">
+                0 Tk
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="monthlySection"
+            class="hidden"
+          >
+
+            <div class="sales-row">
+
+              <div class="sales-filter">
+
+                <select
+                  id="yearSelect"
+                  class="year-select"
+                  onchange="loadCustomerDetails(true)"
+                ></select>
+
+
+                <select
+                  id="monthSelect"
+                  class="month-select"
+                  onchange="loadCustomerDetails(true)"
+                ></select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="transactionsSection"
+            class="hidden"
+          >
+
+            <div class="transactions-header">
+
+              <h3>
+                TRANSACTIONS
+              </h3>
+
+            </div>
+
+
+            <div
+              id="transactionList"
+              class="transaction-list"
+            ></div>
+
+          </div>
+
+
+          <div
+            id="detailsMessage"
+            class="message"
+          ></div>
+
+
+        </main>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VIEWER
+===================================================== -->
+
+<section id="viewerPage" class="page">
+
+  <div class="app-container">
+
+    <header class="top-header">
+
+      <div>
+
+        <h2>
+          VIEWER PANEL
+        </h2>
+
+        <span id="viewerWelcome">
+          Welcome
+        </span>
 
       </div>
 
 
       <button
-        class="primary-btn"
-        onclick="saveTransaction()"
+        class="logout-btn"
+        onclick="logout()"
       >
-        💾 SAVE
+        🚪
       </button>
 
-
-      <div
-        id="transactionMessage"
-        class="message"
-      ></div>
-
-    </main>
-
-  </section>
+    </header>
 
 
-  <!-- =========================================
-       CHECK DETAILS
-  ========================================== -->
-
-  <section
-    id="checkDetailsSection"
-    class="admin-panel-section"
-  >
-
-    <div class="panel-title">
-
-      <h3>
-        Check Details
-      </h3>
-
-    </div>
+    <main class="viewer-container">
 
 
-    <main class="details-container">
+      <div class="balance-card">
 
-
-      <div class="input-group">
-
-        <label>
-          👤 Name
-        </label>
-
-        <select
-          id="detailsName"
-          onchange="loadCustomerDetails()"
-        >
-
-          <option value="">
-            Select Name
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div
-        id="balanceCard"
-        class="balance-card hidden"
-      >
-
-        <span>
-          CURRENT BALANCE
-        </span>
-
-        <strong id="currentBalance">
-          0 Tk
-        </strong>
-
-      </div>
-
-
-      <div
-        id="monthlySection"
-        class="hidden"
-      >
-
-        <div class="section-title">
+        <div class="balance-left">
 
           <span>
-            📊 Sales
+            CURRENT BALANCE
           </span>
 
-          <select
-            id="monthSelect"
-            onchange="loadCustomerDetails()"
-          >
-
-            <option value="">
-              All Months
-            </option>
-
-          </select>
+          <strong id="viewerBalance">
+            0 Tk
+          </strong>
 
         </div>
 
 
-        <div class="sales-card">
+        <div class="balance-sales">
 
           <span>
             TOTAL SALES
           </span>
 
-          <strong id="monthlySales">
+          <strong id="viewerMonthlySales">
             0 Tk
           </strong>
 
@@ -953,17 +1313,37 @@ select:focus{
       </div>
 
 
-      <div
-        id="transactionsSection"
-        class="hidden"
-      >
+      <div class="sales-row">
+
+        <div class="sales-filter">
+
+          <select
+            id="viewerYear"
+            class="year-select"
+            onchange="loadViewerDetails(true)"
+          ></select>
+
+
+          <select
+            id="viewerMonth"
+            class="month-select"
+            onchange="loadViewerDetails(true)"
+          ></select>
+
+        </div>
+
+      </div>
+
+
+      <div class="viewer-history">
 
         <h3>
           TRANSACTIONS
         </h3>
 
+
         <div
-          id="transactionList"
+          id="viewerTransactionList"
           class="transaction-list"
         ></div>
 
@@ -971,128 +1351,49 @@ select:focus{
 
 
       <div
-        id="detailsMessage"
+        id="viewerMessage"
         class="message"
       ></div>
 
+
     </main>
 
-  </section>
-
-</main>
-
-  </div></section><!-- =================================================
-     VIEWER
-================================================= --><section id="viewerPage" class="page">  <div class="app-container"><header class="top-header">
-
-  <div>
-
-    <h2>
-      VIEWER PANEL
-    </h2>
-
-    <span id="viewerWelcome">
-      Welcome
-    </span>
-
   </div>
 
-  <button
-    class="logout-btn"
-    onclick="logout()"
-  >
-    🚪
-  </button>
-
-</header>
+</section>
 
 
-<main class="viewer-container">
-
-
-  <div class="balance-card">
-
-    <span>
-      CURRENT BALANCE
-    </span>
-
-    <strong id="viewerBalance">
-      0 Tk
-    </strong>
-
-  </div>
-
-
-  <div class="input-group">
-
-    <label>
-      📊 Sales
-    </label>
-
-    <select
-      id="viewerMonth"
-      onchange="loadViewerDetails()"
-    >
-
-      <option value="">
-        All Months
-      </option>
-
-    </select>
-
-  </div>
-
-
-  <div class="sales-card">
-
-    <span>
-      TOTAL SALES
-    </span>
-
-    <strong id="viewerMonthlySales">
-      0 Tk
-    </strong>
-
-  </div>
-
-
-  <div class="viewer-history">
-
-    <h3>
-      TRANSACTIONS
-    </h3>
-
-    <div
-      id="viewerTransactionList"
-      class="transaction-list"
-    ></div>
-
-  </div>
-
-
-  <div
-    id="viewerMessage"
-    class="message"
-  ></div>
-
-</main>
-
-  </div></section><!-- =================================================
+<!-- =====================================================
      LOADING
-================================================= --><div
+===================================================== -->
+
+<div
   id="loading"
   class="loading hidden"
->  <div class="spinner"></div>  <span>
+>
+
+  <div class="spinner"></div>
+
+  <span>
     Loading...
-  </span></div><script>
+  </span>
+
+</div>
+
+
+<script>
 
 /* =====================================================
    APPS SCRIPT URL
 ===================================================== */
 
 const API_URL =
-  'https://script.google.com/macros/s/AKfycbwjo8vQO3GmnVKTJLJKmoAgHKQequvOtzuO9ySlLSqCAABvGuPvb3X_PeDDMSVu6Fb0Tg/exec';
+'https://script.google.com/macros/s/AKfycbwjo8vQO3GmnVKTJLJKmoAgHKQequvOtzuO9ySlLSqCAABvGuPvb3X_PeDDMSVu6Fb0Tg/exec';
 
+
+/* =====================================================
+   GLOBAL STATE
+===================================================== */
 
 let currentUser = null;
 
@@ -1100,56 +1401,142 @@ let salesOptions = [];
 
 let paymentOptions = [];
 
+let namesCache = null;
+
+let namesLoading = null;
+
+let optionsLoaded = false;
+
+let optionsLoading = null;
+
+let detailsRequestId = 0;
+
+let viewerRequestId = 0;
+
+
+/* =====================================================
+   DOM CACHE
+===================================================== */
+
+const DOM = {};
+
+function cacheDOM(){
+
+  const ids = [
+
+    'loginPage',
+    'adminPage',
+    'viewerPage',
+
+    'username',
+    'password',
+
+    'loginMessage',
+
+    'adminWelcome',
+    'viewerWelcome',
+
+    'transactionDate',
+    'transactionAmount',
+    'transactionName',
+    'transactionType',
+    'transactionMethod',
+    'methodLabel',
+
+    'saleBtn',
+    'paymentBtn',
+
+    'transactionMessage',
+
+    'detailsName',
+    'yearSelect',
+    'monthSelect',
+
+    'balanceCard',
+    'monthlySection',
+    'transactionsSection',
+
+    'currentBalance',
+    'monthlySales',
+
+    'transactionList',
+    'detailsMessage',
+
+    'viewerYear',
+    'viewerMonth',
+    'viewerBalance',
+    'viewerMonthlySales',
+
+    'viewerTransactionList',
+    'viewerMessage',
+
+    'loading'
+
+  ];
+
+  for(let i=0;i<ids.length;i++){
+
+    DOM[ids[i]] =
+      document.getElementById(ids[i]);
+
+  }
+
+}
+
 
 /* =====================================================
    API
 ===================================================== */
 
-function api(action, params = {}) {
+function api(action, params = {}){
 
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve,reject){
 
     const callbackName =
-      'apiCallback_' +
+      'cb_' +
       Date.now() +
       '_' +
-      Math.floor(Math.random() * 100000);
+      Math.random()
+        .toString(36)
+        .slice(2);
+
 
     const script =
       document.createElement('script');
 
+
     const query =
       new URLSearchParams();
 
-    query.set('action', action);
 
-    query.set('callback', callbackName);
+    query.set('action',action);
+
+    query.set('callback',callbackName);
 
 
-    Object.keys(params).forEach(function(key) {
+    for(const key in params){
 
-      if (
-        params[key] !== undefined &&
-        params[key] !== null
-      ) {
+      const value = params[key];
 
-        query.set(
-          key,
-          params[key]
-        );
+      if(
+        value !== undefined &&
+        value !== null
+      ){
+
+        query.set(key,String(value));
 
       }
 
-    });
+    }
 
 
     let finished = false;
 
 
     const timeout =
-      setTimeout(function() {
+      setTimeout(function(){
 
-        if (finished) return;
+        if(finished) return;
 
         finished = true;
 
@@ -1161,32 +1548,28 @@ function api(action, params = {}) {
           )
         );
 
-      }, 15000);
+      },15000);
 
 
-    function cleanup() {
+    function cleanup(){
 
       clearTimeout(timeout);
 
-      if (script.parentNode) {
+      script.remove();
 
-        script.parentNode.removeChild(script);
-
-      }
-
-      try {
+      try{
 
         delete window[callbackName];
 
-      } catch (e) {}
+      }catch(e){}
 
     }
 
 
     window[callbackName] =
-      function(result) {
+      function(result){
 
-        if (finished) return;
+        if(finished) return;
 
         finished = true;
 
@@ -1198,9 +1581,9 @@ function api(action, params = {}) {
 
 
     script.onerror =
-      function() {
+      function(){
 
-        if (finished) return;
+        if(finished) return;
 
         finished = true;
 
@@ -1232,11 +1615,11 @@ function api(action, params = {}) {
    PAGE
 ===================================================== */
 
-function showPage(pageId) {
+function showPage(pageId){
 
   document
     .querySelectorAll('.page')
-    .forEach(function(page) {
+    .forEach(function(page){
 
       page.classList.remove('active');
 
@@ -1247,7 +1630,7 @@ function showPage(pageId) {
     document.getElementById(pageId);
 
 
-  if (page) {
+  if(page){
 
     page.classList.add('active');
 
@@ -1260,7 +1643,7 @@ function showPage(pageId) {
    ADMIN SECTION
 ===================================================== */
 
-function showAdminSection(section) {
+function showAdminSection(section){
 
   const addSection =
     document.getElementById(
@@ -1272,24 +1655,36 @@ function showAdminSection(section) {
       'checkDetailsSection'
     );
 
+  const addBtn =
+    document.getElementById(
+      'addTransactionBtn'
+    );
 
-  addSection.classList.remove('active');
-
-  detailsSection.classList.remove('active');
-
-
-  if (section === 'add') {
-
-    addSection.classList.add('active');
-
-  }
+  const detailsBtn =
+    document.getElementById(
+      'checkDetailsBtn'
+    );
 
 
-  if (section === 'details') {
+  addSection.classList.toggle(
+    'active',
+    section === 'add'
+  );
 
-    detailsSection.classList.add('active');
+  detailsSection.classList.toggle(
+    'active',
+    section === 'details'
+  );
 
-  }
+  addBtn.classList.toggle(
+    'active',
+    section === 'add'
+  );
+
+  detailsBtn.classList.toggle(
+    'active',
+    section === 'details'
+  );
 
 }
 
@@ -1298,20 +1693,16 @@ function showAdminSection(section) {
    LOADING
 ===================================================== */
 
-function showLoading() {
+function showLoading(){
 
-  document
-    .getElementById('loading')
-    .classList.remove('hidden');
+  DOM.loading.classList.remove('hidden');
 
 }
 
 
-function hideLoading() {
+function hideLoading(){
 
-  document
-    .getElementById('loading')
-    .classList.add('hidden');
+  DOM.loading.classList.add('hidden');
 
 }
 
@@ -1320,14 +1711,10 @@ function hideLoading() {
    PASSWORD
 ===================================================== */
 
-function togglePassword() {
+function togglePassword(){
 
-  const input =
-    document.getElementById('password');
-
-
-  input.type =
-    input.type === 'password'
+  DOM.password.type =
+    DOM.password.type === 'password'
       ? 'text'
       : 'password';
 
@@ -1338,32 +1725,25 @@ function togglePassword() {
    LOGIN
 ===================================================== */
 
-async function loginUser() {
+async function loginUser(){
 
   const username =
-    document
-      .getElementById('username')
-      .value
-      .trim();
-
+    DOM.username.value.trim();
 
   const password =
-    document
-      .getElementById('password')
-      .value
-      .trim();
+    DOM.password.value.trim();
 
 
-  const message =
-    document.getElementById('loginMessage');
+  DOM.loginMessage.textContent = '';
+
+  DOM.loginMessage.classList.remove(
+    'success'
+  );
 
 
-  message.textContent = '';
+  if(!username || !password){
 
-
-  if (!username || !password) {
-
-    message.textContent =
+    DOM.loginMessage.textContent =
       'Username and password required.';
 
     return;
@@ -1374,21 +1754,26 @@ async function loginUser() {
   showLoading();
 
 
-  try {
+  try{
 
     const result =
-      await api('login', {
-        username: username,
-        password: password
-      });
+      await api(
+        'login',
+        {
+          username,
+          password
+        }
+      );
 
 
-    hideLoading();
+    if(
+      !result ||
+      !result.success
+    ){
 
+      hideLoading();
 
-    if (!result || !result.success) {
-
-      message.textContent =
+      DOM.loginMessage.textContent =
         result && result.message
           ? result.message
           : 'Login failed.';
@@ -1407,14 +1792,14 @@ async function loginUser() {
     );
 
 
-    if (
+    const role =
       String(result.role)
-        .toLowerCase() === 'admin'
-    ) {
+        .toLowerCase();
 
-      document
-        .getElementById('adminWelcome')
-        .textContent =
+
+    if(role === 'admin'){
+
+      DOM.adminWelcome.textContent =
         'Welcome, ' +
         (result.name || 'Admin');
 
@@ -1423,44 +1808,66 @@ async function loginUser() {
 
       showAdminSection('add');
 
+      setToday();
+
+      /*
+       Login শেষ হওয়ার সাথে সাথেই
+       সব dropdown data একসাথে load হবে।
+      */
+
+      preloadAdminData();
+
+
+      hideLoading();
+
       return;
 
     }
 
 
-    if (
-      String(result.role)
-        .toLowerCase() === 'viewer'
-    ) {
+    if(role === 'viewer'){
 
-      document
-        .getElementById('viewerWelcome')
-        .textContent =
+      DOM.viewerWelcome.textContent =
         'Welcome, ' +
         result.name;
 
 
-      setupMonthSelect('viewerMonth');
+      setupMonthSelect(
+        'viewerMonth',
+        'viewerYear'
+      );
+
 
       showPage('viewerPage');
 
+
+      hideLoading();
+
+
+      /*
+       Viewer-এর data load শুরু।
+      */
+
       loadViewerDetails();
+
 
       return;
 
     }
 
 
-    message.textContent =
+    hideLoading();
+
+    DOM.loginMessage.textContent =
       'Unknown account type.';
 
   }
 
-  catch (error) {
+  catch(error){
 
     hideLoading();
 
-    message.textContent =
+    DOM.loginMessage.textContent =
       error.message ||
       'Something went wrong.';
 
@@ -1473,22 +1880,24 @@ async function loginUser() {
    LOGOUT
 ===================================================== */
 
-async function logout() {
+async function logout(){
 
-  if (currentUser) {
-
-    try {
-
-      await api('logout', {
-        token: currentUser.token
-      });
-
-    } catch (e) {}
-
-  }
+  const user = currentUser;
 
 
   currentUser = null;
+
+  namesCache = null;
+
+  namesLoading = null;
+
+  salesOptions = [];
+
+  paymentOptions = [];
+
+  optionsLoaded = false;
+
+  optionsLoading = null;
 
 
   localStorage.removeItem(
@@ -1496,12 +1905,53 @@ async function logout() {
   );
 
 
-  document.getElementById('username').value = '';
+  DOM.username.value = '';
 
-  document.getElementById('password').value = '';
+  DOM.password.value = '';
 
 
   showPage('loginPage');
+
+
+  if(user){
+
+    try{
+
+      await api(
+        'logout',
+        {
+          token:user.token
+        }
+      );
+
+    }catch(e){}
+
+  }
+
+}
+
+
+/* =====================================================
+   PRELOAD ADMIN DATA
+===================================================== */
+
+function preloadAdminData(){
+
+  /*
+   Name + Options একই সময়ে request হবে।
+   ফলে একটার জন্য আরেকটা অপেক্ষা করবে না।
+  */
+
+  Promise.allSettled([
+
+    loadNames(),
+
+    loadOptions()
+
+  ]);
+
+
+  setToday();
 
 }
 
@@ -1510,39 +1960,36 @@ async function logout() {
    ADD TRANSACTION
 ===================================================== */
 
-async function openAddTransaction() {
+function openAddTransaction(){
 
   showAdminSection('add');
 
   setToday();
 
 
-  const nameSelect =
-    document.getElementById(
-      'transactionName'
-    );
+  /*
+   Data আগে থেকেই cache থাকলে
+   এখানে কোনো server request হবে না।
+  */
 
+  if(!namesCache){
 
-  if (
-    nameSelect.options.length <= 1
-  ) {
-
-    await loadNames();
+    loadNames();
 
   }
 
 
-  if (
-    salesOptions.length === 0 &&
-    paymentOptions.length === 0
-  ) {
+  if(!optionsLoaded){
 
-    await loadOptions();
+    loadOptions();
 
   }
 
 
-  selectType('বিক্রয়');
+  selectType(
+    DOM.transactionType.value ||
+    'বিক্রয়'
+  );
 
 }
 
@@ -1551,27 +1998,38 @@ async function openAddTransaction() {
    CHECK DETAILS
 ===================================================== */
 
-async function openCheckDetails() {
+function openCheckDetails(){
 
   showAdminSection('details');
 
 
-  const select =
-    document.getElementById(
+  /*
+   Year + Month instant তৈরি হবে।
+  */
+
+  setupMonthSelect(
+    'monthSelect',
+    'yearSelect'
+  );
+
+
+  /*
+   Login-এর সময় names preload হয়ে থাকলে
+   সঙ্গে সঙ্গে dropdown-এ দেখাবে।
+  */
+
+  if(namesCache){
+
+    populateNameSelect(
       'detailsName'
     );
 
+  }
+  else{
 
-  if (
-    select.options.length <= 1
-  ) {
-
-    await loadDetailNames();
+    loadNames();
 
   }
-
-
-  setupMonthSelect('monthSelect');
 
 }
 
@@ -1580,40 +2038,112 @@ async function openCheckDetails() {
    TODAY
 ===================================================== */
 
-function setToday() {
+function setToday(){
 
   const input =
-    document.getElementById(
-      'transactionDate'
-    );
+    DOM.transactionDate;
+
+
+  if(!input) return;
 
 
   const now =
     new Date();
 
 
-  const year =
-    now.getFullYear();
-
-
-  const month =
+  const today =
+    now.getFullYear() +
+    '-' +
     String(
-      now.getMonth() + 1
-    ).padStart(2, '0');
-
-
-  const day =
+      now.getMonth()+1
+    ).padStart(2,'0') +
+    '-' +
     String(
       now.getDate()
-    ).padStart(2, '0');
+    ).padStart(2,'0');
 
 
-  input.value =
-    year +
-    '-' +
-    month +
-    '-' +
-    day;
+  input.value = today;
+
+  input.max = today;
+
+}
+
+
+/* =====================================================
+   POPULATE NAMES
+===================================================== */
+
+function populateNameSelect(elementId){
+
+  const select =
+    document.getElementById(elementId);
+
+
+  if(!select) return;
+
+
+  /*
+   আগের selected value ধরে রাখা।
+  */
+
+  const oldValue =
+    select.value;
+
+
+  select.innerHTML =
+    '<option value="">Select Name</option>';
+
+
+  if(
+    !namesCache ||
+    !namesCache.length
+  ){
+
+    return;
+
+  }
+
+
+  const fragment =
+    document.createDocumentFragment();
+
+
+  for(let i=0;i<namesCache.length;i++){
+
+    const name =
+      namesCache[i];
+
+
+    const option =
+      document.createElement('option');
+
+
+    option.value = name;
+
+    option.textContent = name;
+
+
+    fragment.appendChild(option);
+
+  }
+
+
+  select.appendChild(fragment);
+
+
+  /*
+   সম্ভব হলে আগের selection restore।
+  */
+
+  if(
+    oldValue &&
+    namesCache.includes(oldValue)
+  ){
+
+    select.value = oldValue;
+
+  }
 
 }
 
@@ -1622,104 +2152,94 @@ function setToday() {
    LOAD NAMES
 ===================================================== */
 
-async function loadNames() {
+function loadNames(){
 
-  try {
+  if(namesCache){
 
-    const result =
-      await api('getNames', {
-        token: currentUser.token
-      });
+    populateNameSelect(
+      'transactionName'
+    );
+
+    populateNameSelect(
+      'detailsName'
+    );
+
+    return Promise.resolve(
+      namesCache
+    );
+
+  }
 
 
-    if (!result.success) return;
+  if(namesLoading){
+
+    return namesLoading;
+
+  }
 
 
-    const select =
-      document.getElementById(
-        'transactionName'
+  if(!currentUser){
+
+    return Promise.resolve([]);
+
+  }
+
+
+  namesLoading =
+    api(
+      'getNames',
+      {
+        token:currentUser.token
+      }
+    )
+    .then(function(result){
+
+      if(
+        result &&
+        result.success &&
+        Array.isArray(result.names)
+      ){
+
+        /*
+         একবার cache হয়ে গেলে
+         পরের বার server call হবে না।
+        */
+
+        namesCache =
+          result.names;
+
+        populateNameSelect(
+          'transactionName'
+        );
+
+        populateNameSelect(
+          'detailsName'
+        );
+
+      }
+
+
+      return namesCache || [];
+
+    })
+    .catch(function(error){
+
+      console.error(
+        'Names:',
+        error
       );
 
+      return [];
 
-    select.innerHTML =
-      '<option value="">Select Name</option>';
+    })
+    .finally(function(){
 
-
-    result.names.forEach(function(name) {
-
-      const option =
-        document.createElement('option');
-
-
-      option.value = name;
-
-      option.textContent = name;
-
-
-      select.appendChild(option);
+      namesLoading = null;
 
     });
 
-  }
 
-  catch (error) {
-
-    console.error(error);
-
-  }
-
-}
-
-
-/* =====================================================
-   LOAD DETAIL NAMES
-===================================================== */
-
-async function loadDetailNames() {
-
-  try {
-
-    const result =
-      await api('getNames', {
-        token: currentUser.token
-      });
-
-
-    if (!result.success) return;
-
-
-    const select =
-      document.getElementById(
-        'detailsName'
-      );
-
-
-    select.innerHTML =
-      '<option value="">Select Name</option>';
-
-
-    result.names.forEach(function(name) {
-
-      const option =
-        document.createElement('option');
-
-
-      option.value = name;
-
-      option.textContent = name;
-
-
-      select.appendChild(option);
-
-    });
-
-  }
-
-  catch (error) {
-
-    console.error(error);
-
-  }
+  return namesLoading;
 
 }
 
@@ -1728,33 +2248,92 @@ async function loadDetailNames() {
    LOAD OPTIONS
 ===================================================== */
 
-async function loadOptions() {
+function loadOptions(){
 
-  try {
+  if(optionsLoaded){
 
-    const result =
-      await api('getOptions', {
-        token: currentUser.token
-      });
+    selectType(
+      DOM.transactionType.value ||
+      'বিক্রয়'
+    );
 
-
-    if (!result.success) return;
-
-
-    salesOptions =
-      result.sales || [];
-
-
-    paymentOptions =
-      result.payments || [];
+    return Promise.resolve();
 
   }
 
-  catch (error) {
 
-    console.error(error);
+  if(optionsLoading){
+
+    return optionsLoading;
 
   }
+
+
+  if(!currentUser){
+
+    return Promise.resolve();
+
+  }
+
+
+  optionsLoading =
+    api(
+      'getOptions',
+      {
+        token:currentUser.token
+      }
+    )
+    .then(function(result){
+
+      if(
+        result &&
+        result.success
+      ){
+
+        salesOptions =
+          Array.isArray(result.sales)
+            ? result.sales
+            : [];
+
+
+        paymentOptions =
+          Array.isArray(result.payments)
+            ? result.payments
+            : [];
+
+
+        optionsLoaded = true;
+
+
+        selectType(
+          DOM.transactionType.value ||
+          'বিক্রয়'
+        );
+
+      }
+
+
+      return result;
+
+    })
+    .catch(function(error){
+
+      console.error(
+        'Options:',
+        error
+      );
+
+      return null;
+
+    })
+    .finally(function(){
+
+      optionsLoading = null;
+
+    });
+
+
+  return optionsLoading;
 
 }
 
@@ -1763,89 +2342,84 @@ async function loadOptions() {
    TYPE SELECT
 ===================================================== */
 
-function selectType(type) {
+function selectType(type){
 
-  document
-    .getElementById('transactionType')
-    .value = type;
-
-
-  document
-    .getElementById('saleBtn')
-    .classList.remove('active');
+  DOM.transactionType.value =
+    type;
 
 
-  document
-    .getElementById('paymentBtn')
-    .classList.remove('active');
+  const isSale =
+    type === 'বিক্রয়';
+
+
+  DOM.saleBtn.classList.toggle(
+    'active',
+    isSale
+  );
+
+
+  DOM.paymentBtn.classList.toggle(
+    'active',
+    !isSale
+  );
+
+
+  DOM.methodLabel.textContent =
+    isSale
+      ? 'বিক্রয়ের ধরন'
+      : 'পেমেন্টের ধরন';
+
+
+  const options =
+    isSale
+      ? salesOptions
+      : paymentOptions;
 
 
   const select =
-    document.getElementById(
-      'transactionMethod'
-    );
-
-
-  const label =
-    document.getElementById(
-      'methodLabel'
-    );
+    DOM.transactionMethod;
 
 
   select.innerHTML =
     '<option value="">Select</option>';
 
 
-  let options = [];
+  if(!options.length){
 
+    if(!optionsLoaded){
 
-  if (type === 'বিক্রয়') {
+      loadOptions();
 
-    document
-      .getElementById('saleBtn')
-      .classList.add('active');
+    }
 
-
-    label.textContent =
-      'বিক্রয়ের ধরন';
-
-
-    options =
-      salesOptions;
-
-  }
-
-  else {
-
-    document
-      .getElementById('paymentBtn')
-      .classList.add('active');
-
-
-    label.textContent =
-      'পেমেন্টের ধরন';
-
-
-    options =
-      paymentOptions;
+    return;
 
   }
 
 
-  options.forEach(function(item) {
+  const fragment =
+    document.createDocumentFragment();
+
+
+  for(let i=0;i<options.length;i++){
 
     const option =
       document.createElement('option');
 
 
-    option.value = item;
+    option.value =
+      options[i];
 
-    option.textContent = item;
+    option.textContent =
+      options[i];
 
 
-    select.appendChild(option);
+    fragment.appendChild(option);
 
-  });
+  }
+
+
+  select.appendChild(fragment);
 
 }
 
@@ -1854,48 +2428,36 @@ function selectType(type) {
    SAVE TRANSACTION
 ===================================================== */
 
-async function saveTransaction() {
+async function saveTransaction(){
 
   const date =
-    document
-      .getElementById('transactionDate')
-      .value;
-
+    DOM.transactionDate.value;
 
   const amount =
-    document
-      .getElementById('transactionAmount')
-      .value;
-
+    DOM.transactionAmount.value;
 
   const name =
-    document
-      .getElementById('transactionName')
-      .value;
-
+    DOM.transactionName.value;
 
   const type =
-    document
-      .getElementById('transactionType')
-      .value;
-
+    DOM.transactionType.value;
 
   const method =
-    document
-      .getElementById('transactionMethod')
-      .value;
+    DOM.transactionMethod.value;
 
 
   const message =
-    document.getElementById(
-      'transactionMessage'
-    );
+    DOM.transactionMessage;
 
 
   message.textContent = '';
 
+  message.classList.remove(
+    'success'
+  );
 
-  if (!date) {
+
+  if(!date){
 
     message.textContent =
       'Please select a date.';
@@ -1905,7 +2467,38 @@ async function saveTransaction() {
   }
 
 
-  if (!amount || Number(amount) <= 0) {
+  const now =
+    new Date();
+
+
+  const todayString =
+    now.getFullYear() +
+    '-' +
+    String(
+      now.getMonth()+1
+    ).padStart(2,'0') +
+    '-' +
+    String(
+      now.getDate()
+    ).padStart(2,'0');
+
+
+  if(date > todayString){
+
+    message.textContent =
+      'Future date is not allowed.';
+
+    setToday();
+
+    return;
+
+  }
+
+
+  if(
+    !amount ||
+    Number(amount) <= 0
+  ){
 
     message.textContent =
       'Please enter a valid amount.';
@@ -1915,7 +2508,7 @@ async function saveTransaction() {
   }
 
 
-  if (!name) {
+  if(!name){
 
     message.textContent =
       'Please select a name.';
@@ -1925,7 +2518,7 @@ async function saveTransaction() {
   }
 
 
-  if (!method) {
+  if(!method){
 
     message.textContent =
       'Please select an option.';
@@ -1938,18 +2531,18 @@ async function saveTransaction() {
   showLoading();
 
 
-  try {
+  try{
 
     const result =
       await api(
         'addTransaction',
         {
-          token: currentUser.token,
-          date: date,
-          amount: amount,
-          name: name,
-          type: type,
-          method: method
+          token:currentUser.token,
+          date,
+          amount,
+          name,
+          type,
+          method
         }
       );
 
@@ -1957,37 +2550,45 @@ async function saveTransaction() {
     hideLoading();
 
 
-    message.textContent =
-      result.message || '';
+    if(
+      result &&
+      result.success
+    ){
+
+      message.textContent =
+        result.message ||
+        'Transaction added successfully.';
+
+      message.classList.add(
+        'success'
+      );
 
 
-    if (result.success) {
+      DOM.transactionAmount.value =
+        '';
 
-      document
-        .getElementById(
-          'transactionAmount'
-        )
-        .value = '';
+      DOM.transactionName.value =
+        '';
 
-
-      document
-        .getElementById(
-          'transactionName'
-        )
-        .value = '';
+      DOM.transactionMethod.value =
+        '';
 
 
-      document
-        .getElementById(
-          'transactionMethod'
-        )
-        .value = '';
+      setToday();
+
+    }
+    else{
+
+      message.textContent =
+        result && result.message
+          ? result.message
+          : 'Failed to save transaction.';
 
     }
 
   }
 
-  catch (error) {
+  catch(error){
 
     hideLoading();
 
@@ -2001,20 +2602,48 @@ async function saveTransaction() {
 
 
 /* =====================================================
-   MONTH SELECT
+   YEAR + MONTH SELECT
 ===================================================== */
 
-function setupMonthSelect(elementId) {
+function setupMonthSelect(
+  monthElementId,
+  yearElementId
+){
 
-  const select =
-    document.getElementById(elementId);
+  const monthSelect =
+    document.getElementById(
+      monthElementId
+    );
+
+  const yearSelect =
+    document.getElementById(
+      yearElementId
+    );
 
 
-  if (!select) return;
+  if(
+    !monthSelect ||
+    !yearSelect
+  ){
+
+    return;
+
+  }
 
 
-  select.innerHTML =
-    '<option value="">All Months</option>';
+  /*
+   যদি already তৈরি থাকে,
+   আবার তৈরি করার দরকার নেই।
+  */
+
+  if(
+    yearSelect.options.length === 5 &&
+    monthSelect.options.length === 12
+  ){
+
+    return;
+
+  }
 
 
   const now =
@@ -2026,84 +2655,127 @@ function setupMonthSelect(elementId) {
 
 
   const currentMonth =
-    now.getMonth();
+    now.getMonth()+1;
 
 
-  for (let i = 0; i < 24; i++) {
+  const yearFragment =
+    document.createDocumentFragment();
 
-    const date =
-      new Date(
-        currentYear,
-        currentMonth - i,
-        1
-      );
 
+  for(let i=0;i<5;i++){
 
     const year =
-      date.getFullYear();
-
-
-    const month =
-      date.getMonth() + 1;
-
-
-    const monthName =
-      date.toLocaleString(
-        'en-US',
-        {
-          month:'long'
-        }
-      );
+      currentYear-i;
 
 
     const option =
       document.createElement('option');
 
 
-    option.value =
-      year + '-' + month;
+    option.value = year;
+
+    option.textContent = year;
 
 
-    option.textContent =
-      monthName + ' ' + year;
-
-
-    select.appendChild(option);
+    yearFragment.appendChild(option);
 
   }
+
+
+  yearSelect.innerHTML = '';
+
+  yearSelect.appendChild(
+    yearFragment
+  );
+
+
+  const months = [
+
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+
+  ];
+
+
+  const monthFragment =
+    document.createDocumentFragment();
+
+
+  for(let i=0;i<12;i++){
+
+    const option =
+      document.createElement('option');
+
+
+    option.value =
+      i+1;
+
+    option.textContent =
+      months[i];
+
+
+    monthFragment.appendChild(
+      option
+    );
+
+  }
+
+
+  monthSelect.innerHTML = '';
+
+  monthSelect.appendChild(
+    monthFragment
+  );
+
+
+  yearSelect.value =
+    currentYear;
+
+  monthSelect.value =
+    currentMonth;
 
 }
 
 
 /* =====================================================
-   SELECTED MONTH
+   SELECTED YEAR + MONTH
 ===================================================== */
 
-function getSelectedMonth(elementId) {
+function getSelectedMonth(
+  monthElementId,
+  yearElementId
+){
 
-  const value =
-    document
-      .getElementById(elementId)
-      .value;
-
-
-  if (!value) {
-
-    return {
-      year:'',
-      month:''
-    };
-
-  }
+  const month =
+    document.getElementById(
+      monthElementId
+    ).value;
 
 
-  const parts =
-    value.split('-');
+  const year =
+    document.getElementById(
+      yearElementId
+    ).value;
 
 
   return {
-    year:Number(parts[0]),
-    month:Number(parts[1])
+
+    year:
+      Number(year) || '',
+
+    month:
+      Number(month) || ''
+
   };
 
 }
@@ -2113,30 +2785,27 @@ function getSelectedMonth(elementId) {
    CUSTOMER DETAILS
 ===================================================== */
 
-async function loadCustomerDetails() {
+async function loadCustomerDetails(
+  quickReload = false
+){
 
   const name =
-    document
-      .getElementById('detailsName')
-      .value;
+    DOM.detailsName.value;
 
 
-  if (!name) {
+  if(!name){
 
-    document
-      .getElementById('balanceCard')
-      .classList.add('hidden');
+    DOM.balanceCard.classList.add(
+      'hidden'
+    );
 
+    DOM.monthlySection.classList.add(
+      'hidden'
+    );
 
-    document
-      .getElementById('monthlySection')
-      .classList.add('hidden');
-
-
-    document
-      .getElementById('transactionsSection')
-      .classList.add('hidden');
-
+    DOM.transactionsSection.classList.add(
+      'hidden'
+    );
 
     return;
 
@@ -2144,65 +2813,99 @@ async function loadCustomerDetails() {
 
 
   const selected =
-    getSelectedMonth('monthSelect');
+    getSelectedMonth(
+      'monthSelect',
+      'yearSelect'
+    );
 
 
-  showLoading();
+  /*
+   প্রতিটি request-এর আলাদা ID।
+   পুরোনো request পরে response দিলে
+   সেটা আর screen overwrite করতে পারবে না।
+  */
+
+  const requestId =
+    ++detailsRequestId;
 
 
-  try {
+  /*
+   Month/Year change-এর সময়
+   full-screen loading দেখানো হবে না।
+   এতে UI অনেক দ্রুত মনে হবে।
+  */
+
+  if(!quickReload){
+
+    showLoading();
+
+  }
+
+
+  try{
 
     const result =
       await api(
         'customerDetails',
         {
           token:currentUser.token,
-          name:name,
+          name,
           year:selected.year,
           month:selected.month
         }
       );
 
 
-    hideLoading();
-
-
-    if (!result.success) {
-
-      document
-        .getElementById('detailsMessage')
-        .textContent =
-        result.message || '';
+    if(requestId !== detailsRequestId){
 
       return;
 
     }
 
 
-    document
-      .getElementById('currentBalance')
-      .textContent =
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
+
+    if(!result || !result.success){
+
+      DOM.detailsMessage.textContent =
+        result && result.message
+          ? result.message
+          : '';
+
+      return;
+
+    }
+
+
+    DOM.detailsMessage.textContent =
+      '';
+
+
+    DOM.currentBalance.textContent =
       formatAmount(
         result.currentBalance
       );
 
 
-    document
-      .getElementById('balanceCard')
-      .classList.remove('hidden');
-
-
-    document
-      .getElementById('monthlySales')
-      .textContent =
+    DOM.monthlySales.textContent =
       formatAmount(
         result.totalSales
       );
 
 
-    document
-      .getElementById('monthlySection')
-      .classList.remove('hidden');
+    DOM.balanceCard.classList.remove(
+      'hidden'
+    );
+
+
+    DOM.monthlySection.classList.remove(
+      'hidden'
+    );
 
 
     renderTransactions(
@@ -2211,19 +2914,29 @@ async function loadCustomerDetails() {
     );
 
 
-    document
-      .getElementById('transactionsSection')
-      .classList.remove('hidden');
+    DOM.transactionsSection.classList.remove(
+      'hidden'
+    );
 
   }
 
-  catch (error) {
+  catch(error){
 
-    hideLoading();
+    if(requestId !== detailsRequestId){
 
-    document
-      .getElementById('detailsMessage')
-      .textContent =
+      return;
+
+    }
+
+
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
+
+    DOM.detailsMessage.textContent =
       error.message ||
       'Failed to load details.';
 
@@ -2236,19 +2949,32 @@ async function loadCustomerDetails() {
    VIEWER DETAILS
 ===================================================== */
 
-async function loadViewerDetails() {
+async function loadViewerDetails(
+  quickReload = false
+){
 
-  if (!currentUser) return;
+  if(!currentUser) return;
 
 
   const selected =
-    getSelectedMonth('viewerMonth');
+    getSelectedMonth(
+      'viewerMonth',
+      'viewerYear'
+    );
 
 
-  showLoading();
+  const requestId =
+    ++viewerRequestId;
 
 
-  try {
+  if(!quickReload){
+
+    showLoading();
+
+  }
+
+
+  try{
 
     const result =
       await api(
@@ -2261,32 +2987,43 @@ async function loadViewerDetails() {
       );
 
 
-    hideLoading();
-
-
-    if (!result.success) {
-
-      document
-        .getElementById('viewerMessage')
-        .textContent =
-        result.message || '';
+    if(requestId !== viewerRequestId){
 
       return;
 
     }
 
 
-    document
-      .getElementById('viewerBalance')
-      .textContent =
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
+
+    if(!result || !result.success){
+
+      DOM.viewerMessage.textContent =
+        result && result.message
+          ? result.message
+          : '';
+
+      return;
+
+    }
+
+
+    DOM.viewerMessage.textContent =
+      '';
+
+
+    DOM.viewerBalance.textContent =
       formatAmount(
         result.currentBalance
       );
 
 
-    document
-      .getElementById('viewerMonthlySales')
-      .textContent =
+    DOM.viewerMonthlySales.textContent =
       formatAmount(
         result.totalSales
       );
@@ -2299,13 +3036,23 @@ async function loadViewerDetails() {
 
   }
 
-  catch (error) {
+  catch(error){
 
-    hideLoading();
+    if(requestId !== viewerRequestId){
 
-    document
-      .getElementById('viewerMessage')
-      .textContent =
+      return;
+
+    }
+
+
+    if(!quickReload){
+
+      hideLoading();
+
+    }
+
+
+    DOM.viewerMessage.textContent =
       error.message ||
       'Failed to load details.';
 
@@ -2321,19 +3068,21 @@ async function loadViewerDetails() {
 function renderTransactions(
   transactions,
   elementId
-) {
+){
 
   const container =
-    document.getElementById(elementId);
+    document.getElementById(
+      elementId
+    );
 
 
-  container.innerHTML = '';
+  if(!container) return;
 
 
-  if (
+  if(
     !transactions ||
-    transactions.length === 0
-  ) {
+    !transactions.length
+  ){
 
     container.innerHTML =
       '<div class="message">No transactions found.</div>';
@@ -2343,11 +3092,43 @@ function renderTransactions(
   }
 
 
+  /*
+   Sort করার জন্য ছোট temporary array।
+  */
+
+  const list =
+    transactions
+      .map(function(item,index){
+
+        return {
+
+          item:item,
+
+          time:getTransactionTime(
+            item,
+            index,
+            transactions.length
+          )
+
+        };
+
+      })
+      .sort(function(a,b){
+
+        return b.time-a.time;
+
+      });
+
+
   const fragment =
     document.createDocumentFragment();
 
 
-  transactions.forEach(function(item) {
+  for(let i=0;i<list.length;i++){
+
+    const item =
+      list[i].item;
+
 
     const card =
       document.createElement('div');
@@ -2377,7 +3158,6 @@ function renderTransactions(
     date.className =
       'transaction-date';
 
-
     date.textContent =
       item.date || '';
 
@@ -2389,25 +3169,10 @@ function renderTransactions(
     type.className =
       'transaction-type';
 
-
     type.textContent =
       item.type === 'বিক্রয়'
         ? '🛒 বিক্রয়'
         : '💳 পেমেন্ট';
-
-
-    const method =
-      document.createElement('div');
-
-
-    method.className =
-      'transaction-method';
-
-
-    method.textContent =
-      item.method
-        ? '• ' + item.method
-        : '';
 
 
     info.appendChild(date);
@@ -2415,7 +3180,18 @@ function renderTransactions(
     info.appendChild(type);
 
 
-    if (item.method) {
+    if(item.method){
+
+      const method =
+        document.createElement('div');
+
+
+      method.className =
+        'transaction-method';
+
+      method.textContent =
+        '• ' + item.method;
+
 
       info.appendChild(method);
 
@@ -2429,9 +3205,10 @@ function renderTransactions(
     amount.className =
       'transaction-amount';
 
-
     amount.textContent =
-      formatAmount(item.amount);
+      formatAmount(
+        item.amount
+      );
 
 
     card.appendChild(info);
@@ -2441,10 +3218,95 @@ function renderTransactions(
 
     fragment.appendChild(card);
 
-  });
+  }
 
 
-  container.appendChild(fragment);
+  container.replaceChildren(
+    fragment
+  );
+
+}
+
+
+/* =====================================================
+   TRANSACTION TIME
+===================================================== */
+
+function getTransactionTime(
+  item,
+  index,
+  total
+){
+
+  const timestamp =
+    item.timestamp ||
+    item.createdAt ||
+    item.time ||
+    item.datetime;
+
+
+  if(timestamp){
+
+    const parsed =
+      new Date(timestamp).getTime();
+
+
+    if(!Number.isNaN(parsed)){
+
+      return parsed;
+
+    }
+
+  }
+
+
+  const id =
+    item.transactionId ||
+    item.id ||
+    item.rowNumber;
+
+
+  if(
+    id !== undefined &&
+    id !== null &&
+    id !== ''
+  ){
+
+    const numericId =
+      Number(id);
+
+
+    if(
+      Number.isFinite(numericId) &&
+      numericId > 0
+    ){
+
+      return 1000000000000 +
+             numericId;
+
+    }
+
+  }
+
+
+  if(item.date){
+
+    const parsedDate =
+      new Date(item.date).getTime();
+
+
+    if(!Number.isNaN(parsedDate)){
+
+      return parsedDate +
+        index /
+        Math.max(total,1);
+
+    }
+
+  }
+
+
+  return index;
 
 }
 
@@ -2453,7 +3315,7 @@ function renderTransactions(
    AMOUNT
 ===================================================== */
 
-function formatAmount(amount) {
+function formatAmount(amount){
 
   const number =
     Number(amount) || 0;
@@ -2471,9 +3333,9 @@ function formatAmount(amount) {
    RESTORE SESSION
 ===================================================== */
 
-function restoreSession() {
+function restoreSession(){
 
-  try {
+  try{
 
     const saved =
       localStorage.getItem(
@@ -2481,7 +3343,7 @@ function restoreSession() {
       );
 
 
-    if (!saved) {
+    if(!saved){
 
       showPage('loginPage');
 
@@ -2494,7 +3356,10 @@ function restoreSession() {
       JSON.parse(saved);
 
 
-    if (!user || !user.token) {
+    if(
+      !user ||
+      !user.token
+    ){
 
       localStorage.removeItem(
         'transactionUser'
@@ -2510,14 +3375,14 @@ function restoreSession() {
     currentUser = user;
 
 
-    if (
+    const role =
       String(user.role)
-        .toLowerCase() === 'admin'
-    ) {
+        .toLowerCase();
 
-      document
-        .getElementById('adminWelcome')
-        .textContent =
+
+    if(role === 'admin'){
+
+      DOM.adminWelcome.textContent =
         'Welcome, ' +
         (user.name || 'Admin');
 
@@ -2526,26 +3391,36 @@ function restoreSession() {
 
       showAdminSection('add');
 
+      setToday();
+
+
+      /*
+       Session restore-এর সাথে সাথেই
+       dropdown preload।
+      */
+
+      preloadAdminData();
+
       return;
 
     }
 
 
-    if (
-      String(user.role)
-        .toLowerCase() === 'viewer'
-    ) {
+    if(role === 'viewer'){
 
-      document
-        .getElementById('viewerWelcome')
-        .textContent =
+      DOM.viewerWelcome.textContent =
         'Welcome, ' +
         user.name;
 
 
-      setupMonthSelect('viewerMonth');
+      setupMonthSelect(
+        'viewerMonth',
+        'viewerYear'
+      );
+
 
       showPage('viewerPage');
+
 
       loadViewerDetails();
 
@@ -2558,7 +3433,7 @@ function restoreSession() {
 
   }
 
-  catch (error) {
+  catch(error){
 
     localStorage.removeItem(
       'transactionUser'
@@ -2572,23 +3447,74 @@ function restoreSession() {
 
 
 /* =====================================================
+   ENTER KEY LOGIN
+===================================================== */
+
+document.addEventListener(
+  'keydown',
+  function(event){
+
+    if(
+      event.key === 'Enter' &&
+      DOM.loginPage.classList.contains(
+        'active'
+      )
+    ){
+
+      loginUser();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
    START
 ===================================================== */
 
 document.addEventListener(
   'DOMContentLoaded',
-  function() {
+  function(){
+
+    /*
+     DOM cache প্রথমেই তৈরি।
+    */
+
+    cacheDOM();
+
+
+    /*
+     Year + Month dropdown
+     page load-এর আগেই ready।
+    */
+
+    setupMonthSelect(
+      'monthSelect',
+      'yearSelect'
+    );
+
+
+    setupMonthSelect(
+      'viewerMonth',
+      'viewerYear'
+    );
+
 
     setToday();
 
-    setupMonthSelect('monthSelect');
 
-    setupMonthSelect('viewerMonth');
+    /*
+     Session থাকলে
+     সঙ্গে সঙ্গে restore + preload।
+    */
 
     restoreSession();
 
   }
 );
 
-</script></body>
+</script>
+
+</body>
   </html>
