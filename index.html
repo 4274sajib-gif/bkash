@@ -1,19 +1,19 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport"
-content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!DOCTYPE html>
+<html lang="bn">
 
-<title>Transaction Software</title><style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Transaction Software</title>
 
-/* =====================================================
-   GLOBAL
-===================================================== */
+<style>
 
 *{
   box-sizing:border-box;
   -webkit-tap-highlight-color:transparent;
 }
 
-html,
-body{
+html,body{
   margin:0;
   padding:0;
   width:100%;
@@ -23,9 +23,7 @@ body{
   color:#202124;
 }
 
-button,
-input,
-select{
+button,input,select{
   font:inherit;
 }
 
@@ -37,11 +35,6 @@ button{
   display:none!important;
 }
 
-
-/* =====================================================
-   PAGE
-===================================================== */
-
 .page{
   display:none;
   min-height:100vh;
@@ -51,10 +44,7 @@ button{
   display:block;
 }
 
-
-/* =====================================================
-   LOGIN
-===================================================== */
+/* LOGIN */
 
 #loginPage{
   min-height:100vh;
@@ -103,10 +93,7 @@ button{
   font-size:14px;
 }
 
-
-/* =====================================================
-   APP
-===================================================== */
+/* APP */
 
 .app-container{
   width:100%;
@@ -116,20 +103,15 @@ button{
   background:#f5f7fb;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 .top-header{
   min-height:72px;
   padding:15px 18px;
   background:#fff;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   border-bottom:1px solid #e9edf3;
 }
 
@@ -155,19 +137,11 @@ button{
   font-size:19px;
 }
 
-
-/* =====================================================
-   ADMIN
-===================================================== */
+/* ADMIN */
 
 .admin-content{
   padding:14px;
 }
-
-
-/* =====================================================
-   MAIN BUTTONS
-===================================================== */
 
 .admin-buttons{
   display:flex;
@@ -181,28 +155,16 @@ button{
   min-width:0;
   height:52px;
   padding:8px 10px;
-
   border-radius:12px;
-
   background:#fff;
   border:1px solid #e5e9ef;
-
   box-shadow:0 3px 12px rgba(0,0,0,.04);
-
   cursor:pointer;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   gap:6px;
-
   text-align:center;
-
-  transition:
-    background .12s,
-    color .12s,
-    transform .12s;
 }
 
 .admin-main-btn:active{
@@ -213,14 +175,12 @@ button{
   background:#111;
   border-color:#111;
   color:#fff;
-  box-shadow:0 4px 14px rgba(0,0,0,.12);
 }
 
 .admin-main-icon{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:transparent;
   font-size:17px;
   flex-shrink:0;
 }
@@ -230,15 +190,6 @@ button{
   font-size:13px;
   font-weight:800;
 }
-
-.admin-main-btn small{
-  display:none;
-}
-
-
-/* =====================================================
-   ADMIN SECTIONS
-===================================================== */
 
 .admin-panel-section{
   display:none;
@@ -252,14 +203,7 @@ button{
   display:block;
 }
 
-.panel-title{
-  display:none;
-}
-
-
-/* =====================================================
-   FORMS
-===================================================== */
+/* FORM */
 
 .form-container,
 .details-container,
@@ -283,43 +227,27 @@ input,
 select{
   width:100%;
   height:45px;
-
   padding:0 12px;
-
   border:1px solid #dfe3e8;
   border-radius:11px;
-
   outline:none;
-
   background:#fff;
   color:#222;
-
   font-size:14px;
 }
 
 input:focus,
 select:focus{
   border-color:#7185ff;
-
-  box-shadow:
-    0 0 0 3px
-    rgba(113,133,255,.10);
+  box-shadow:0 0 0 3px rgba(113,133,255,.10);
 }
-
-
-/* =====================================================
-   AMOUNT
-===================================================== */
 
 .amount-input{
   text-align:left;
   font-variant-numeric:tabular-nums;
 }
 
-
-/* =====================================================
-   PASSWORD
-===================================================== */
+/* PASSWORD */
 
 .password-box{
   position:relative;
@@ -333,32 +261,22 @@ select:focus{
   position:absolute;
   right:5px;
   top:4px;
-
   width:36px;
   height:36px;
-
   background:transparent;
   cursor:pointer;
 }
 
-
-/* =====================================================
-   PRIMARY
-===================================================== */
+/* PRIMARY */
 
 .primary-btn{
   width:100%;
   height:46px;
-
   border-radius:11px;
-
   background:#5267e8;
   color:#fff;
-
   font-weight:800;
-
   cursor:pointer;
-
   margin-top:4px;
 }
 
@@ -366,10 +284,7 @@ select:focus{
   transform:scale(.99);
 }
 
-
-/* =====================================================
-   TYPE BUTTONS
-===================================================== */
+/* TYPE */
 
 .type-row{
   display:flex;
@@ -380,23 +295,12 @@ select:focus{
 .type-btn{
   flex:1;
   height:44px;
-
   border-radius:11px;
-
   background:#fff;
-
   border:1px solid #dfe3e8;
-
   color:#555;
-
   font-weight:700;
-
   cursor:pointer;
-
-  transition:
-    background .12s,
-    color .12s,
-    border-color .12s;
 }
 
 .type-btn.active{
@@ -405,10 +309,7 @@ select:focus{
   color:#fff;
 }
 
-
-/* =====================================================
-   CHECK DETAILS FILTER
-===================================================== */
+/* DETAILS FILTER */
 
 .details-filter-row{
   display:flex;
@@ -437,31 +338,20 @@ select:focus{
 
 .details-filter-row .filter-name{
   flex:1;
-  width:auto;
 }
 
-
-/* =====================================================
-   BALANCE
-===================================================== */
+/* BALANCE */
 
 .balance-card{
   padding:8px 11px;
-
   border-radius:9px;
-
   background:#fff;
-
   border:1px solid #e7eaf0;
-
   box-shadow:0 2px 7px rgba(0,0,0,.035);
-
   margin-bottom:9px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   gap:10px;
 }
 
@@ -472,23 +362,16 @@ select:focus{
 .balance-left span,
 .balance-sales span{
   display:block;
-
   font-size:9px;
-
   font-weight:700;
-
   color:#777;
-
   letter-spacing:.2px;
 }
 
 .balance-left strong{
   display:block;
-
   margin-top:1px;
-
   font-size:17px;
-
   line-height:1.15;
 }
 
@@ -499,67 +382,41 @@ select:focus{
 
 .balance-sales strong{
   display:block;
-
   margin-top:1px;
-
   font-size:16px;
-
   line-height:1.15;
 }
 
-
-/* =====================================================
-   SALES FILTER
-===================================================== */
+/* SALES FILTER */
 
 .sales-row{
   display:flex;
-
   align-items:center;
   justify-content:flex-end;
-
   gap:8px;
-
   padding:7px 9px;
-
   background:#fff;
-
   border:1px solid #e7eaf0;
-
   border-radius:9px;
-
   margin-bottom:9px;
 }
 
 .sales-filter{
   display:flex;
-
   align-items:center;
   justify-content:space-between;
-
   gap:5px;
-
   width:100%;
 }
 
 .sales-filter select{
   width:auto;
-
   height:30px;
-
   min-width:75px;
-
   padding:0 7px;
-
   border-radius:7px;
-
   font-size:11px;
-
   font-weight:700;
-
-  border:1px solid #dfe3e8;
-
-  background:#fff;
 }
 
 .sales-filter .year-select{
@@ -570,38 +427,27 @@ select:focus{
   min-width:95px;
 }
 
-
-/* =====================================================
-   TRANSACTIONS
-===================================================== */
+/* TRANSACTIONS */
 
 .transactions-header{
   display:flex;
-
   align-items:center;
   justify-content:space-between;
-
   margin:9px 0 8px;
 }
 
 .transactions-header h3{
   margin:0;
-
   font-size:13px;
   font-weight:800;
 }
 
 .transaction-list{
   max-height:calc(100vh - 330px);
-
   min-height:120px;
-
   overflow-y:auto;
-
   padding-right:2px;
-
   -webkit-overflow-scrolling:touch;
-
   overscroll-behavior:contain;
 }
 
@@ -614,32 +460,23 @@ select:focus{
   border-radius:10px;
 }
 
-
 /* =====================================================
-   TRANSACTION CARD
+   NEW COMPACT TRANSACTION CARD
 ===================================================== */
 
 .transaction-card{
-  min-height:57px;
-
-  margin-bottom:7px;
-
-  padding:8px 10px;
+  min-height:58px;
+  margin-bottom:6px;
+  padding:6px 10px;
 
   background:#fff;
-
   border:1px solid #e6e9ee;
-
   border-left:4px solid #aaa;
-
-  border-radius:10px;
+  border-radius:9px;
 
   display:flex;
-
-  align-items:center;
-
+  align-items:stretch;
   justify-content:space-between;
-
   gap:10px;
 }
 
@@ -651,43 +488,55 @@ select:focus{
   border-left-color:#34a56f;
 }
 
+/* LEFT SIDE */
+
 .transaction-info{
   min-width:0;
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .transaction-date{
-  font-size:10px;
+  font-size:9px;
+  line-height:1;
   color:#888;
-  margin-bottom:3px;
-}
-
-.transaction-type{
-  font-size:12px;
-  font-weight:800;
-}
-
-.transaction-method{
-  display:inline-block;
-
-  margin-top:2px;
-
-  font-size:10px;
-
-  color:#777;
+  font-weight:400;
 }
 
 .transaction-amount{
+  font-size:16px;
+  line-height:1;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+}
+
+.transaction-method{
+  font-size:9px;
+  line-height:1;
+  color:#777;
+  font-weight:400;
+}
+
+/* RIGHT TYPE */
+
+.transaction-type{
   flex-shrink:0;
 
-  font-size:13px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
 
+  padding-top:1px;
+
+  font-size:11px;
+  line-height:1;
   font-weight:800;
 }
 
-
-/* =====================================================
-   VIEWER
-===================================================== */
+/* VIEWER */
 
 .viewer-history{
   margin-top:12px;
@@ -695,25 +544,17 @@ select:focus{
 
 .viewer-history h3{
   margin:0 0 8px;
-
   font-size:13px;
   font-weight:800;
 }
 
-
-/* =====================================================
-   MESSAGE
-===================================================== */
+/* MESSAGE */
 
 .message{
   min-height:20px;
-
   margin-top:9px;
-
   text-align:center;
-
   font-size:13px;
-
   color:#d34c4c;
 }
 
@@ -722,45 +563,28 @@ select:focus{
   font-weight:700;
 }
 
-
-/* =====================================================
-   LOADING
-===================================================== */
+/* LOADING */
 
 .loading{
   position:fixed;
-
   inset:0;
-
   z-index:9999;
-
   background:rgba(255,255,255,.72);
-
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
-
   gap:10px;
-
   font-size:13px;
-
   color:#555;
 }
 
 .spinner{
   width:30px;
   height:30px;
-
   border:3px solid #ddd;
-
   border-top-color:#5267e8;
-
   border-radius:50%;
-
   animation:spin .7s linear infinite;
 }
 
@@ -770,10 +594,7 @@ select:focus{
   }
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media(max-width:420px){
 
@@ -836,16 +657,28 @@ select:focus{
     width:30%;
   }
 
-  .details-filter-row .filter-name{
-    flex:1;
-  }
-
   .transaction-list{
     max-height:calc(100vh - 300px);
   }
 
-}
+  .transaction-card{
+    min-height:56px;
+    padding:6px 9px;
+  }
 
+  .transaction-amount{
+    font-size:15px;
+  }
+
+  .transaction-date,
+  .transaction-method{
+    font-size:8.5px;
+  }
+
+  .transaction-type{
+    font-size:10.5px;
+  }
+}
 
 @media(max-width:340px){
 
@@ -878,340 +711,377 @@ select:focus{
     font-size:9px;
   }
 
+  .transaction-card{
+    min-height:54px;
+  }
+
+  .transaction-amount{
+    font-size:14px;
+  }
 }
 
-</style></head><body><!-- =====================================================
-     LOGIN
-===================================================== --><section id="loginPage" class="page active">  <div class="login-card"><div class="logo-circle">
-  🔐
-</div>
+</style>
+</head>
 
-<h1>
-  Welcome Back
-</h1>
+<body>
 
-<p class="subtitle">
-  Login to continue
-</p>
+<!-- LOGIN -->
 
-<div class="input-group">
+<section id="loginPage" class="page active">
 
-  <label>
-    Username
-  </label>
+  <div class="login-card">
 
-  <input
-    id="username"
-    type="text"
-    placeholder="Enter username"
-    autocomplete="username"
-  >
+    <div class="logo-circle">🔐</div>
 
-</div>
+    <h1>Welcome Back</h1>
 
+    <p class="subtitle">Login to continue</p>
 
-<div class="input-group">
-
-  <label>
-    Password
-  </label>
-
-  <div class="password-box">
-
-    <input
-      id="password"
-      type="password"
-      placeholder="Enter password"
-      autocomplete="current-password"
-    >
-
-    <button
-      type="button"
-      class="eye-btn"
-      onclick="togglePassword()"
-    >
-      👁️
-    </button>
-
-  </div>
-
-</div>
-
-
-<button
-  class="primary-btn"
-  onclick="loginUser()"
->
-  LOGIN
-</button>
-
-
-<div
-  id="loginMessage"
-  class="message"
-></div>
-
-  </div></section><!-- =====================================================
-     ADMIN
-===================================================== --><section id="adminPage" class="page">  <div class="app-container"><header class="top-header">
-
-  <div>
-
-    <h2>
-      ADMIN PANEL
-    </h2>
-
-    <span id="adminWelcome">
-      Welcome
-    </span>
-
-  </div>
-
-  <button
-    class="logout-btn"
-    onclick="logout()"
-  >
-    🚪
-  </button>
-
-</header>
-
-
-<main class="admin-content">
-
-
-  <div class="admin-buttons">
-
-    <button
-      id="addTransactionBtn"
-      class="admin-main-btn active"
-      onclick="openAddTransaction()"
-    >
-
-      <span class="admin-main-icon">
-        ➕
-      </span>
-
-      <strong>
-        Add Transaction
-      </strong>
-
-    </button>
-
-
-    <button
-      id="checkDetailsBtn"
-      class="admin-main-btn"
-      onclick="openCheckDetails()"
-    >
-
-      <span class="admin-main-icon">
-        📋
-      </span>
-
-      <strong>
-        Check Details
-      </strong>
-
-    </button>
-
-  </div>
-
-
-  <!-- =================================================
-       ADD TRANSACTION
-  ================================================== -->
-
-  <section
-    id="addTransactionSection"
-    class="admin-panel-section active"
-  >
-
-    <main class="form-container">
-
-
-      <div class="input-group">
-
-        <label>
-          📅 Date
-        </label>
-
-        <input
-          id="transactionDate"
-          type="date"
-        >
-
-      </div>
-
-
-      <div class="input-group">
-
-        <label>
-          💰 Amount
-        </label>
-
-        <input
-          id="transactionAmount"
-          class="amount-input"
-          type="text"
-          inputmode="numeric"
-          autocomplete="off"
-          placeholder="1,000"
-        >
-
-      </div>
-
-
-      <div class="input-group">
-
-        <label>
-          👤 Name
-        </label>
-
-        <select id="transactionName">
-
-          <option value="">
-            Select Name
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div class="type-row">
-
-        <button
-          id="saleBtn"
-          class="type-btn active"
-          onclick="selectType('বিক্রয়')"
-        >
-          🛒 বিক্রয়
-        </button>
-
-
-        <button
-          id="paymentBtn"
-          class="type-btn"
-          onclick="selectType('পেমেন্ট')"
-        >
-          💳 পেমেন্ট
-        </button>
-
-      </div>
-
+    <div class="input-group">
+      <label>Username</label>
 
       <input
-        id="transactionType"
-        type="hidden"
-        value="বিক্রয়"
+        id="username"
+        type="text"
+        placeholder="Enter username"
+        autocomplete="username"
       >
+    </div>
 
+    <div class="input-group">
 
-      <div class="input-group">
+      <label>Password</label>
 
-        <label id="methodLabel">
-          বিক্রয়ের ধরন
-        </label>
+      <div class="password-box">
 
-        <select id="transactionMethod">
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+        >
 
-          <option value="">
-            Select
-          </option>
-
-        </select>
+        <button
+          type="button"
+          class="eye-btn"
+          onclick="togglePassword()"
+        >👁️</button>
 
       </div>
 
+    </div>
+
+    <button
+      class="primary-btn"
+      onclick="loginUser()"
+    >
+      LOGIN
+    </button>
+
+    <div id="loginMessage" class="message"></div>
+
+  </div>
+
+</section>
+
+<!-- ADMIN -->
+
+<section id="adminPage" class="page">
+
+  <div class="app-container">
+
+    <header class="top-header">
+
+      <div>
+        <h2>ADMIN PANEL</h2>
+        <span id="adminWelcome">Welcome</span>
+      </div>
 
       <button
-        class="primary-btn"
-        onclick="saveTransaction()"
+        class="logout-btn"
+        onclick="logout()"
+      >🚪</button>
+
+    </header>
+
+    <main class="admin-content">
+
+      <div class="admin-buttons">
+
+        <button
+          id="addTransactionBtn"
+          class="admin-main-btn active"
+          onclick="openAddTransaction()"
+        >
+
+          <span class="admin-main-icon">➕</span>
+
+          <strong>Add Transaction</strong>
+
+        </button>
+
+        <button
+          id="checkDetailsBtn"
+          class="admin-main-btn"
+          onclick="openCheckDetails()"
+        >
+
+          <span class="admin-main-icon">📋</span>
+
+          <strong>Check Details</strong>
+
+        </button>
+
+      </div>
+
+      <!-- ADD TRANSACTION -->
+
+      <section
+        id="addTransactionSection"
+        class="admin-panel-section active"
       >
-        💾 SAVE
-      </button>
 
+        <main class="form-container">
 
-      <div
-        id="transactionMessage"
-        class="message"
-      ></div>
+          <div class="input-group">
 
+            <label>📅 Date</label>
+
+            <input
+              id="transactionDate"
+              type="date"
+            >
+
+          </div>
+
+          <div class="input-group">
+
+            <label>💰 Amount</label>
+
+            <input
+              id="transactionAmount"
+              class="amount-input"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="1,000"
+            >
+
+          </div>
+
+          <div class="input-group">
+
+            <label>👤 Name</label>
+
+            <select id="transactionName">
+
+              <option value="">
+                Select Name
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="type-row">
+
+            <button
+              id="saleBtn"
+              class="type-btn active"
+              onclick="selectType('বিক্রয়')"
+            >
+              বিক্রয়
+            </button>
+
+            <button
+              id="paymentBtn"
+              class="type-btn"
+              onclick="selectType('পেমেন্ট')"
+            >
+              💳 পেমেন্ট
+            </button>
+
+          </div>
+
+          <input
+            id="transactionType"
+            type="hidden"
+            value="বিক্রয়"
+          >
+
+          <div class="input-group">
+
+            <label id="methodLabel">
+              বিক্রয়ের ধরন
+            </label>
+
+            <select id="transactionMethod">
+
+              <option value="">
+                Select
+              </option>
+
+            </select>
+
+          </div>
+
+          <button
+            class="primary-btn"
+            onclick="saveTransaction()"
+          >
+            💾 SAVE
+          </button>
+
+          <div
+            id="transactionMessage"
+            class="message"
+          ></div>
+
+        </main>
+
+      </section>
+
+      <!-- CHECK DETAILS -->
+
+      <section
+        id="checkDetailsSection"
+        class="admin-panel-section"
+      >
+
+        <main class="details-container">
+
+          <div class="details-filter-row">
+
+            <select
+              id="yearSelect"
+              class="filter-year"
+              onchange="loadCustomerDetails(true)"
+            ></select>
+
+            <select
+              id="monthSelect"
+              class="filter-month"
+              onchange="loadCustomerDetails(true)"
+            ></select>
+
+            <select
+              id="detailsName"
+              class="filter-name"
+              onchange="loadCustomerDetails()"
+            >
+
+              <option value="">
+                Select Name
+              </option>
+
+            </select>
+
+          </div>
+
+          <div
+            id="balanceCard"
+            class="balance-card hidden"
+          >
+
+            <div class="balance-left">
+
+              <span>CURRENT BALANCE</span>
+
+              <strong id="currentBalance">
+                0 Tk
+              </strong>
+
+            </div>
+
+            <div class="balance-sales">
+
+              <span>TOTAL SALES</span>
+
+              <strong id="monthlySales">
+                0 Tk
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div
+            id="transactionsSection"
+            class="hidden"
+          >
+
+            <div class="transactions-header">
+
+              <h3>TRANSACTIONS</h3>
+
+            </div>
+
+            <div
+              id="transactionList"
+              class="transaction-list"
+            ></div>
+
+          </div>
+
+          <div
+            id="detailsMessage"
+            class="message"
+          ></div>
+
+        </main>
+
+      </section>
 
     </main>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- =================================================
-       CHECK DETAILS
-  ================================================== -->
+<!-- VIEWER -->
 
-  <section
-    id="checkDetailsSection"
-    class="admin-panel-section"
-  >
+<section id="viewerPage" class="page">
 
-    <main class="details-container">
+  <div class="app-container">
 
+    <header class="top-header">
 
-      <div class="details-filter-row">
+      <div>
 
-        <select
-          id="yearSelect"
-          class="filter-year"
-          onchange="loadCustomerDetails(true)"
-        ></select>
+        <h2>VIEWER PANEL</h2>
 
-
-        <select
-          id="monthSelect"
-          class="filter-month"
-          onchange="loadCustomerDetails(true)"
-        ></select>
-
-
-        <select
-          id="detailsName"
-          class="filter-name"
-          onchange="loadCustomerDetails()"
-        >
-
-          <option value="">
-            Select Name
-          </option>
-
-        </select>
+        <span id="viewerWelcome">
+          Welcome
+        </span>
 
       </div>
 
+      <button
+        class="logout-btn"
+        onclick="logout()"
+      >🚪</button>
 
-      <div
-        id="balanceCard"
-        class="balance-card hidden"
-      >
+    </header>
+
+    <main class="viewer-container">
+
+      <div class="balance-card">
 
         <div class="balance-left">
 
-          <span>
-            CURRENT BALANCE
-          </span>
+          <span>CURRENT BALANCE</span>
 
-          <strong id="currentBalance">
+          <strong id="viewerBalance">
             0 Tk
           </strong>
 
         </div>
 
-
         <div class="balance-sales">
 
-          <span>
-            TOTAL SALES
-          </span>
+          <span>TOTAL SALES</span>
 
-          <strong id="monthlySales">
+          <strong id="viewerMonthlySales">
             0 Tk
           </strong>
 
@@ -1219,335 +1089,150 @@ select:focus{
 
       </div>
 
+      <div class="sales-row">
 
-      <div
-        id="monthlySection"
-        class="hidden"
-      ></div>
+        <div class="sales-filter">
 
+          <select
+            id="viewerYear"
+            class="year-select"
+            onchange="loadViewerDetails(true)"
+          ></select>
 
-      <div
-        id="transactionsSection"
-        class="hidden"
-      >
-
-        <div class="transactions-header">
-
-          <h3>
-            TRANSACTIONS
-          </h3>
+          <select
+            id="viewerMonth"
+            class="month-select"
+            onchange="loadViewerDetails(true)"
+          ></select>
 
         </div>
 
+      </div>
+
+      <div class="viewer-history">
+
+        <h3>TRANSACTIONS</h3>
 
         <div
-          id="transactionList"
+          id="viewerTransactionList"
           class="transaction-list"
         ></div>
 
       </div>
 
-
       <div
-        id="detailsMessage"
+        id="viewerMessage"
         class="message"
       ></div>
 
-
     </main>
 
-  </section>
-
-
-</main>
-
-  </div></section><!-- =====================================================
-     VIEWER
-===================================================== --><section id="viewerPage" class="page">  <div class="app-container"><header class="top-header">
-
-  <div>
-
-    <h2>
-      VIEWER PANEL
-    </h2>
-
-    <span id="viewerWelcome">
-      Welcome
-    </span>
-
   </div>
 
+</section>
 
-  <button
-    class="logout-btn"
-    onclick="logout()"
-  >
-    🚪
-  </button>
+<!-- LOADING -->
 
-</header>
-
-
-<main class="viewer-container">
-
-
-  <div class="balance-card">
-
-    <div class="balance-left">
-
-      <span>
-        CURRENT BALANCE
-      </span>
-
-      <strong id="viewerBalance">
-        0 Tk
-      </strong>
-
-    </div>
-
-
-    <div class="balance-sales">
-
-      <span>
-        TOTAL SALES
-      </span>
-
-      <strong id="viewerMonthlySales">
-        0 Tk
-      </strong>
-
-    </div>
-
-  </div>
-
-
-  <div class="sales-row">
-
-    <div class="sales-filter">
-
-      <select
-        id="viewerYear"
-        class="year-select"
-        onchange="loadViewerDetails(true)"
-      ></select>
-
-
-      <select
-        id="viewerMonth"
-        class="month-select"
-        onchange="loadViewerDetails(true)"
-      ></select>
-
-    </div>
-
-  </div>
-
-
-  <div class="viewer-history">
-
-    <h3>
-      TRANSACTIONS
-    </h3>
-
-
-    <div
-      id="viewerTransactionList"
-      class="transaction-list"
-    ></div>
-
-  </div>
-
-
-  <div
-    id="viewerMessage"
-    class="message"
-  ></div>
-
-
-</main>
-
-  </div></section><!-- =====================================================
-     LOADING
-===================================================== --><div
+<div
   id="loading"
   class="loading hidden"
->  <div class="spinner"></div>  <span>
-    Loading...
-  </span></div><script>
+>
 
-/* =====================================================
-   API
-===================================================== */
+  <div class="spinner"></div>
+
+  <span>Loading...</span>
+
+</div>
+
+<script>
 
 const API_URL =
 'https://script.google.com/macros/s/AKfycbwjo8vQO3GmnVKTJLJKmoAgHKQequvOtzuO9ySlLSqCAABvGuPvb3X_PeDDMSVu6Fb0Tg/exec';
 
+let currentUser=null;
+let salesOptions=[];
+let paymentOptions=[];
+let namesCache=null;
+let namesLoading=null;
+let optionsLoaded=false;
+let optionsLoading=null;
+let detailsRequestId=0;
+let viewerRequestId=0;
 
-/* =====================================================
-   STATE
-===================================================== */
-
-let currentUser = null;
-
-let salesOptions = [];
-let paymentOptions = [];
-
-let namesCache = null;
-let namesLoading = null;
-
-let optionsLoaded = false;
-let optionsLoading = null;
-
-let detailsRequestId = 0;
-let viewerRequestId = 0;
-
-let domReady = false;
-
-
-/* =====================================================
-   DOM
-===================================================== */
-
-const DOM = {};
+const DOM={};
 
 function cacheDOM(){
 
-  const ids = [
-
-    'loginPage',
-    'adminPage',
-    'viewerPage',
-
-    'username',
-    'password',
-
-    'loginMessage',
-
-    'adminWelcome',
-    'viewerWelcome',
-
-    'transactionDate',
-    'transactionAmount',
-    'transactionName',
-    'transactionType',
-    'transactionMethod',
-    'methodLabel',
-
-    'saleBtn',
-    'paymentBtn',
-
+  const ids=[
+    'loginPage','adminPage','viewerPage',
+    'username','password','loginMessage',
+    'adminWelcome','viewerWelcome',
+    'transactionDate','transactionAmount',
+    'transactionName','transactionType',
+    'transactionMethod','methodLabel',
+    'saleBtn','paymentBtn',
     'transactionMessage',
-
-    'detailsName',
-    'yearSelect',
-    'monthSelect',
-
-    'balanceCard',
-    'monthlySection',
-    'transactionsSection',
-
-    'currentBalance',
-    'monthlySales',
-
-    'transactionList',
-    'detailsMessage',
-
-    'viewerYear',
-    'viewerMonth',
-    'viewerBalance',
-    'viewerMonthlySales',
-
-    'viewerTransactionList',
-    'viewerMessage',
-
+    'detailsName','yearSelect','monthSelect',
+    'balanceCard','transactionsSection',
+    'currentBalance','monthlySales',
+    'transactionList','detailsMessage',
+    'viewerYear','viewerMonth',
+    'viewerBalance','viewerMonthlySales',
+    'viewerTransactionList','viewerMessage',
     'loading'
-
   ];
 
-  for(let i=0;i<ids.length;i++){
-
-    DOM[ids[i]] =
-      document.getElementById(ids[i]);
-
-  }
-
-  domReady = true;
+  ids.forEach(id=>{
+    DOM[id]=document.getElementById(id);
+  });
 
 }
 
-
-/* =====================================================
-   API
-   Lightweight JSONP
-===================================================== */
+/* API */
 
 function api(action,params={}){
 
-  return new Promise(function(resolve,reject){
+  return new Promise((resolve,reject)=>{
 
-    const callbackName =
-      'cb_' +
-      Date.now() +
-      Math.random()
-        .toString(36)
-        .slice(2);
+    const callbackName=
+      'cb_'+Date.now()+'_'+
+      Math.random().toString(36).slice(2);
 
+    const script=document.createElement('script');
 
-    const script =
-      document.createElement('script');
-
-
-    const query =
-      new URLSearchParams();
-
+    const query=new URLSearchParams();
 
     query.set('action',action);
     query.set('callback',callbackName);
 
-
-    for(const key in params){
+    Object.keys(params).forEach(key=>{
 
       const value=params[key];
 
-      if(
-        value !== undefined &&
-        value !== null
-      ){
-
-        query.set(
-          key,
-          String(value)
-        );
-
+      if(value!==undefined && value!==null){
+        query.set(key,String(value));
       }
 
-    }
-
+    });
 
     let finished=false;
 
-
-    const timeout=setTimeout(function(){
+    const timeout=setTimeout(()=>{
 
       if(finished)return;
 
       finished=true;
-
       cleanup();
 
       reject(
-        new Error(
-          'Server request timed out.'
-        )
+        new Error('Server request timed out.')
       );
 
-    },12000);
-
+    },15000);
 
     function cleanup(){
 
       clearTimeout(timeout);
-
       script.remove();
 
       try{
@@ -1556,42 +1241,32 @@ function api(action,params={}){
 
     }
 
-
-    window[callbackName]=function(result){
+    window[callbackName]=result=>{
 
       if(finished)return;
 
       finished=true;
-
       cleanup();
 
       resolve(result);
 
     };
 
-
-    script.onerror=function(){
+    script.onerror=()=>{
 
       if(finished)return;
 
       finished=true;
-
       cleanup();
 
       reject(
-        new Error(
-          'Unable to connect to server.'
-        )
+        new Error('Unable to connect to server.')
       );
 
     };
 
-
-    script.src =
-      API_URL +
-      '?' +
-      query.toString();
-
+    script.src=
+      API_URL+'?'+query.toString();
 
     document.head.appendChild(script);
 
@@ -1599,278 +1274,169 @@ function api(action,params={}){
 
 }
 
-
-/* =====================================================
-   PAGE
-===================================================== */
+/* PAGE */
 
 function showPage(pageId){
 
-  const pages =
-    document.querySelectorAll('.page');
+  document.querySelectorAll('.page').forEach(page=>{
+    page.classList.remove('active');
+  });
 
+  const page=document.getElementById(pageId);
 
-  for(let i=0;i<pages.length;i++){
-
-    pages[i].classList.remove('active');
-
-  }
-
-
-  const page =
-    document.getElementById(pageId);
-
-
-  if(page){
-
-    page.classList.add('active');
-
-  }
+  if(page)page.classList.add('active');
 
 }
 
-
-/* =====================================================
-   ADMIN SECTION
-===================================================== */
+/* ADMIN SECTION */
 
 function showAdminSection(section){
 
-  const addSection =
-    document.getElementById(
-      'addTransactionSection'
-    );
+  const addSection=
+    document.getElementById('addTransactionSection');
 
-  const detailsSection =
-    document.getElementById(
-      'checkDetailsSection'
-    );
+  const detailsSection=
+    document.getElementById('checkDetailsSection');
 
-  const addBtn =
-    document.getElementById(
-      'addTransactionBtn'
-    );
+  const addBtn=
+    document.getElementById('addTransactionBtn');
 
-  const detailsBtn =
-    document.getElementById(
-      'checkDetailsBtn'
-    );
-
-
-  const isAdd =
-    section === 'add';
-
+  const detailsBtn=
+    document.getElementById('checkDetailsBtn');
 
   addSection.classList.toggle(
     'active',
-    isAdd
+    section==='add'
   );
 
   detailsSection.classList.toggle(
     'active',
-    !isAdd
+    section==='details'
   );
 
   addBtn.classList.toggle(
     'active',
-    isAdd
+    section==='add'
   );
 
   detailsBtn.classList.toggle(
     'active',
-    !isAdd
+    section==='details'
   );
 
 }
 
-
-/* =====================================================
-   LOADING
-===================================================== */
+/* LOADING */
 
 function showLoading(){
-
-  if(DOM.loading){
-
-    DOM.loading.classList.remove(
-      'hidden'
-    );
-
-  }
-
+  DOM.loading.classList.remove('hidden');
 }
-
 
 function hideLoading(){
-
-  if(DOM.loading){
-
-    DOM.loading.classList.add(
-      'hidden'
-    );
-
-  }
-
+  DOM.loading.classList.add('hidden');
 }
 
-
-/* =====================================================
-   PASSWORD
-===================================================== */
+/* PASSWORD */
 
 function togglePassword(){
 
-  DOM.password.type =
-    DOM.password.type === 'password'
+  DOM.password.type=
+    DOM.password.type==='password'
       ? 'text'
       : 'password';
 
 }
 
-
-/* =====================================================
-   LOGIN
-===================================================== */
+/* LOGIN */
 
 async function loginUser(){
 
-  const username =
-    DOM.username.value.trim();
-
-  const password =
-    DOM.password.value.trim();
-
+  const username=DOM.username.value.trim();
+  const password=DOM.password.value.trim();
 
   DOM.loginMessage.textContent='';
   DOM.loginMessage.classList.remove('success');
 
-
   if(!username || !password){
 
-    DOM.loginMessage.textContent =
+    DOM.loginMessage.textContent=
       'Username and password required.';
 
     return;
-
   }
-
 
   showLoading();
 
-
   try{
 
-    const result =
-      await api(
-        'login',
-        {
-          username,
-          password
-        }
-      );
+    const result=await api(
+      'login',
+      {username,password}
+    );
 
-
-    if(
-      !result ||
-      !result.success
-    ){
+    if(!result || !result.success){
 
       hideLoading();
 
-      DOM.loginMessage.textContent =
-        result?.message ||
-        'Login failed.';
+      DOM.loginMessage.textContent=
+        result?.message || 'Login failed.';
 
       return;
-
     }
-
 
     currentUser=result;
 
-
     localStorage.setItem(
       'transactionUser',
-      JSON.stringify(result)
+      JSON.stringify(currentUser)
     );
 
-
-    const role =
-      String(result.role)
-        .toLowerCase();
-
+    const role=String(result.role).toLowerCase();
 
     if(role==='admin'){
 
-      DOM.adminWelcome.textContent =
-        'Welcome, ' +
-        (result.name || 'Admin');
-
+      DOM.adminWelcome.textContent=
+        'Welcome, '+(result.name||'Admin');
 
       showPage('adminPage');
-
       showAdminSection('add');
 
       setToday();
-
-
-      /*
-       * Important:
-       * Names + Options একই সময়ে
-       * load হবে।
-       */
       preloadAdminData();
 
-
       hideLoading();
-
       return;
-
     }
-
 
     if(role==='viewer'){
 
-      DOM.viewerWelcome.textContent =
-        'Welcome, ' +
-        (result.name || 'Viewer');
-
+      DOM.viewerWelcome.textContent=
+        'Welcome, '+result.name;
 
       setupMonthSelect(
         'viewerMonth',
         'viewerYear'
       );
 
-
       showPage('viewerPage');
 
       hideLoading();
 
-
-      /*
-       * Viewer transaction
-       * background এ load হবে।
-       */
       loadViewerDetails();
 
-
       return;
-
     }
 
-
     hideLoading();
 
-    DOM.loginMessage.textContent =
+    DOM.loginMessage.textContent=
       'Unknown account type.';
 
-  }
-
-  catch(error){
+  }catch(error){
 
     hideLoading();
 
-    DOM.loginMessage.textContent =
+    DOM.loginMessage.textContent=
       error.message ||
       'Something went wrong.';
 
@@ -1878,42 +1444,26 @@ async function loginUser(){
 
 }
 
-
-/* =====================================================
-   LOGOUT
-===================================================== */
+/* LOGOUT */
 
 async function logout(){
 
   const user=currentUser;
 
-
   currentUser=null;
-
   namesCache=null;
   namesLoading=null;
-
   salesOptions=[];
   paymentOptions=[];
-
   optionsLoaded=false;
   optionsLoading=null;
 
-  detailsRequestId++;
-  viewerRequestId++;
-
-
-  localStorage.removeItem(
-    'transactionUser'
-  );
-
+  localStorage.removeItem('transactionUser');
 
   DOM.username.value='';
   DOM.password.value='';
 
-
   showPage('loginPage');
-
 
   if(user){
 
@@ -1921,9 +1471,7 @@ async function logout(){
 
       await api(
         'logout',
-        {
-          token:user.token
-        }
+        {token:user.token}
       );
 
     }catch(e){}
@@ -1932,109 +1480,50 @@ async function logout(){
 
 }
 
-
-/* =====================================================
-   PRELOAD ADMIN DATA
-===================================================== */
+/* PRELOAD */
 
 function preloadAdminData(){
 
-  if(!currentUser)return;
-
-
-  /*
-   * Parallel request.
-   * Names আর Options একসাথে যাবে।
-   */
-  Promise.all([
-    loadNames(),
-    loadOptions()
-  ]).catch(function(error){
-
-    console.error(
-      'Preload:',
-      error
-    );
-
-  });
-
+  loadNames();
+  loadOptions();
 
   setToday();
 
 }
 
-
-/* =====================================================
-   ADD TRANSACTION
-===================================================== */
+/* ADD */
 
 function openAddTransaction(){
 
   showAdminSection('add');
-
   setToday();
 
+  if(!namesCache)loadNames();
 
-  /*
-   * Cache থাকলে API call হবে না।
-   */
-  if(namesCache){
+  if(!optionsLoaded)loadOptions();
 
-    populateNameSelect(
-      'transactionName'
-    );
-
-  }
-  else{
-
-    loadNames();
-
-  }
-
-
-  if(optionsLoaded){
-
-    selectType(
-      DOM.transactionType.value ||
-      'বিক্রয়'
-    );
-
-  }
-  else{
-
-    loadOptions();
-
-  }
+  selectType(
+    DOM.transactionType.value||'বিক্রয়'
+  );
 
 }
 
-
-/* =====================================================
-   CHECK DETAILS
-===================================================== */
+/* CHECK */
 
 function openCheckDetails(){
 
   showAdminSection('details');
 
-
-  /*
-   * Dropdown immediately তৈরি হবে।
-   */
   setupMonthSelect(
     'monthSelect',
     'yearSelect'
   );
 
-
   if(namesCache){
 
-    populateNameSelect(
-      'detailsName'
-    );
+    populateNameSelect('detailsName');
 
-  }
-  else{
+  }else{
 
     loadNames();
 
@@ -2042,319 +1531,180 @@ function openCheckDetails(){
 
 }
 
-
-/* =====================================================
-   TODAY
-===================================================== */
+/* TODAY */
 
 function setToday(){
 
-  const input =
-    DOM.transactionDate;
-
+  const input=DOM.transactionDate;
 
   if(!input)return;
 
-
   const now=new Date();
 
-
-  const today =
-    now.getFullYear() +
-    '-' +
-    String(
-      now.getMonth()+1
-    ).padStart(2,'0') +
-    '-' +
-    String(
-      now.getDate()
-    ).padStart(2,'0');
-
+  const today=
+    now.getFullYear()+'-'+
+    String(now.getMonth()+1).padStart(2,'0')+'-'+
+    String(now.getDate()).padStart(2,'0');
 
   input.value=today;
   input.max=today;
 
 }
 
-
-/* =====================================================
-   NAMES
-===================================================== */
+/* NAMES */
 
 function populateNameSelect(elementId){
 
-  const select =
-    document.getElementById(elementId);
-
+  const select=document.getElementById(elementId);
 
   if(!select)return;
 
+  const oldValue=select.value;
 
-  const oldValue =
-    select.value;
-
-
-  select.innerHTML =
+  select.innerHTML=
     '<option value="">Select Name</option>';
 
+  if(!namesCache?.length)return;
 
-  if(
-    !namesCache ||
-    !namesCache.length
-  ){
+  const fragment=document.createDocumentFragment();
 
-    return;
+  namesCache.forEach(name=>{
 
-  }
-
-
-  const fragment =
-    document.createDocumentFragment();
-
-
-  for(let i=0;i<namesCache.length;i++){
-
-    const name =
-      namesCache[i];
-
-
-    const option =
-      document.createElement('option');
-
+    const option=document.createElement('option');
 
     option.value=name;
     option.textContent=name;
 
-
     fragment.appendChild(option);
 
-  }
-
+  });
 
   select.appendChild(fragment);
 
-
-  if(
-    oldValue &&
-    namesCache.includes(oldValue)
-  ){
-
+  if(oldValue && namesCache.includes(oldValue)){
     select.value=oldValue;
-
   }
 
 }
-
-
-/* =====================================================
-   LOAD NAMES
-===================================================== */
 
 function loadNames(){
 
   if(namesCache){
 
-    populateNameSelect(
-      'transactionName'
-    );
+    populateNameSelect('transactionName');
+    populateNameSelect('detailsName');
 
-    populateNameSelect(
-      'detailsName'
-    );
-
-    return Promise.resolve(
-      namesCache
-    );
-
+    return Promise.resolve(namesCache);
   }
 
+  if(namesLoading)return namesLoading;
 
-  if(namesLoading){
+  if(!currentUser)return Promise.resolve([]);
 
-    return namesLoading;
-
-  }
-
-
-  if(!currentUser){
-
-    return Promise.resolve([]);
-
-  }
-
-
-  namesLoading =
+  namesLoading=
     api(
       'getNames',
-      {
-        token:currentUser.token
-      }
+      {token:currentUser.token}
     )
-    .then(function(result){
+    .then(result=>{
 
       if(
-        result &&
-        result.success &&
+        result?.success &&
         Array.isArray(result.names)
       ){
 
-        /*
-         * Remove duplicate names
-         * and empty values.
-         */
-        namesCache =
-          [...new Set(
-            result.names
-              .map(String)
-              .map(function(v){
-                return v.trim();
-              })
-              .filter(Boolean)
-          )];
+        namesCache=result.names;
 
-
-        populateNameSelect(
-          'transactionName'
-        );
-
-        populateNameSelect(
-          'detailsName'
-        );
+        populateNameSelect('transactionName');
+        populateNameSelect('detailsName');
 
       }
 
-
-      return namesCache || [];
+      return namesCache||[];
 
     })
-    .catch(function(error){
+    .catch(error=>{
 
-      console.error(
-        'Names:',
-        error
-      );
-
+      console.error('Names:',error);
       return [];
 
     })
-    .finally(function(){
-
+    .finally(()=>{
       namesLoading=null;
-
     });
-
 
   return namesLoading;
 
 }
 
-
-/* =====================================================
-   LOAD OPTIONS
-===================================================== */
+/* OPTIONS */
 
 function loadOptions(){
 
   if(optionsLoaded){
 
     selectType(
-      DOM.transactionType.value ||
-      'বিক্রয়'
+      DOM.transactionType.value||'বিক্রয়'
     );
 
     return Promise.resolve();
-
   }
 
+  if(optionsLoading)return optionsLoading;
 
-  if(optionsLoading){
+  if(!currentUser)return Promise.resolve();
 
-    return optionsLoading;
-
-  }
-
-
-  if(!currentUser){
-
-    return Promise.resolve();
-
-  }
-
-
-  optionsLoading =
+  optionsLoading=
     api(
       'getOptions',
-      {
-        token:currentUser.token
-      }
+      {token:currentUser.token}
     )
-    .then(function(result){
+    .then(result=>{
 
-      if(
-        result &&
-        result.success
-      ){
+      if(result?.success){
 
-        salesOptions =
+        salesOptions=
           Array.isArray(result.sales)
             ? result.sales
             : [];
 
-
-        paymentOptions =
+        paymentOptions=
           Array.isArray(result.payments)
             ? result.payments
             : [];
 
-
         optionsLoaded=true;
 
-
         selectType(
-          DOM.transactionType.value ||
-          'বিক্রয়'
+          DOM.transactionType.value||'বিক্রয়'
         );
 
       }
 
-
       return result;
 
     })
-    .catch(function(error){
+    .catch(error=>{
 
-      console.error(
-        'Options:',
-        error
-      );
-
+      console.error('Options:',error);
       return null;
 
     })
-    .finally(function(){
-
+    .finally(()=>{
       optionsLoading=null;
-
     });
-
 
   return optionsLoading;
 
 }
 
-
-/* =====================================================
-   TYPE
-===================================================== */
+/* TYPE */
 
 function selectType(type){
 
   DOM.transactionType.value=type;
 
-
-  const isSale =
-    type==='বিক্রয়';
-
+  const isSale=type==='বিক্রয়';
 
   DOM.saleBtn.classList.toggle(
     'active',
@@ -2366,358 +1716,232 @@ function selectType(type){
     !isSale
   );
 
-
-  DOM.methodLabel.textContent =
+  DOM.methodLabel.textContent=
     isSale
       ? 'বিক্রয়ের ধরন'
       : 'পেমেন্টের ধরন';
 
-
-  const options =
+  const options=
     isSale
       ? salesOptions
       : paymentOptions;
 
+  const select=DOM.transactionMethod;
 
-  const select =
-    DOM.transactionMethod;
-
-
-  const oldValue =
-    select.value;
-
-
-  select.innerHTML =
+  select.innerHTML=
     '<option value="">Select</option>';
-
 
   if(!options.length){
 
-    if(!optionsLoaded){
-
-      loadOptions();
-
-    }
+    if(!optionsLoaded)loadOptions();
 
     return;
-
   }
 
+  const fragment=document.createDocumentFragment();
 
-  const fragment =
-    document.createDocumentFragment();
+  options.forEach(item=>{
 
+    const option=document.createElement('option');
 
-  for(let i=0;i<options.length;i++){
-
-    const option =
-      document.createElement('option');
-
-
-    option.value=options[i];
-    option.textContent=options[i];
-
+    option.value=item;
+    option.textContent=item;
 
     fragment.appendChild(option);
 
-  }
-
+  });
 
   select.appendChild(fragment);
 
-
-  if(options.includes(oldValue)){
-
-    select.value=oldValue;
-
-  }
-
 }
 
-
-/* =====================================================
-   AMOUNT FORMAT
-===================================================== */
+/* AMOUNT FORMAT */
 
 function formatInputAmount(value){
 
-  let clean =
-    String(value || '')
-      .replace(/,/g,'')
-      .replace(/[^\d]/g,'');
-
+  let clean=String(value||'')
+    .replace(/,/g,'')
+    .replace(/[^\d]/g,'');
 
   if(!clean)return '';
 
+  clean=clean.replace(/^0+(?=\d)/,'');
 
-  clean =
-    clean.replace(
-      /^0+(?=\d)/,
-      ''
-    );
-
-
-  return Number(clean)
-    .toLocaleString('en-US');
+  return Number(clean).toLocaleString('en-US');
 
 }
 
-
-/* =====================================================
-   AMOUNT INPUT
-===================================================== */
+/* AMOUNT LIVE */
 
 function setupAmountInput(){
 
-  const input =
-    DOM.transactionAmount;
-
+  const input=DOM.transactionAmount;
 
   if(!input)return;
 
+  input.addEventListener('input',()=>{
 
-  input.addEventListener(
-    'input',
-    function(){
+    const cursor=input.selectionStart;
 
-      const cursor =
-        input.selectionStart || 0;
+    const before=input.value.slice(0,cursor);
 
+    const digitsBefore=
+      before
+        .replace(/,/g,'')
+        .replace(/[^\d]/g,'')
+        .length;
 
-      const before =
-        input.value.slice(
-          0,
-          cursor
-        );
+    input.value=formatInputAmount(input.value);
 
+    let newCursor=0;
+    let digitCount=0;
 
-      const digitsBefore =
-        before
-          .replace(/,/g,'')
-          .replace(/[^\d]/g,'')
-          .length;
+    while(
+      newCursor<input.value.length &&
+      digitCount<digitsBefore
+    ){
 
-
-      input.value =
-        formatInputAmount(
-          input.value
-        );
-
-
-      let newCursor=0;
-      let digitCount=0;
-
-
-      while(
-        newCursor < input.value.length &&
-        digitCount < digitsBefore
-      ){
-
-        if(
-          /\d/.test(
-            input.value[newCursor]
-          )
-        ){
-
-          digitCount++;
-
-        }
-
-        newCursor++;
-
+      if(/\d/.test(input.value[newCursor])){
+        digitCount++;
       }
 
+      newCursor++;
 
-      try{
+    }
 
-        input.setSelectionRange(
-          newCursor,
-          newCursor
-        );
+    try{
 
-      }catch(e){}
+      input.setSelectionRange(
+        newCursor,
+        newCursor
+      );
 
-    },
-    {passive:true}
-  );
+    }catch(e){}
 
+  });
 
-  input.addEventListener(
-    'blur',
-    function(){
+  input.addEventListener('blur',()=>{
 
-      input.value =
-        formatInputAmount(
-          input.value
-        );
+    input.value=
+      formatInputAmount(input.value);
 
-    },
-    {passive:true}
-  );
+  });
 
 }
 
-
-/* =====================================================
-   SAVE TRANSACTION
-===================================================== */
+/* SAVE */
 
 async function saveTransaction(){
 
-  const date =
-    DOM.transactionDate.value;
+  const date=DOM.transactionDate.value;
 
-  const amount =
+  const amount=
     DOM.transactionAmount.value
       .replace(/,/g,'');
 
-  const name =
-    DOM.transactionName.value;
+  const name=DOM.transactionName.value;
+  const type=DOM.transactionType.value;
+  const method=DOM.transactionMethod.value;
 
-  const type =
-    DOM.transactionType.value;
-
-  const method =
-    DOM.transactionMethod.value;
-
-
-  const message =
-    DOM.transactionMessage;
-
+  const message=DOM.transactionMessage;
 
   message.textContent='';
   message.classList.remove('success');
 
-
   if(!date){
 
-    message.textContent =
+    message.textContent=
       'Please select a date.';
 
     return;
-
   }
-
 
   const now=new Date();
 
-
-  const todayString =
-    now.getFullYear() +
-    '-' +
-    String(
-      now.getMonth()+1
-    ).padStart(2,'0') +
-    '-' +
-    String(
-      now.getDate()
-    ).padStart(2,'0');
-
+  const todayString=
+    now.getFullYear()+'-'+
+    String(now.getMonth()+1).padStart(2,'0')+'-'+
+    String(now.getDate()).padStart(2,'0');
 
   if(date>todayString){
 
-    message.textContent =
+    message.textContent=
       'Future date is not allowed.';
 
     setToday();
 
     return;
-
   }
 
+  if(!amount || Number(amount)<=0){
 
-  if(
-    !amount ||
-    Number(amount)<=0
-  ){
-
-    message.textContent =
+    message.textContent=
       'Please enter a valid amount.';
 
     return;
-
   }
-
 
   if(!name){
 
-    message.textContent =
+    message.textContent=
       'Please select a name.';
 
     return;
-
   }
-
 
   if(!method){
 
-    message.textContent =
+    message.textContent=
       'Please select an option.';
 
     return;
-
   }
-
 
   showLoading();
 
-
   try{
 
-    const result =
-      await api(
-        'addTransaction',
-        {
-          token:currentUser.token,
-          date,
-          amount,
-          name,
-          type,
-          method
-        }
-      );
-
+    const result=await api(
+      'addTransaction',
+      {
+        token:currentUser.token,
+        date,
+        amount,
+        name,
+        type,
+        method
+      }
+    );
 
     hideLoading();
 
+    if(result?.success){
 
-    if(
-      result &&
-      result.success
-    ){
-
-      message.textContent =
+      message.textContent=
         result.message ||
         'Transaction added successfully.';
 
-      message.classList.add(
-        'success'
-      );
-
+      message.classList.add('success');
 
       DOM.transactionAmount.value='';
       DOM.transactionName.value='';
       DOM.transactionMethod.value='';
 
-
       setToday();
 
-    }
-    else{
+    }else{
 
-      message.textContent =
+      message.textContent=
         result?.message ||
         'Failed to save transaction.';
 
     }
 
-  }
-
-  catch(error){
+  }catch(error){
 
     hideLoading();
 
-    message.textContent =
+    message.textContent=
       error.message ||
       'Failed to save transaction.';
 
@@ -2725,323 +1949,176 @@ async function saveTransaction(){
 
 }
 
-
-/* =====================================================
-   YEAR + MONTH
-===================================================== */
+/* YEAR MONTH */
 
 function setupMonthSelect(
   monthElementId,
   yearElementId
 ){
 
-  const monthSelect =
-    document.getElementById(
-      monthElementId
-    );
+  const monthSelect=
+    document.getElementById(monthElementId);
 
-  const yearSelect =
-    document.getElementById(
-      yearElementId
-    );
+  const yearSelect=
+    document.getElementById(yearElementId);
 
+  if(!monthSelect || !yearSelect)return;
 
   if(
-    !monthSelect ||
-    !yearSelect
+    yearSelect.options.length===5 &&
+    monthSelect.options.length===12
   ){
-
     return;
-
   }
-
-
-  /*
-   * Already built.
-   */
-  if(
-    yearSelect.dataset.ready === '1'
-  ){
-
-    return;
-
-  }
-
 
   const now=new Date();
 
-  const currentYear =
-    now.getFullYear();
+  const currentYear=now.getFullYear();
+  const currentMonth=now.getMonth()+1;
 
-
-  /*
-   * Year dropdown
-   */
-  yearSelect.innerHTML =
-    '<option value="">Year</option>';
-
+  const yearFragment=
+    document.createDocumentFragment();
 
   for(let i=0;i<5;i++){
 
-    const year =
-      currentYear-i;
+    const year=currentYear-i;
 
-
-    const option =
+    const option=
       document.createElement('option');
-
 
     option.value=year;
     option.textContent=year;
 
-
-    yearSelect.appendChild(option);
+    yearFragment.appendChild(option);
 
   }
 
+  yearSelect.innerHTML='';
+  yearSelect.appendChild(yearFragment);
 
-  /*
-   * Month dropdown
-   * No month selected by default.
-   */
   const months=[
-
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-
+    'January','February','March','April',
+    'May','June','July','August',
+    'September','October','November','December'
   ];
 
+  const monthFragment=
+    document.createDocumentFragment();
 
-  monthSelect.innerHTML =
-    '<option value="">Month</option>';
+  months.forEach((month,index)=>{
 
-
-  for(let i=0;i<12;i++){
-
-    const option =
+    const option=
       document.createElement('option');
 
+    option.value=index+1;
+    option.textContent=month;
 
-    option.value=i+1;
-    option.textContent=months[i];
+    monthFragment.appendChild(option);
 
+  });
 
-    monthSelect.appendChild(option);
+  monthSelect.innerHTML='';
+  monthSelect.appendChild(monthFragment);
 
-  }
-
-
-  /*
-   * Nothing selected initially.
-   * Empty means All.
-   */
-  yearSelect.value='';
-  monthSelect.value='';
-
-
-  yearSelect.dataset.ready='1';
+  yearSelect.value=currentYear;
+  monthSelect.value=currentMonth;
 
 }
-
-
-/* =====================================================
-   SELECTED YEAR + MONTH
-===================================================== */
 
 function getSelectedMonth(
   monthElementId,
   yearElementId
 ){
 
-  const month =
-    document.getElementById(
-      monthElementId
-    ).value;
+  const month=
+    document.getElementById(monthElementId).value;
 
+  const year=
+    document.getElementById(yearElementId).value;
 
-  const year =
-    document.getElementById(
-      yearElementId
-    ).value;
-
-
-  return {
-
-    year:
-      year
-        ? Number(year)
-        : '',
-
-    month:
-      month
-        ? Number(month)
-        : ''
-
+  return{
+    year:Number(year)||'',
+    month:Number(month)||''
   };
 
 }
 
-
-/* =====================================================
-   CUSTOMER DETAILS
-===================================================== */
+/* CUSTOMER DETAILS */
 
 async function loadCustomerDetails(
   quickReload=false
 ){
 
-  const name =
-    DOM.detailsName.value;
-
+  const name=DOM.detailsName.value;
 
   if(!name){
 
-    DOM.balanceCard.classList.add(
-      'hidden'
-    );
-
-    DOM.monthlySection.classList.add(
-      'hidden'
-    );
-
-    DOM.transactionsSection.classList.add(
-      'hidden'
-    );
-
-    DOM.transactionList.innerHTML='';
+    DOM.balanceCard.classList.add('hidden');
+    DOM.transactionsSection.classList.add('hidden');
 
     return;
-
   }
 
-
-  const selected =
+  const selected=
     getSelectedMonth(
       'monthSelect',
       'yearSelect'
     );
 
+  const requestId=++detailsRequestId;
 
-  const requestId =
-    ++detailsRequestId;
-
-
-  /*
-   * Only initial loading shows overlay.
-   * Filter changes remain smooth.
-   */
-  if(!quickReload){
-
-    showLoading();
-
-  }
-
+  if(!quickReload)showLoading();
 
   try{
 
-    const result =
-      await api(
-        'customerDetails',
-        {
-          token:currentUser.token,
-          name,
-          year:selected.year,
-          month:selected.month
-        }
-      );
+    const result=await api(
+      'customerDetails',
+      {
+        token:currentUser.token,
+        name,
+        year:selected.year,
+        month:selected.month
+      }
+    );
 
+    if(requestId!==detailsRequestId)return;
 
-    if(requestId!==detailsRequestId){
+    if(!quickReload)hideLoading();
 
-      return;
+    if(!result?.success){
 
-    }
-
-
-    if(!quickReload){
-
-      hideLoading();
-
-    }
-
-
-    if(
-      !result ||
-      !result.success
-    ){
-
-      DOM.detailsMessage.textContent =
-        result?.message || '';
+      DOM.detailsMessage.textContent=
+        result?.message||'';
 
       return;
-
     }
-
 
     DOM.detailsMessage.textContent='';
 
+    DOM.currentBalance.textContent=
+      formatAmount(result.currentBalance);
 
-    DOM.currentBalance.textContent =
-      formatAmount(
-        result.currentBalance
-      );
+    DOM.monthlySales.textContent=
+      formatAmount(result.totalSales);
 
-
-    DOM.monthlySales.textContent =
-      formatAmount(
-        result.totalSales
-      );
-
-
-    DOM.balanceCard.classList.remove(
-      'hidden'
-    );
-
-
-    DOM.monthlySection.classList.remove(
-      'hidden'
-    );
-
+    DOM.balanceCard.classList.remove('hidden');
 
     renderTransactions(
       result.transactions,
       'transactionList'
     );
 
-
     DOM.transactionsSection.classList.remove(
       'hidden'
     );
 
-  }
+  }catch(error){
 
-  catch(error){
+    if(requestId!==detailsRequestId)return;
 
-    if(requestId!==detailsRequestId){
+    if(!quickReload)hideLoading();
 
-      return;
-
-    }
-
-
-    if(!quickReload){
-
-      hideLoading();
-
-    }
-
-
-    DOM.detailsMessage.textContent =
+    DOM.detailsMessage.textContent=
       error.message ||
       'Failed to load details.';
 
@@ -3049,10 +2126,7 @@ async function loadCustomerDetails(
 
 }
 
-
-/* =====================================================
-   VIEWER DETAILS
-===================================================== */
+/* VIEWER */
 
 async function loadViewerDetails(
   quickReload=false
@@ -3060,111 +2134,65 @@ async function loadViewerDetails(
 
   if(!currentUser)return;
 
-
-  const selected =
+  const selected=
     getSelectedMonth(
       'viewerMonth',
       'viewerYear'
     );
 
+  const requestId=++viewerRequestId;
 
-  const requestId =
-    ++viewerRequestId;
-
-
-  if(!quickReload){
-
-    showLoading();
-
-  }
-
+  if(!quickReload)showLoading();
 
   try{
 
-    const result =
-      await api(
-        'viewerDetails',
-        {
-          token:currentUser.token,
-          year:selected.year,
-          month:selected.month
-        }
-      );
+    const result=await api(
+      'viewerDetails',
+      {
+        token:currentUser.token,
+        year:selected.year,
+        month:selected.month
+      }
+    );
 
+    if(requestId!==viewerRequestId)return;
 
-    if(requestId!==viewerRequestId){
+    if(!quickReload)hideLoading();
 
-      return;
+    if(!result?.success){
 
-    }
-
-
-    if(!quickReload){
-
-      hideLoading();
-
-    }
-
-
-    if(
-      !result ||
-      !result.success
-    ){
-
-      DOM.viewerMessage.textContent =
-        result?.message || '';
+      DOM.viewerMessage.textContent=
+        result?.message||'';
 
       return;
-
     }
-
 
     DOM.viewerMessage.textContent='';
 
+    DOM.viewerBalance.textContent=
+      formatAmount(result.currentBalance);
 
-    DOM.viewerBalance.textContent =
-      formatAmount(
-        result.currentBalance
-      );
-
-
-    DOM.viewerMonthlySales.textContent =
-      formatAmount(
-        result.totalSales
-      );
-
+    DOM.viewerMonthlySales.textContent=
+      formatAmount(result.totalSales);
 
     renderTransactions(
       result.transactions,
       'viewerTransactionList'
     );
 
-  }
+  }catch(error){
 
-  catch(error){
+    if(requestId!==viewerRequestId)return;
 
-    if(requestId!==viewerRequestId){
+    if(!quickReload)hideLoading();
 
-      return;
-
-    }
-
-
-    if(!quickReload){
-
-      hideLoading();
-
-    }
-
-
-    DOM.viewerMessage.textContent =
+    DOM.viewerMessage.textContent=
       error.message ||
       'Failed to load details.';
 
   }
 
 }
-
 
 /* =====================================================
    TRANSACTION RENDER
@@ -3175,147 +2203,121 @@ function renderTransactions(
   elementId
 ){
 
-  const container =
-    document.getElementById(
-      elementId
-    );
-
+  const container=
+    document.getElementById(elementId);
 
   if(!container)return;
 
+  if(!transactions?.length){
 
-  if(
-    !Array.isArray(transactions) ||
-    !transactions.length
-  ){
-
-    container.innerHTML =
+    container.innerHTML=
       '<div class="message">No transactions found.</div>';
 
     return;
-
   }
 
-
-  /*
-   * Sort newest first.
-   */
-  const list =
+  const list=
     transactions
-      .map(function(item,index){
+      .map((item,index)=>({
 
-        return {
+        item,
+
+        time:getTransactionTime(
           item,
-          time:getTransactionTime(
-            item,
-            index,
-            transactions.length
-          )
-        };
+          index,
+          transactions.length
+        )
 
-      })
-      .sort(function(a,b){
+      }))
+      .sort((a,b)=>b.time-a.time);
 
-        return b.time-a.time;
-
-      });
-
-
-  const fragment =
+  const fragment=
     document.createDocumentFragment();
 
+  list.forEach(({item})=>{
 
-  for(let i=0;i<list.length;i++){
-
-    const item=list[i].item;
-
-
-    const card =
+    const card=
       document.createElement('div');
 
+    const isSale=
+      item.type==='বিক্রয়';
 
-    card.className =
-      'transaction-card ' +
-      (
-        item.type==='বিক্রয়'
-          ? 'sale'
-          : 'payment'
-      );
+    card.className=
+      'transaction-card '+
+      (isSale?'sale':'payment');
 
+    /* LEFT */
 
-    const info =
+    const info=
       document.createElement('div');
 
-    info.className='transaction-info';
+    info.className=
+      'transaction-info';
 
-
-    const date =
+    const date=
       document.createElement('div');
 
-    date.className='transaction-date';
+    date.className=
+      'transaction-date';
 
-    date.textContent=item.date || '';
+    date.textContent=
+      item.date||'';
 
-
-    const type =
-      document.createElement('div');
-
-    type.className='transaction-type';
-
-    type.textContent =
-      item.type==='বিক্রয়'
-        ? '🛒 বিক্রয়'
-        : '💳 পেমেন্ট';
-
-
-    info.appendChild(date);
-    info.appendChild(type);
-
-
-    if(item.method){
-
-      const method =
-        document.createElement('div');
-
-      method.className=
-        'transaction-method';
-
-      method.textContent=
-        '• ' + item.method;
-
-      info.appendChild(method);
-
-    }
-
-
-    const amount =
+    const amount=
       document.createElement('div');
 
     amount.className=
       'transaction-amount';
 
-    amount.textContent =
-      formatAmount(item.amount);
+    const numericAmount=
+      Number(
+        String(item.amount||'')
+          .replace(/,/g,'')
+      )||0;
 
+    amount.textContent=
+      (isSale?'+':'−')+
+      formatNumber(numericAmount)+
+      ' TK';
+
+    const method=
+      document.createElement('div');
+
+    method.className=
+      'transaction-method';
+
+    method.textContent=
+      item.method||'';
+
+    info.appendChild(date);
+    info.appendChild(amount);
+    info.appendChild(method);
+
+    /* RIGHT */
+
+    const type=
+      document.createElement('div');
+
+    type.className=
+      'transaction-type';
+
+    type.textContent=
+      isSale
+        ? 'বিক্রয়'
+        : 'পেমেন্ট';
 
     card.appendChild(info);
-    card.appendChild(amount);
+    card.appendChild(type);
 
     fragment.appendChild(card);
 
-  }
+  });
 
-
-  container.replaceChildren(
-    fragment
-  );
+  container.replaceChildren(fragment);
 
 }
 
-
-/* =====================================================
-   TRANSACTION TIME
-===================================================== */
+/* TRANSACTION TIME */
 
 function getTransactionTime(
   item,
@@ -3323,33 +2325,26 @@ function getTransactionTime(
   total
 ){
 
-  const timestamp =
-    item.timestamp ||
-    item.createdAt ||
-    item.time ||
+  const timestamp=
+    item.timestamp||
+    item.createdAt||
+    item.time||
     item.datetime;
-
 
   if(timestamp){
 
-    const parsed =
+    const parsed=
       new Date(timestamp).getTime();
 
-
     if(!Number.isNaN(parsed)){
-
       return parsed;
-
     }
-
   }
 
-
-  const id =
-    item.transactionId ||
-    item.id ||
+  const id=
+    item.transactionId||
+    item.id||
     item.rowNumber;
-
 
   if(
     id!==undefined &&
@@ -3357,200 +2352,142 @@ function getTransactionTime(
     id!==''
   ){
 
-    const numericId =
-      Number(id);
-
+    const numericId=Number(id);
 
     if(
       Number.isFinite(numericId) &&
       numericId>0
     ){
 
-      return 1000000000000+
-             numericId;
+      return 1000000000000+numericId;
 
     }
 
   }
 
-
   if(item.date){
 
-    const parsedDate =
+    const parsedDate=
       new Date(item.date).getTime();
-
 
     if(!Number.isNaN(parsedDate)){
 
       return parsedDate+
-        index/
-        Math.max(total,1);
+        index/Math.max(total,1);
 
     }
 
   }
-
 
   return index;
 
 }
 
+/* NUMBER */
 
-/* =====================================================
-   AMOUNT
-===================================================== */
+function formatNumber(number){
 
-function formatAmount(amount){
-
-  const number =
-    Number(
-      String(amount || '')
-        .replace(/,/g,'')
-    ) || 0;
-
-
-  return (
-    number.toLocaleString('en-US') +
-    ' Tk'
-  );
+  return Number(number||0)
+    .toLocaleString('en-US');
 
 }
 
+/* AMOUNT */
 
-/* =====================================================
-   RESTORE SESSION
-===================================================== */
+function formatAmount(amount){
+
+  const number=
+    Number(
+      String(amount||'')
+        .replace(/,/g,'')
+    )||0;
+
+  return formatNumber(number)+' Tk';
+
+}
+
+/* RESTORE */
 
 function restoreSession(){
 
-  const saved =
-    localStorage.getItem(
-      'transactionUser'
-    );
-
-
-  if(!saved){
-
-    showPage('loginPage');
-
-    return;
-
-  }
-
-
   try{
 
-    const user =
-      JSON.parse(saved);
+    const saved=
+      localStorage.getItem('transactionUser');
 
-
-    if(
-      !user ||
-      !user.token
-    ){
-
-      localStorage.removeItem(
-        'transactionUser'
-      );
+    if(!saved){
 
       showPage('loginPage');
-
       return;
 
     }
 
+    const user=JSON.parse(saved);
+
+    if(!user?.token){
+
+      localStorage.removeItem('transactionUser');
+      showPage('loginPage');
+      return;
+
+    }
 
     currentUser=user;
 
-
-    const role =
-      String(user.role)
-        .toLowerCase();
-
+    const role=
+      String(user.role).toLowerCase();
 
     if(role==='admin'){
 
-      DOM.adminWelcome.textContent =
-        'Welcome, ' +
-        (user.name || 'Admin');
-
+      DOM.adminWelcome.textContent=
+        'Welcome, '+(user.name||'Admin');
 
       showPage('adminPage');
-
       showAdminSection('add');
 
       setToday();
-
-
-      /*
-       * Background preload.
-       * User interface immediately visible.
-       */
       preloadAdminData();
 
       return;
-
     }
-
 
     if(role==='viewer'){
 
-      DOM.viewerWelcome.textContent =
-        'Welcome, ' +
-        (user.name || 'Viewer');
-
+      DOM.viewerWelcome.textContent=
+        'Welcome, '+user.name;
 
       setupMonthSelect(
         'viewerMonth',
         'viewerYear'
       );
 
-
       showPage('viewerPage');
-
 
       loadViewerDetails();
 
       return;
-
     }
 
+    logout();
 
-    localStorage.removeItem(
-      'transactionUser'
-    );
+  }catch(error){
 
-    showPage('loginPage');
-
-  }
-
-  catch(error){
-
-    localStorage.removeItem(
-      'transactionUser'
-    );
-
+    localStorage.removeItem('transactionUser');
     showPage('loginPage');
 
   }
 
 }
 
-
-/* =====================================================
-   ENTER LOGIN
-===================================================== */
+/* ENTER */
 
 document.addEventListener(
   'keydown',
-  function(event){
+  event=>{
 
     if(
       event.key==='Enter' &&
-      DOM.loginPage &&
-      DOM.loginPage.classList.contains(
-        'active'
-      )
+      DOM.loginPage?.classList.contains('active')
     ){
 
       loginUser();
@@ -3560,44 +2497,34 @@ document.addEventListener(
   }
 );
 
-
-/* =====================================================
-   START
-===================================================== */
+/* START */
 
 document.addEventListener(
   'DOMContentLoaded',
-  function(){
+  ()=>{
 
     cacheDOM();
 
-
-    /*
-     * Dropdown UI immediately তৈরি।
-     * কোনো server request লাগবে না।
-     */
     setupMonthSelect(
       'monthSelect',
       'yearSelect'
     );
-
 
     setupMonthSelect(
       'viewerMonth',
       'viewerYear'
     );
 
-
     setupAmountInput();
 
-
     setToday();
-
 
     restoreSession();
 
   }
 );
 
-</script></body>
-      </html>
+</script>
+
+</body>
+</html>
