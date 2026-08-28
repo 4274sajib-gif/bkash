@@ -35,9 +35,7 @@ button {
 }
 
 
-/* =========================
-   LOGIN
-========================= */
+/* LOGIN */
 
 #loginPage {
   display: none;
@@ -95,9 +93,7 @@ button {
 }
 
 
-/* =========================
-   INPUT
-========================= */
+/* INPUT */
 
 .input-group {
   margin-bottom: 18px;
@@ -161,9 +157,7 @@ select:focus {
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 .primary-btn {
   width: 100%;
@@ -177,8 +171,6 @@ select:focus {
   color: white;
 
   font-weight: 700;
-
-  transition: .2s;
 }
 
 .primary-btn:active {
@@ -186,9 +178,7 @@ select:focus {
 }
 
 
-/* =========================
-   APP
-========================= */
+/* APP */
 
 .app-container {
   width: 100%;
@@ -203,9 +193,7 @@ select:focus {
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .top-header {
   min-height: 80px;
@@ -248,9 +236,7 @@ select:focus {
 }
 
 
-/* =========================
-   ADMIN HOME
-========================= */
+/* ADMIN HOME */
 
 .home-content {
   padding: 25px 18px;
@@ -322,9 +308,7 @@ select:focus {
 }
 
 
-/* =========================
-   INNER HEADER
-========================= */
+/* INNER HEADER */
 
 .inner-header {
   height: 70px;
@@ -357,9 +341,7 @@ select:focus {
 }
 
 
-/* =========================
-   FORM
-========================= */
+/* FORM */
 
 .form-container,
 .details-container,
@@ -368,9 +350,7 @@ select:focus {
 }
 
 
-/* =========================
-   TYPE
-========================= */
+/* TYPE */
 
 .type-row {
   display: flex;
@@ -405,9 +385,7 @@ select:focus {
 }
 
 
-/* =========================
-   BALANCE
-========================= */
+/* BALANCE */
 
 .balance-card {
   background: white;
@@ -446,9 +424,7 @@ select:focus {
 }
 
 
-/* =========================
-   MONTH
-========================= */
+/* MONTH */
 
 .section-title {
   display: flex;
@@ -465,15 +441,13 @@ select:focus {
 }
 
 .section-title select {
-  width: 150px;
+  width: 160px;
 
   height: 42px;
 }
 
 
-/* =========================
-   SALES
-========================= */
+/* SALES */
 
 .sales-card {
   background: white;
@@ -499,9 +473,7 @@ select:focus {
 }
 
 
-/* =========================
-   TRANSACTIONS
-========================= */
+/* TRANSACTIONS */
 
 .details-container h3,
 .viewer-history h3 {
@@ -549,6 +521,14 @@ select:focus {
   font-weight: 700;
 }
 
+.transaction-method {
+  font-size: 12px;
+
+  color: #7b8490;
+
+  margin-top: 4px;
+}
+
 .transaction-amount {
   font-weight: 800;
 
@@ -566,9 +546,7 @@ select:focus {
 }
 
 
-/* =========================
-   MESSAGE
-========================= */
+/* MESSAGE */
 
 .message {
   margin-top: 14px;
@@ -581,9 +559,7 @@ select:focus {
 }
 
 
-/* =========================
-   LOADING
-========================= */
+/* LOADING */
 
 .loading {
   position: fixed;
@@ -635,9 +611,27 @@ select:focus {
 }
 
 
-/* =========================
-   DESKTOP
-========================= */
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-title select {
+    width: 100%;
+  }
+
+}
+
+
+/* DESKTOP */
 
 @media (min-width: 700px) {
 
