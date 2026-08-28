@@ -2216,20 +2216,13 @@ function renderTransactions(
     return;
   }
 
-  const list=
-    transactions
-      .map((item,index)=>({
-
-        item,
-
-        time:getTransactionTime(
-          item,
-          index,
-          transactions.length
-        )
-
-      }))
-      .sort((a,b)=>b.time-a.time);
+  const list =
+  transactions
+    .map((item,index)=>({
+      item,
+      originalIndex:index
+    }))
+    .reverse();
 
   const fragment=
     document.createDocumentFragment();
@@ -2388,7 +2381,7 @@ function getTransactionTime(
 function formatNumber(number){
 
   return Number(number||0)
-    .toLocaleString('en-US');
+    .toLocaleString('en-IN');
 
 }
 
