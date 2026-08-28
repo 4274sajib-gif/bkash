@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Transaction Software</title>
-
-<style>
+<title>Transaction Software</title><style>
 
 /* =====================================================
    GLOBAL
@@ -189,7 +180,6 @@ button{
   flex:1;
   min-width:0;
   height:52px;
-
   padding:8px 10px;
 
   border-radius:12px;
@@ -252,12 +242,9 @@ button{
 
 .admin-panel-section{
   display:none;
-
   background:#fff;
-
   border:1px solid #e6e9ee;
   border-radius:15px;
-
   overflow:hidden;
 }
 
@@ -321,7 +308,7 @@ select:focus{
 
 
 /* =====================================================
-   AMOUNT INPUT
+   AMOUNT
 ===================================================== */
 
 .amount-input{
@@ -356,7 +343,7 @@ select:focus{
 
 
 /* =====================================================
-   PRIMARY BUTTON
+   PRIMARY
 ===================================================== */
 
 .primary-btn{
@@ -455,7 +442,7 @@ select:focus{
 
 
 /* =====================================================
-   BALANCE + TOTAL SALES
+   BALANCE
 ===================================================== */
 
 .balance-card{
@@ -522,7 +509,7 @@ select:focus{
 
 
 /* =====================================================
-   YEAR + MONTH FILTER
+   SALES FILTER
 ===================================================== */
 
 .sales-row{
@@ -893,458 +880,317 @@ select:focus{
 
 }
 
-</style>
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
+</style></head><body><!-- =====================================================
      LOGIN
-===================================================== -->
+===================================================== --><section id="loginPage" class="page active">  <div class="login-card"><div class="logo-circle">
+  🔐
+</div>
 
-<section id="loginPage" class="page active">
+<h1>
+  Welcome Back
+</h1>
 
-  <div class="login-card">
+<p class="subtitle">
+  Login to continue
+</p>
 
-    <div class="logo-circle">
-      🔐
-    </div>
+<div class="input-group">
 
-    <h1>
-      Welcome Back
-    </h1>
+  <label>
+    Username
+  </label>
 
-    <p class="subtitle">
-      Login to continue
-    </p>
+  <input
+    id="username"
+    type="text"
+    placeholder="Enter username"
+    autocomplete="username"
+  >
 
-    <div class="input-group">
-
-      <label>
-        Username
-      </label>
-
-      <input
-        id="username"
-        type="text"
-        placeholder="Enter username"
-        autocomplete="username"
-      >
-
-    </div>
+</div>
 
 
-    <div class="input-group">
+<div class="input-group">
 
-      <label>
-        Password
-      </label>
+  <label>
+    Password
+  </label>
 
-      <div class="password-box">
+  <div class="password-box">
 
-        <input
-          id="password"
-          type="password"
-          placeholder="Enter password"
-          autocomplete="current-password"
-        >
-
-        <button
-          type="button"
-          class="eye-btn"
-          onclick="togglePassword()"
-        >
-          👁️
-        </button>
-
-      </div>
-
-    </div>
-
+    <input
+      id="password"
+      type="password"
+      placeholder="Enter password"
+      autocomplete="current-password"
+    >
 
     <button
-      class="primary-btn"
-      onclick="loginUser()"
+      type="button"
+      class="eye-btn"
+      onclick="togglePassword()"
     >
-      LOGIN
+      👁️
     </button>
-
-
-    <div
-      id="loginMessage"
-      class="message"
-    ></div>
 
   </div>
 
-</section>
+</div>
 
 
-<!-- =====================================================
+<button
+  class="primary-btn"
+  onclick="loginUser()"
+>
+  LOGIN
+</button>
+
+
+<div
+  id="loginMessage"
+  class="message"
+></div>
+
+  </div></section><!-- =====================================================
      ADMIN
-===================================================== -->
+===================================================== --><section id="adminPage" class="page">  <div class="app-container"><header class="top-header">
 
-<section id="adminPage" class="page">
+  <div>
 
-  <div class="app-container">
+    <h2>
+      ADMIN PANEL
+    </h2>
 
-    <header class="top-header">
+    <span id="adminWelcome">
+      Welcome
+    </span>
 
-      <div>
+  </div>
 
-        <h2>
-          ADMIN PANEL
-        </h2>
+  <button
+    class="logout-btn"
+    onclick="logout()"
+  >
+    🚪
+  </button>
 
-        <span id="adminWelcome">
-          Welcome
-        </span>
+</header>
+
+
+<main class="admin-content">
+
+
+  <div class="admin-buttons">
+
+    <button
+      id="addTransactionBtn"
+      class="admin-main-btn active"
+      onclick="openAddTransaction()"
+    >
+
+      <span class="admin-main-icon">
+        ➕
+      </span>
+
+      <strong>
+        Add Transaction
+      </strong>
+
+    </button>
+
+
+    <button
+      id="checkDetailsBtn"
+      class="admin-main-btn"
+      onclick="openCheckDetails()"
+    >
+
+      <span class="admin-main-icon">
+        📋
+      </span>
+
+      <strong>
+        Check Details
+      </strong>
+
+    </button>
+
+  </div>
+
+
+  <!-- =================================================
+       ADD TRANSACTION
+  ================================================== -->
+
+  <section
+    id="addTransactionSection"
+    class="admin-panel-section active"
+  >
+
+    <main class="form-container">
+
+
+      <div class="input-group">
+
+        <label>
+          📅 Date
+        </label>
+
+        <input
+          id="transactionDate"
+          type="date"
+        >
 
       </div>
+
+
+      <div class="input-group">
+
+        <label>
+          💰 Amount
+        </label>
+
+        <input
+          id="transactionAmount"
+          class="amount-input"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="1,000"
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          👤 Name
+        </label>
+
+        <select id="transactionName">
+
+          <option value="">
+            Select Name
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="type-row">
+
+        <button
+          id="saleBtn"
+          class="type-btn active"
+          onclick="selectType('বিক্রয়')"
+        >
+          🛒 বিক্রয়
+        </button>
+
+
+        <button
+          id="paymentBtn"
+          class="type-btn"
+          onclick="selectType('পেমেন্ট')"
+        >
+          💳 পেমেন্ট
+        </button>
+
+      </div>
+
+
+      <input
+        id="transactionType"
+        type="hidden"
+        value="বিক্রয়"
+      >
+
+
+      <div class="input-group">
+
+        <label id="methodLabel">
+          বিক্রয়ের ধরন
+        </label>
+
+        <select id="transactionMethod">
+
+          <option value="">
+            Select
+          </option>
+
+        </select>
+
+      </div>
+
 
       <button
-        class="logout-btn"
-        onclick="logout()"
+        class="primary-btn"
+        onclick="saveTransaction()"
       >
-        🚪
+        💾 SAVE
       </button>
 
-    </header>
 
-
-    <main class="admin-content">
-
-
-      <div class="admin-buttons">
-
-        <button
-          id="addTransactionBtn"
-          class="admin-main-btn active"
-          onclick="openAddTransaction()"
-        >
-
-          <span class="admin-main-icon">
-            ➕
-          </span>
-
-          <strong>
-            Add Transaction
-          </strong>
-
-        </button>
-
-
-        <button
-          id="checkDetailsBtn"
-          class="admin-main-btn"
-          onclick="openCheckDetails()"
-        >
-
-          <span class="admin-main-icon">
-            📋
-          </span>
-
-          <strong>
-            Check Details
-          </strong>
-
-        </button>
-
-      </div>
-
-
-      <!-- =================================================
-           ADD TRANSACTION
-      ================================================== -->
-
-      <section
-        id="addTransactionSection"
-        class="admin-panel-section active"
-      >
-
-        <main class="form-container">
-
-
-          <div class="input-group">
-
-            <label>
-              📅 Date
-            </label>
-
-            <input
-              id="transactionDate"
-              type="date"
-            >
-
-          </div>
-
-
-          <div class="input-group">
-
-            <label>
-              💰 Amount
-            </label>
-
-            <input
-              id="transactionAmount"
-              class="amount-input"
-              type="text"
-              inputmode="numeric"
-              autocomplete="off"
-              placeholder="1,000"
-            >
-
-          </div>
-
-
-          <div class="input-group">
-
-            <label>
-              👤 Name
-            </label>
-
-            <select
-              id="transactionName"
-            >
-
-              <option value="">
-                Select Name
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <div class="type-row">
-
-            <button
-              id="saleBtn"
-              class="type-btn active"
-              onclick="selectType('বিক্রয়')"
-            >
-              🛒 বিক্রয়
-            </button>
-
-
-            <button
-              id="paymentBtn"
-              class="type-btn"
-              onclick="selectType('পেমেন্ট')"
-            >
-              💳 পেমেন্ট
-            </button>
-
-          </div>
-
-
-          <input
-            id="transactionType"
-            type="hidden"
-            value="বিক্রয়"
-          >
-
-
-          <div class="input-group">
-
-            <label id="methodLabel">
-              বিক্রয়ের ধরন
-            </label>
-
-            <select
-              id="transactionMethod"
-            >
-
-              <option value="">
-                Select
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <button
-            class="primary-btn"
-            onclick="saveTransaction()"
-          >
-            💾 SAVE
-          </button>
-
-
-          <div
-            id="transactionMessage"
-            class="message"
-          ></div>
-
-
-        </main>
-
-      </section>
-
-
-      <!-- =================================================
-           CHECK DETAILS
-      ================================================== -->
-
-      <section
-        id="checkDetailsSection"
-        class="admin-panel-section"
-      >
-
-        <main class="details-container">
-
-
-          <div class="details-filter-row">
-
-            <select
-              id="yearSelect"
-              class="filter-year"
-              onchange="loadCustomerDetails(true)"
-            ></select>
-
-
-            <select
-              id="monthSelect"
-              class="filter-month"
-              onchange="loadCustomerDetails(true)"
-            ></select>
-
-
-            <select
-              id="detailsName"
-              class="filter-name"
-              onchange="loadCustomerDetails()"
-            >
-
-              <option value="">
-                Select Name
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <div
-            id="balanceCard"
-            class="balance-card hidden"
-          >
-
-            <div class="balance-left">
-
-              <span>
-                CURRENT BALANCE
-              </span>
-
-              <strong id="currentBalance">
-                0 Tk
-              </strong>
-
-            </div>
-
-
-            <div class="balance-sales">
-
-              <span>
-                TOTAL SALES
-              </span>
-
-              <strong id="monthlySales">
-                0 Tk
-              </strong>
-
-            </div>
-
-          </div>
-
-
-          <div
-            id="monthlySection"
-            class="hidden"
-          >
-          </div>
-
-
-          <div
-            id="transactionsSection"
-            class="hidden"
-          >
-
-            <div class="transactions-header">
-
-              <h3>
-                TRANSACTIONS
-              </h3>
-
-            </div>
-
-
-            <div
-              id="transactionList"
-              class="transaction-list"
-            ></div>
-
-          </div>
-
-
-          <div
-            id="detailsMessage"
-            class="message"
-          ></div>
-
-
-        </main>
-
-      </section>
+      <div
+        id="transactionMessage"
+        class="message"
+      ></div>
 
 
     </main>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     VIEWER
-===================================================== -->
+  <!-- =================================================
+       CHECK DETAILS
+  ================================================== -->
 
-<section id="viewerPage" class="page">
+  <section
+    id="checkDetailsSection"
+    class="admin-panel-section"
+  >
 
-  <div class="app-container">
+    <main class="details-container">
 
-    <header class="top-header">
 
-      <div>
+      <div class="details-filter-row">
 
-        <h2>
-          VIEWER PANEL
-        </h2>
+        <select
+          id="yearSelect"
+          class="filter-year"
+          onchange="loadCustomerDetails(true)"
+        ></select>
 
-        <span id="viewerWelcome">
-          Welcome
-        </span>
+
+        <select
+          id="monthSelect"
+          class="filter-month"
+          onchange="loadCustomerDetails(true)"
+        ></select>
+
+
+        <select
+          id="detailsName"
+          class="filter-name"
+          onchange="loadCustomerDetails()"
+        >
+
+          <option value="">
+            Select Name
+          </option>
+
+        </select>
 
       </div>
 
 
-      <button
-        class="logout-btn"
-        onclick="logout()"
+      <div
+        id="balanceCard"
+        class="balance-card hidden"
       >
-        🚪
-      </button>
-
-    </header>
-
-
-    <main class="viewer-container">
-
-
-      <div class="balance-card">
 
         <div class="balance-left">
 
@@ -1352,7 +1198,7 @@ select:focus{
             CURRENT BALANCE
           </span>
 
-          <strong id="viewerBalance">
+          <strong id="currentBalance">
             0 Tk
           </strong>
 
@@ -1365,7 +1211,7 @@ select:focus{
             TOTAL SALES
           </span>
 
-          <strong id="viewerMonthlySales">
+          <strong id="monthlySales">
             0 Tk
           </strong>
 
@@ -1374,37 +1220,28 @@ select:focus{
       </div>
 
 
-      <div class="sales-row">
-
-        <div class="sales-filter">
-
-          <select
-            id="viewerYear"
-            class="year-select"
-            onchange="loadViewerDetails(true)"
-          ></select>
+      <div
+        id="monthlySection"
+        class="hidden"
+      ></div>
 
 
-          <select
-            id="viewerMonth"
-            class="month-select"
-            onchange="loadViewerDetails(true)"
-          ></select>
+      <div
+        id="transactionsSection"
+        class="hidden"
+      >
+
+        <div class="transactions-header">
+
+          <h3>
+            TRANSACTIONS
+          </h3>
 
         </div>
 
-      </div>
-
-
-      <div class="viewer-history">
-
-        <h3>
-          TRANSACTIONS
-        </h3>
-
 
         <div
-          id="viewerTransactionList"
+          id="transactionList"
           class="transaction-list"
         ></div>
 
@@ -1412,40 +1249,134 @@ select:focus{
 
 
       <div
-        id="viewerMessage"
+        id="detailsMessage"
         class="message"
       ></div>
 
 
     </main>
 
+  </section>
+
+
+</main>
+
+  </div></section><!-- =====================================================
+     VIEWER
+===================================================== --><section id="viewerPage" class="page">  <div class="app-container"><header class="top-header">
+
+  <div>
+
+    <h2>
+      VIEWER PANEL
+    </h2>
+
+    <span id="viewerWelcome">
+      Welcome
+    </span>
+
   </div>
 
-</section>
+
+  <button
+    class="logout-btn"
+    onclick="logout()"
+  >
+    🚪
+  </button>
+
+</header>
 
 
-<!-- =====================================================
+<main class="viewer-container">
+
+
+  <div class="balance-card">
+
+    <div class="balance-left">
+
+      <span>
+        CURRENT BALANCE
+      </span>
+
+      <strong id="viewerBalance">
+        0 Tk
+      </strong>
+
+    </div>
+
+
+    <div class="balance-sales">
+
+      <span>
+        TOTAL SALES
+      </span>
+
+      <strong id="viewerMonthlySales">
+        0 Tk
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="sales-row">
+
+    <div class="sales-filter">
+
+      <select
+        id="viewerYear"
+        class="year-select"
+        onchange="loadViewerDetails(true)"
+      ></select>
+
+
+      <select
+        id="viewerMonth"
+        class="month-select"
+        onchange="loadViewerDetails(true)"
+      ></select>
+
+    </div>
+
+  </div>
+
+
+  <div class="viewer-history">
+
+    <h3>
+      TRANSACTIONS
+    </h3>
+
+
+    <div
+      id="viewerTransactionList"
+      class="transaction-list"
+    ></div>
+
+  </div>
+
+
+  <div
+    id="viewerMessage"
+    class="message"
+  ></div>
+
+
+</main>
+
+  </div></section><!-- =====================================================
      LOADING
-===================================================== -->
-
-<div
+===================================================== --><div
   id="loading"
   class="loading hidden"
->
-
-  <div class="spinner"></div>
-
-  <span>
+>  <div class="spinner"></div>  <span>
     Loading...
-  </span>
-
-</div>
-
-
-<script>
+  </span></div><script>
 
 /* =====================================================
-   APPS SCRIPT URL
+   API
 ===================================================== */
 
 const API_URL =
@@ -1453,30 +1384,28 @@ const API_URL =
 
 
 /* =====================================================
-   GLOBAL STATE
+   STATE
 ===================================================== */
 
 let currentUser = null;
 
 let salesOptions = [];
-
 let paymentOptions = [];
 
 let namesCache = null;
-
 let namesLoading = null;
 
 let optionsLoaded = false;
-
 let optionsLoading = null;
 
 let detailsRequestId = 0;
-
 let viewerRequestId = 0;
+
+let domReady = false;
 
 
 /* =====================================================
-   DOM CACHE
+   DOM
 ===================================================== */
 
 const DOM = {};
@@ -1542,21 +1471,23 @@ function cacheDOM(){
 
   }
 
+  domReady = true;
+
 }
 
 
 /* =====================================================
    API
+   Lightweight JSONP
 ===================================================== */
 
-function api(action, params = {}){
+function api(action,params={}){
 
   return new Promise(function(resolve,reject){
 
     const callbackName =
       'cb_' +
       Date.now() +
-      '_' +
       Math.random()
         .toString(36)
         .slice(2);
@@ -1571,45 +1502,46 @@ function api(action, params = {}){
 
 
     query.set('action',action);
-
     query.set('callback',callbackName);
 
 
     for(const key in params){
 
-      const value = params[key];
+      const value=params[key];
 
       if(
         value !== undefined &&
         value !== null
       ){
 
-        query.set(key,String(value));
+        query.set(
+          key,
+          String(value)
+        );
 
       }
 
     }
 
 
-    let finished = false;
+    let finished=false;
 
 
-    const timeout =
-      setTimeout(function(){
+    const timeout=setTimeout(function(){
 
-        if(finished) return;
+      if(finished)return;
 
-        finished = true;
+      finished=true;
 
-        cleanup();
+      cleanup();
 
-        reject(
-          new Error(
-            'Server request timed out.'
-          )
-        );
+      reject(
+        new Error(
+          'Server request timed out.'
+        )
+      );
 
-      },15000);
+    },12000);
 
 
     function cleanup(){
@@ -1619,44 +1551,40 @@ function api(action, params = {}){
       script.remove();
 
       try{
-
         delete window[callbackName];
-
       }catch(e){}
 
     }
 
 
-    window[callbackName] =
-      function(result){
+    window[callbackName]=function(result){
 
-        if(finished) return;
+      if(finished)return;
 
-        finished = true;
+      finished=true;
 
-        cleanup();
+      cleanup();
 
-        resolve(result);
+      resolve(result);
 
-      };
+    };
 
 
-    script.onerror =
-      function(){
+    script.onerror=function(){
 
-        if(finished) return;
+      if(finished)return;
 
-        finished = true;
+      finished=true;
 
-        cleanup();
+      cleanup();
 
-        reject(
-          new Error(
-            'Unable to connect to server.'
-          )
-        );
+      reject(
+        new Error(
+          'Unable to connect to server.'
+        )
+      );
 
-      };
+    };
 
 
     script.src =
@@ -1678,13 +1606,15 @@ function api(action, params = {}){
 
 function showPage(pageId){
 
-  document
-    .querySelectorAll('.page')
-    .forEach(function(page){
+  const pages =
+    document.querySelectorAll('.page');
 
-      page.classList.remove('active');
 
-    });
+  for(let i=0;i<pages.length;i++){
+
+    pages[i].classList.remove('active');
+
+  }
 
 
   const page =
@@ -1727,24 +1657,28 @@ function showAdminSection(section){
     );
 
 
+  const isAdd =
+    section === 'add';
+
+
   addSection.classList.toggle(
     'active',
-    section === 'add'
+    isAdd
   );
 
   detailsSection.classList.toggle(
     'active',
-    section === 'details'
+    !isAdd
   );
 
   addBtn.classList.toggle(
     'active',
-    section === 'add'
+    isAdd
   );
 
   detailsBtn.classList.toggle(
     'active',
-    section === 'details'
+    !isAdd
   );
 
 }
@@ -1756,14 +1690,26 @@ function showAdminSection(section){
 
 function showLoading(){
 
-  DOM.loading.classList.remove('hidden');
+  if(DOM.loading){
+
+    DOM.loading.classList.remove(
+      'hidden'
+    );
+
+  }
 
 }
 
 
 function hideLoading(){
 
-  DOM.loading.classList.add('hidden');
+  if(DOM.loading){
+
+    DOM.loading.classList.add(
+      'hidden'
+    );
+
+  }
 
 }
 
@@ -1795,11 +1741,8 @@ async function loginUser(){
     DOM.password.value.trim();
 
 
-  DOM.loginMessage.textContent = '';
-
-  DOM.loginMessage.classList.remove(
-    'success'
-  );
+  DOM.loginMessage.textContent='';
+  DOM.loginMessage.classList.remove('success');
 
 
   if(!username || !password){
@@ -1835,21 +1778,20 @@ async function loginUser(){
       hideLoading();
 
       DOM.loginMessage.textContent =
-        result && result.message
-          ? result.message
-          : 'Login failed.';
+        result?.message ||
+        'Login failed.';
 
       return;
 
     }
 
 
-    currentUser = result;
+    currentUser=result;
 
 
     localStorage.setItem(
       'transactionUser',
-      JSON.stringify(currentUser)
+      JSON.stringify(result)
     );
 
 
@@ -1858,7 +1800,7 @@ async function loginUser(){
         .toLowerCase();
 
 
-    if(role === 'admin'){
+    if(role==='admin'){
 
       DOM.adminWelcome.textContent =
         'Welcome, ' +
@@ -1871,7 +1813,14 @@ async function loginUser(){
 
       setToday();
 
+
+      /*
+       * Important:
+       * Names + Options একই সময়ে
+       * load হবে।
+       */
       preloadAdminData();
+
 
       hideLoading();
 
@@ -1880,11 +1829,11 @@ async function loginUser(){
     }
 
 
-    if(role === 'viewer'){
+    if(role==='viewer'){
 
       DOM.viewerWelcome.textContent =
         'Welcome, ' +
-        result.name;
+        (result.name || 'Viewer');
 
 
       setupMonthSelect(
@@ -1895,10 +1844,13 @@ async function loginUser(){
 
       showPage('viewerPage');
 
-
       hideLoading();
 
 
+      /*
+       * Viewer transaction
+       * background এ load হবে।
+       */
       loadViewerDetails();
 
 
@@ -1933,22 +1885,22 @@ async function loginUser(){
 
 async function logout(){
 
-  const user = currentUser;
+  const user=currentUser;
 
 
-  currentUser = null;
+  currentUser=null;
 
-  namesCache = null;
+  namesCache=null;
+  namesLoading=null;
 
-  namesLoading = null;
+  salesOptions=[];
+  paymentOptions=[];
 
-  salesOptions = [];
+  optionsLoaded=false;
+  optionsLoading=null;
 
-  paymentOptions = [];
-
-  optionsLoaded = false;
-
-  optionsLoading = null;
+  detailsRequestId++;
+  viewerRequestId++;
 
 
   localStorage.removeItem(
@@ -1956,9 +1908,8 @@ async function logout(){
   );
 
 
-  DOM.username.value = '';
-
-  DOM.password.value = '';
+  DOM.username.value='';
+  DOM.password.value='';
 
 
   showPage('loginPage');
@@ -1988,13 +1939,24 @@ async function logout(){
 
 function preloadAdminData(){
 
-  Promise.allSettled([
+  if(!currentUser)return;
 
+
+  /*
+   * Parallel request.
+   * Names আর Options একসাথে যাবে।
+   */
+  Promise.all([
     loadNames(),
-
     loadOptions()
+  ]).catch(function(error){
 
-  ]);
+    console.error(
+      'Preload:',
+      error
+    );
+
+  });
 
 
   setToday();
@@ -2013,24 +1975,36 @@ function openAddTransaction(){
   setToday();
 
 
-  if(!namesCache){
+  /*
+   * Cache থাকলে API call হবে না।
+   */
+  if(namesCache){
+
+    populateNameSelect(
+      'transactionName'
+    );
+
+  }
+  else{
 
     loadNames();
 
   }
 
 
-  if(!optionsLoaded){
+  if(optionsLoaded){
+
+    selectType(
+      DOM.transactionType.value ||
+      'বিক্রয়'
+    );
+
+  }
+  else{
 
     loadOptions();
 
   }
-
-
-  selectType(
-    DOM.transactionType.value ||
-    'বিক্রয়'
-  );
 
 }
 
@@ -2044,6 +2018,9 @@ function openCheckDetails(){
   showAdminSection('details');
 
 
+  /*
+   * Dropdown immediately তৈরি হবে।
+   */
   setupMonthSelect(
     'monthSelect',
     'yearSelect'
@@ -2076,11 +2053,10 @@ function setToday(){
     DOM.transactionDate;
 
 
-  if(!input) return;
+  if(!input)return;
 
 
-  const now =
-    new Date();
+  const now=new Date();
 
 
   const today =
@@ -2095,15 +2071,14 @@ function setToday(){
     ).padStart(2,'0');
 
 
-  input.value = today;
-
-  input.max = today;
+  input.value=today;
+  input.max=today;
 
 }
 
 
 /* =====================================================
-   POPULATE NAMES
+   NAMES
 ===================================================== */
 
 function populateNameSelect(elementId){
@@ -2112,7 +2087,7 @@ function populateNameSelect(elementId){
     document.getElementById(elementId);
 
 
-  if(!select) return;
+  if(!select)return;
 
 
   const oldValue =
@@ -2147,9 +2122,8 @@ function populateNameSelect(elementId){
       document.createElement('option');
 
 
-    option.value = name;
-
-    option.textContent = name;
+    option.value=name;
+    option.textContent=name;
 
 
     fragment.appendChild(option);
@@ -2165,7 +2139,7 @@ function populateNameSelect(elementId){
     namesCache.includes(oldValue)
   ){
 
-    select.value = oldValue;
+    select.value=oldValue;
 
   }
 
@@ -2224,8 +2198,20 @@ function loadNames(){
         Array.isArray(result.names)
       ){
 
+        /*
+         * Remove duplicate names
+         * and empty values.
+         */
         namesCache =
-          result.names;
+          [...new Set(
+            result.names
+              .map(String)
+              .map(function(v){
+                return v.trim();
+              })
+              .filter(Boolean)
+          )];
+
 
         populateNameSelect(
           'transactionName'
@@ -2253,7 +2239,7 @@ function loadNames(){
     })
     .finally(function(){
 
-      namesLoading = null;
+      namesLoading=null;
 
     });
 
@@ -2321,7 +2307,7 @@ function loadOptions(){
             : [];
 
 
-        optionsLoaded = true;
+        optionsLoaded=true;
 
 
         selectType(
@@ -2347,7 +2333,7 @@ function loadOptions(){
     })
     .finally(function(){
 
-      optionsLoading = null;
+      optionsLoading=null;
 
     });
 
@@ -2358,24 +2344,22 @@ function loadOptions(){
 
 
 /* =====================================================
-   TYPE SELECT
+   TYPE
 ===================================================== */
 
 function selectType(type){
 
-  DOM.transactionType.value =
-    type;
+  DOM.transactionType.value=type;
 
 
   const isSale =
-    type === 'বিক্রয়';
+    type==='বিক্রয়';
 
 
   DOM.saleBtn.classList.toggle(
     'active',
     isSale
   );
-
 
   DOM.paymentBtn.classList.toggle(
     'active',
@@ -2397,6 +2381,10 @@ function selectType(type){
 
   const select =
     DOM.transactionMethod;
+
+
+  const oldValue =
+    select.value;
 
 
   select.innerHTML =
@@ -2426,11 +2414,8 @@ function selectType(type){
       document.createElement('option');
 
 
-    option.value =
-      options[i];
-
-    option.textContent =
-      options[i];
+    option.value=options[i];
+    option.textContent=options[i];
 
 
     fragment.appendChild(option);
@@ -2439,6 +2424,13 @@ function selectType(type){
 
 
   select.appendChild(fragment);
+
+
+  if(options.includes(oldValue)){
+
+    select.value=oldValue;
+
+  }
 
 }
 
@@ -2455,15 +2447,14 @@ function formatInputAmount(value){
       .replace(/[^\d]/g,'');
 
 
-  if(!clean){
-
-    return '';
-
-  }
+  if(!clean)return '';
 
 
   clean =
-    clean.replace(/^0+(?=\d)/,'');
+    clean.replace(
+      /^0+(?=\d)/,
+      ''
+    );
 
 
   return Number(clean)
@@ -2473,7 +2464,7 @@ function formatInputAmount(value){
 
 
 /* =====================================================
-   AMOUNT INPUT LIVE FORMAT
+   AMOUNT INPUT
 ===================================================== */
 
 function setupAmountInput(){
@@ -2482,7 +2473,7 @@ function setupAmountInput(){
     DOM.transactionAmount;
 
 
-  if(!input) return;
+  if(!input)return;
 
 
   input.addEventListener(
@@ -2490,7 +2481,7 @@ function setupAmountInput(){
     function(){
 
       const cursor =
-        input.selectionStart;
+        input.selectionStart || 0;
 
 
       const before =
@@ -2513,9 +2504,8 @@ function setupAmountInput(){
         );
 
 
-      let newCursor = 0;
-
-      let digitCount = 0;
+      let newCursor=0;
+      let digitCount=0;
 
 
       while(
@@ -2533,7 +2523,6 @@ function setupAmountInput(){
 
         }
 
-
         newCursor++;
 
       }
@@ -2548,7 +2537,8 @@ function setupAmountInput(){
 
       }catch(e){}
 
-    }
+    },
+    {passive:true}
   );
 
 
@@ -2561,7 +2551,8 @@ function setupAmountInput(){
           input.value
         );
 
-    }
+    },
+    {passive:true}
   );
 
 }
@@ -2594,11 +2585,8 @@ async function saveTransaction(){
     DOM.transactionMessage;
 
 
-  message.textContent = '';
-
-  message.classList.remove(
-    'success'
-  );
+  message.textContent='';
+  message.classList.remove('success');
 
 
   if(!date){
@@ -2611,8 +2599,7 @@ async function saveTransaction(){
   }
 
 
-  const now =
-    new Date();
+  const now=new Date();
 
 
   const todayString =
@@ -2627,7 +2614,7 @@ async function saveTransaction(){
     ).padStart(2,'0');
 
 
-  if(date > todayString){
+  if(date>todayString){
 
     message.textContent =
       'Future date is not allowed.';
@@ -2641,7 +2628,7 @@ async function saveTransaction(){
 
   if(
     !amount ||
-    Number(amount) <= 0
+    Number(amount)<=0
   ){
 
     message.textContent =
@@ -2708,14 +2695,9 @@ async function saveTransaction(){
       );
 
 
-      DOM.transactionAmount.value =
-        '';
-
-      DOM.transactionName.value =
-        '';
-
-      DOM.transactionMethod.value =
-        '';
+      DOM.transactionAmount.value='';
+      DOM.transactionName.value='';
+      DOM.transactionMethod.value='';
 
 
       setToday();
@@ -2724,9 +2706,8 @@ async function saveTransaction(){
     else{
 
       message.textContent =
-        result && result.message
-          ? result.message
-          : 'Failed to save transaction.';
+        result?.message ||
+        'Failed to save transaction.';
 
     }
 
@@ -2746,8 +2727,7 @@ async function saveTransaction(){
 
 
 /* =====================================================
-   YEAR + MONTH SELECT
-   MONTH DEFAULT = ALL MONTHS
+   YEAR + MONTH
 ===================================================== */
 
 function setupMonthSelect(
@@ -2776,20 +2756,29 @@ function setupMonthSelect(
   }
 
 
-  const now =
-    new Date();
+  /*
+   * Already built.
+   */
+  if(
+    yearSelect.dataset.ready === '1'
+  ){
 
+    return;
+
+  }
+
+
+  const now=new Date();
 
   const currentYear =
     now.getFullYear();
 
 
-  /* ===================================================
-     YEAR
-  =================================================== */
-
-  const yearFragment =
-    document.createDocumentFragment();
+  /*
+   * Year dropdown
+   */
+  yearSelect.innerHTML =
+    '<option value="">Year</option>';
 
 
   for(let i=0;i<5;i++){
@@ -2802,36 +2791,20 @@ function setupMonthSelect(
       document.createElement('option');
 
 
-    option.value =
-      year;
-
-    option.textContent =
-      year;
+    option.value=year;
+    option.textContent=year;
 
 
-    yearFragment.appendChild(
-      option
-    );
+    yearSelect.appendChild(option);
 
   }
 
 
-  yearSelect.innerHTML = '';
-
-  yearSelect.appendChild(
-    yearFragment
-  );
-
-
-  yearSelect.value =
-    currentYear;
-
-
-  /* ===================================================
-     MONTH
-  =================================================== */
-
-  const months = [
+  /*
+   * Month dropdown
+   * No month selected by default.
+   */
+  const months=[
 
     'January',
     'February',
@@ -2849,32 +2822,9 @@ function setupMonthSelect(
   ];
 
 
-  const monthFragment =
-    document.createDocumentFragment();
+  monthSelect.innerHTML =
+    '<option value="">Month</option>';
 
-
-  /* ===================================================
-     ALL MONTHS
-  =================================================== */
-
-  const allOption =
-    document.createElement('option');
-
-
-  allOption.value = '';
-
-  allOption.textContent =
-    'All Months';
-
-
-  monthFragment.appendChild(
-    allOption
-  );
-
-
-  /* ===================================================
-     MONTH OPTIONS
-  =================================================== */
 
   for(let i=0;i<12;i++){
 
@@ -2882,32 +2832,24 @@ function setupMonthSelect(
       document.createElement('option');
 
 
-    option.value =
-      i+1;
-
-    option.textContent =
-      months[i];
+    option.value=i+1;
+    option.textContent=months[i];
 
 
-    monthFragment.appendChild(
-      option
-    );
+    monthSelect.appendChild(option);
 
   }
 
 
-  monthSelect.innerHTML = '';
+  /*
+   * Nothing selected initially.
+   * Empty means All.
+   */
+  yearSelect.value='';
+  monthSelect.value='';
 
-  monthSelect.appendChild(
-    monthFragment
-  );
 
-
-  /* ===================================================
-     DEFAULT = ALL MONTHS
-  =================================================== */
-
-  monthSelect.value = '';
+  yearSelect.dataset.ready='1';
 
 }
 
@@ -2936,12 +2878,14 @@ function getSelectedMonth(
   return {
 
     year:
-      Number(year) || '',
+      year
+        ? Number(year)
+        : '',
 
     month:
-      month === ''
-        ? ''
-        : Number(month)
+      month
+        ? Number(month)
+        : ''
 
   };
 
@@ -2953,7 +2897,7 @@ function getSelectedMonth(
 ===================================================== */
 
 async function loadCustomerDetails(
-  quickReload = false
+  quickReload=false
 ){
 
   const name =
@@ -2974,6 +2918,8 @@ async function loadCustomerDetails(
       'hidden'
     );
 
+    DOM.transactionList.innerHTML='';
+
     return;
 
   }
@@ -2990,6 +2936,10 @@ async function loadCustomerDetails(
     ++detailsRequestId;
 
 
+  /*
+   * Only initial loading shows overlay.
+   * Filter changes remain smooth.
+   */
   if(!quickReload){
 
     showLoading();
@@ -3004,14 +2954,14 @@ async function loadCustomerDetails(
         'customerDetails',
         {
           token:currentUser.token,
-          name:name,
+          name,
           year:selected.year,
           month:selected.month
         }
       );
 
 
-    if(requestId !== detailsRequestId){
+    if(requestId!==detailsRequestId){
 
       return;
 
@@ -3025,20 +2975,20 @@ async function loadCustomerDetails(
     }
 
 
-    if(!result || !result.success){
+    if(
+      !result ||
+      !result.success
+    ){
 
       DOM.detailsMessage.textContent =
-        result && result.message
-          ? result.message
-          : '';
+        result?.message || '';
 
       return;
 
     }
 
 
-    DOM.detailsMessage.textContent =
-      '';
+    DOM.detailsMessage.textContent='';
 
 
     DOM.currentBalance.textContent =
@@ -3077,7 +3027,7 @@ async function loadCustomerDetails(
 
   catch(error){
 
-    if(requestId !== detailsRequestId){
+    if(requestId!==detailsRequestId){
 
       return;
 
@@ -3105,10 +3055,10 @@ async function loadCustomerDetails(
 ===================================================== */
 
 async function loadViewerDetails(
-  quickReload = false
+  quickReload=false
 ){
 
-  if(!currentUser) return;
+  if(!currentUser)return;
 
 
   const selected =
@@ -3142,7 +3092,7 @@ async function loadViewerDetails(
       );
 
 
-    if(requestId !== viewerRequestId){
+    if(requestId!==viewerRequestId){
 
       return;
 
@@ -3156,20 +3106,20 @@ async function loadViewerDetails(
     }
 
 
-    if(!result || !result.success){
+    if(
+      !result ||
+      !result.success
+    ){
 
       DOM.viewerMessage.textContent =
-        result && result.message
-          ? result.message
-          : '';
+        result?.message || '';
 
       return;
 
     }
 
 
-    DOM.viewerMessage.textContent =
-      '';
+    DOM.viewerMessage.textContent='';
 
 
     DOM.viewerBalance.textContent =
@@ -3193,7 +3143,7 @@ async function loadViewerDetails(
 
   catch(error){
 
-    if(requestId !== viewerRequestId){
+    if(requestId!==viewerRequestId){
 
       return;
 
@@ -3217,7 +3167,7 @@ async function loadViewerDetails(
 
 
 /* =====================================================
-   RENDER TRANSACTIONS
+   TRANSACTION RENDER
 ===================================================== */
 
 function renderTransactions(
@@ -3231,11 +3181,11 @@ function renderTransactions(
     );
 
 
-  if(!container) return;
+  if(!container)return;
 
 
   if(
-    !transactions ||
+    !Array.isArray(transactions) ||
     !transactions.length
   ){
 
@@ -3247,20 +3197,20 @@ function renderTransactions(
   }
 
 
+  /*
+   * Sort newest first.
+   */
   const list =
     transactions
       .map(function(item,index){
 
         return {
-
-          item:item,
-
+          item,
           time:getTransactionTime(
             item,
             index,
             transactions.length
           )
-
         };
 
       })
@@ -3277,8 +3227,7 @@ function renderTransactions(
 
   for(let i=0;i<list.length;i++){
 
-    const item =
-      list[i].item;
+    const item=list[i].item;
 
 
     const card =
@@ -3288,7 +3237,7 @@ function renderTransactions(
     card.className =
       'transaction-card ' +
       (
-        item.type === 'বিক্রয়'
+        item.type==='বিক্রয়'
           ? 'sale'
           : 'payment'
       );
@@ -3297,37 +3246,29 @@ function renderTransactions(
     const info =
       document.createElement('div');
 
-
-    info.className =
-      'transaction-info';
+    info.className='transaction-info';
 
 
     const date =
       document.createElement('div');
 
+    date.className='transaction-date';
 
-    date.className =
-      'transaction-date';
-
-    date.textContent =
-      item.date || '';
+    date.textContent=item.date || '';
 
 
     const type =
       document.createElement('div');
 
-
-    type.className =
-      'transaction-type';
+    type.className='transaction-type';
 
     type.textContent =
-      item.type === 'বিক্রয়'
+      item.type==='বিক্রয়'
         ? '🛒 বিক্রয়'
         : '💳 পেমেন্ট';
 
 
     info.appendChild(date);
-
     info.appendChild(type);
 
 
@@ -3336,13 +3277,11 @@ function renderTransactions(
       const method =
         document.createElement('div');
 
-
-      method.className =
+      method.className=
         'transaction-method';
 
-      method.textContent =
+      method.textContent=
         '• ' + item.method;
-
 
       info.appendChild(method);
 
@@ -3352,20 +3291,15 @@ function renderTransactions(
     const amount =
       document.createElement('div');
 
-
-    amount.className =
+    amount.className=
       'transaction-amount';
 
     amount.textContent =
-      formatAmount(
-        item.amount
-      );
+      formatAmount(item.amount);
 
 
     card.appendChild(info);
-
     card.appendChild(amount);
-
 
     fragment.appendChild(card);
 
@@ -3418,9 +3352,9 @@ function getTransactionTime(
 
 
   if(
-    id !== undefined &&
-    id !== null &&
-    id !== ''
+    id!==undefined &&
+    id!==null &&
+    id!==''
   ){
 
     const numericId =
@@ -3429,10 +3363,10 @@ function getTransactionTime(
 
     if(
       Number.isFinite(numericId) &&
-      numericId > 0
+      numericId>0
     ){
 
-      return 1000000000000 +
+      return 1000000000000+
              numericId;
 
     }
@@ -3448,8 +3382,8 @@ function getTransactionTime(
 
     if(!Number.isNaN(parsedDate)){
 
-      return parsedDate +
-        index /
+      return parsedDate+
+        index/
         Math.max(total,1);
 
     }
@@ -3489,22 +3423,22 @@ function formatAmount(amount){
 
 function restoreSession(){
 
+  const saved =
+    localStorage.getItem(
+      'transactionUser'
+    );
+
+
+  if(!saved){
+
+    showPage('loginPage');
+
+    return;
+
+  }
+
+
   try{
-
-    const saved =
-      localStorage.getItem(
-        'transactionUser'
-      );
-
-
-    if(!saved){
-
-      showPage('loginPage');
-
-      return;
-
-    }
-
 
     const user =
       JSON.parse(saved);
@@ -3526,7 +3460,7 @@ function restoreSession(){
     }
 
 
-    currentUser = user;
+    currentUser=user;
 
 
     const role =
@@ -3534,7 +3468,7 @@ function restoreSession(){
         .toLowerCase();
 
 
-    if(role === 'admin'){
+    if(role==='admin'){
 
       DOM.adminWelcome.textContent =
         'Welcome, ' +
@@ -3548,6 +3482,10 @@ function restoreSession(){
       setToday();
 
 
+      /*
+       * Background preload.
+       * User interface immediately visible.
+       */
       preloadAdminData();
 
       return;
@@ -3555,11 +3493,11 @@ function restoreSession(){
     }
 
 
-    if(role === 'viewer'){
+    if(role==='viewer'){
 
       DOM.viewerWelcome.textContent =
         'Welcome, ' +
-        user.name;
+        (user.name || 'Viewer');
 
 
       setupMonthSelect(
@@ -3578,7 +3516,11 @@ function restoreSession(){
     }
 
 
-    logout();
+    localStorage.removeItem(
+      'transactionUser'
+    );
+
+    showPage('loginPage');
 
   }
 
@@ -3596,7 +3538,7 @@ function restoreSession(){
 
 
 /* =====================================================
-   ENTER KEY LOGIN
+   ENTER LOGIN
 ===================================================== */
 
 document.addEventListener(
@@ -3604,7 +3546,8 @@ document.addEventListener(
   function(event){
 
     if(
-      event.key === 'Enter' &&
+      event.key==='Enter' &&
+      DOM.loginPage &&
       DOM.loginPage.classList.contains(
         'active'
       )
@@ -3629,6 +3572,10 @@ document.addEventListener(
     cacheDOM();
 
 
+    /*
+     * Dropdown UI immediately তৈরি।
+     * কোনো server request লাগবে না।
+     */
     setupMonthSelect(
       'monthSelect',
       'yearSelect'
@@ -3652,7 +3599,5 @@ document.addEventListener(
   }
 );
 
-</script>
-
-</body>
-</html>
+</script></body>
+      </html>
