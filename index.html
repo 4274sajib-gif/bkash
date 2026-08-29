@@ -370,20 +370,34 @@ select:focus{
 ===================================================== */
 
 .balance-card{
-  padding:8px 11px;
-  border-radius:9px;
-  background:#fff;
-  border:1px solid #e7eaf0;
-  box-shadow:0 2px 7px rgba(0,0,0,.035);
+  padding:10px 12px;
+  border-radius:11px;
+  background:#111;
+  border:1px solid #111;
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
   margin-bottom:9px;
   display:flex;
-  align-items:center;
+  align-items:stretch;
   justify-content:space-between;
-  gap:10px;
+  gap:0;
+  color:#fff;
+  overflow:hidden;
+}
+
+.balance-left,
+.balance-sales{
+  flex:1;
+  min-width:0;
+  padding:3px 10px;
 }
 
 .balance-left{
-  min-width:0;
+  text-align:left;
+}
+
+.balance-sales{
+  text-align:right;
+  border-left:1px solid rgba(255,255,255,.22);
 }
 
 .balance-left span,
@@ -391,43 +405,24 @@ select:focus{
   display:block;
   font-size:9px;
   font-weight:700;
-  color:#777;
+  color:#aaa;
   letter-spacing:.2px;
 }
 
 .balance-left strong{
   display:block;
-  margin-top:1px;
+  margin-top:2px;
   font-size:17px;
   line-height:1.15;
-}
-
-.balance-sales{
-  text-align:right;
-  flex-shrink:0;
+  color:#fff;
 }
 
 .balance-sales strong{
   display:block;
-  margin-top:1px;
+  margin-top:2px;
   font-size:16px;
   line-height:1.15;
-}
-
-/* =====================================================
-   SALES FILTER
-===================================================== */
-
-.sales-row{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:8px;
-  padding:7px 9px;
-  background:#fff;
-  border:1px solid #e7eaf0;
-  border-radius:9px;
-  margin-bottom:9px;
+  color:#fff;
 }
 
 .sales-filter{
